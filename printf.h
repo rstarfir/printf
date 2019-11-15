@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
+/*   Updated: 2019/11/15 21:28:09 by rstarfir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PRINTF_H
+# define PRINTF_H
+# define ALLSYMBOLS "cspdiouxXfy%#-+.*0123456789hLljz"
+# define MFL 0
+# define PFL 1
+# define SFL 2
+# define OFL 3
+# define ZFL 4
+
+# define HH 1
+# define LL 2
+# define L 3
+# define H 4
+# define J 5
+# define Z 6
+
+typedef struct  s_parser
+{
+	const char  *format;
+	int			nprinted;
+	int			i;
+	int			flags[5]; //minus, plus, space, #, 0;
+	int			width;
+	int			precision;
+	int			length;//а здесь ничего не указывать?
+}               t_parser;
+
+
+#endif
