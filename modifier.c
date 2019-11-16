@@ -12,31 +12,10 @@
 
 #include	"printf.h"
 #include	<stdarg.h>
-/*
-void		checkflags(t_parser *f)
-{
-	while (ft_strchr("+-#0 ", format[f->i]))
-	{
-		if (format[f->i] == '+')
-			f->minus = 1;
-		if (format[f->i] == '-')
-			f->plus = 1;
-		if (format[f->i] == '#')
-			f->space = 1;
-		if (format[f->i] == '0')
-			f->hash = 1;
-		if (format[f->i] == ' ')
-			f->zero = 1;
-		f->i++;
-	}
-	if (f->plus == 1)
-		f->space = 0;
-}
-*/
 
 void checkflags(t_parser *f)
 {
-	while (true)
+	while (1)
 	{
 		if (f->format[f->i] == '+')
 			f->flags[PFL] = '+'; // изначально f->flags[PFL] проинициализировать нулем
@@ -48,7 +27,7 @@ void checkflags(t_parser *f)
 			f->flags[ZFL] = 1;
 		else if (f->format[f->i] == ' ')
 		{
-			if (flags[PFL] == 0)
+			if (f->flags[PFL] == 0)
 			f->flags[PFL] = ' ';
 		}
 		else
@@ -57,83 +36,82 @@ void checkflags(t_parser *f)
 	}
 }
 
-int		findstar(t_parser *f, va_list ap)
+void	checkwidth(t_parser *f, va_list ap)
 {
-	int		ast;
-
-	ast = 0;
-	if (format[f->i] == '*')
+	if (ft_isdigit(f->format[f->i]))
 	{
-		ast = 1;
+		while(ft_isdigit(f->format[f->i]))
+		{
+			f->width = 10 * f->width + f->format[f->i] - '0';
+			f->i++;	
+		}
+	}
+	else if (f->format[f->i] == '*')
+	{
 		f->width = va_arg(ap, int);
+		f->i++;
 		if (f->width < 0)
 		{
-			f->flags[MFL] = 1;
-			f->width = -(f->width);
+			f->flags[MFL] *= -1;
+			f->width *= -1;
 		}
-		f->i++;
 	}
-	return (ast);
+
 }
 
-void		checkwidth(t_parser *f, va_list ap)
-{
-	if (!findstar(f, ap))
-		if (f->format[f->i] >= '0' && f->format[f->i] <= '9')
-		{
-			f->width = ft_atoi(&format[f->i]);
-			while (f->format[f->i] >= '0' && f->format[f->i] <= '9')
-				f->i++;
-		}
-}
-
-void		checkprecision(t_parser *f, va_list ap)
+void	checkprecision(t_parser *f, va_list ap)
 {
 	if (f->format[f->i] == '.')
 	{
 		f->i++;
-		if(!findstar(f, ap))
-			if (f->format[f->i] >= '0' && f->format[f->i] <= '9')
+		if (ft_isdigit(f->format[f->i]))
+		{
+			f->precision = 0; // изначально precision проинициализировать -1
+			while (ft_isdigit(f->format[f->i]))
 			{
-				f->width = ft_atoi(&format[f->i]);
-				while (f->format[f->i] >= '0' && f->format[f->i] <= '9')
-					f->i++;
+				f->precision = 10 * f->precision + f->format[f->i] - '0';
+				f->i++;
 			}
+			
+		}
+		else if (f->format[f->i] == '*')
+		{
+			f->precision = va_arg(ap, int);
+			f->i++;
+		}
+
 	}
 }
 
-void		checklength(t_parser *f, int i)
+void		checksize(t_parser *f)
 {	
-	i = f->i;
-	if (ft_strchr("hlLjz", format[i]))
+	if (f->format[f->i] == 'h')
 	{
-		if (f->format[f->i] == 'h')
+		if (f->format[f->i + 1] == 'h')
 		{
-			if (f->format[f->i + 1] == 'h')
-				f->length = HH;
-			else if (f->format[f->i - 1] != 'h')
-				f->length = H;
+			f->size = HH;
+			f->i++;
 		}
-		if (f->format[f->i] == 'l')
-		{
-			if (f->format[f->i + 1] == 'l')
-				f->length = LL;
-			else if (f->format[f->i - 1] != 'l')
-				f->length = L;
-		}
-		if (f->format[f->i] == 'L')
-			f->length = BIGL;
+		else
+			f->size = H;
 	}
-	while (ft_strchr("hlLjz", format[f->i]))
-		f->i++;
-	f->i = i;
+	else if (f->format[f->i] == 'l')
+	{
+		if (f->format[f->i + 1] == 'l')
+		{
+			f->size = LL;
+			f->i++;
+		}
+		else
+			f->size = L; 
+	}
 }
 
-void		modifiers(t_parser *f, va_list *ap)
+void		modifiers(t_parser *f, va_list ap)
 {
 	checkflags(f);
 	checkwidth(f, ap);
-	checkprecision(f, ap, 0);
-	checksize(f, 0);
+	checkprecision(f, ap);
+	checksize(f);
 }
 

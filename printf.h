@@ -12,6 +12,10 @@
 
 #ifndef PRINTF_H
 # define PRINTF_H
+
+# include <unistd.h>
+# include <stdarg.h>
+# include "libft/includes/libft.h"
 # define ALLSYMBOLS "cspdiouxXfy%#-+.*0123456789hLljz"
 # define MFL 0
 # define PFL 1
@@ -33,8 +37,12 @@ typedef struct  s_parser
 	int			flags[4]; //minus flag, plus flag(includes space flag):'+', '-', ' ' or 0, # flag, 0 flag;
 	int			width;
 	int			precision;
-	int			length;//а здесь ничего не указывать?
+	int			size;//а здесь ничего не указывать?
 }               t_parser;
 
+char	*ft_itoabase(long int num, int base);
+void	modifiers(t_parser *f, va_list ap);
+void	conversions(char c, va_list ap, t_parser *f);
+void	ifint (t_parser *f, va_list ap);
 
 #endif
