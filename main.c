@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/15 17:42:03 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/16 15:00:01 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int ft_printf(const char *format, ...)
 int main(void)
 {
 	//printf("%0+-+5d", 345);
-	printf("%+d", 345);
+	printf("\n%5*d", 3, 17);
+
 	return (0);
 }
