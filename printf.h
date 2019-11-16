@@ -15,9 +15,8 @@
 # define ALLSYMBOLS "cspdiouxXfy%#-+.*0123456789hLljz"
 # define MFL 0
 # define PFL 1
-# define SFL 2
-# define OFL 3
-# define ZFL 4
+# define OFL 2
+# define ZFL 3
 
 # define HH 1
 # define LL 2
@@ -31,7 +30,7 @@ typedef struct  s_parser
 	const char  *format;
 	int			nprinted;
 	int			i;
-	int			flags[5]; //minus, plus, space, #, 0;
+	int			flags[4]; //minus flag, plus flag(includes space flag):'+', '-', ' ' or 0, # flag, 0 flag;
 	int			width;
 	int			precision;
 	int			length;//а здесь ничего не указывать?

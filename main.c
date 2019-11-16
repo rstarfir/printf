@@ -107,7 +107,7 @@ int ft_printf(const char *format, ...)
 
 int main(void)
 {
-	printf("%*d", 5, 34);
-	// printf("%5d blablacar", 3450));
+	//printf("%0+-+5d", 345);
+	printf("%+d", 345);
 	return (0);
 }

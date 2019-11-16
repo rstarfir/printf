@@ -12,7 +12,7 @@
 
 NAME = printf
 LIBFT = libft
-CFLAGS = -Wall -Wextra
+#CFLAGS = -Wall -Wextra
 LFLAGS = -L$(LIBFT) -lft
 CC = gcc 
 SRCS = main.c \
@@ -25,9 +25,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
+	$(CC) -o $(NAME) $(OBJS) $(LFLAGS)
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ -c $<
+	$(CC) -I$(INCLUDES) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJS)

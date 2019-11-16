@@ -12,7 +12,7 @@
 
 #include	"printf.h"
 #include	<stdarg.h>
-
+/*
 void		checkflags(t_parser *f)
 {
 	while (ft_strchr("+-#0 ", format[f->i]))
@@ -31,6 +31,30 @@ void		checkflags(t_parser *f)
 	}
 	if (f->plus == 1)
 		f->space = 0;
+}
+*/
+
+void checkflags(t_parser *f)
+{
+	while (true)
+	{
+		if (f->format[f->i] == '+')
+			f->flags[PFL] = '+'; // изначально f->flags[PFL] проинициализировать нулем
+		else if (f->format[f->i] == '-')
+			f->flags[MFL] = 1;
+		else if (f->format[f->i] == '#')
+			f->flags[OFL] = 1;
+		else if (f->format[f->i] == '0')
+			f->flags[ZFL] = 1;
+		else if (f->format[f->i] == ' ')
+		{
+			if (flags[PFL] == 0)
+			f->flags[PFL] = ' ';
+		}
+		else
+			break;
+		f->i++;
+	}
 }
 
 int		findstar(t_parser *f, va_list ap)
