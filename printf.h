@@ -35,7 +35,7 @@ typedef struct  s_parser
 	int			nprinted;
 	int			i;
 	int			flags[4]; //minus flag, plus flag(includes space flag):'+', '-', ' ' or 0, # flag, 0 flag;
-	int			width;
+	int			width; //минимальная ширина
 	int			precision;
 	int			size;//а здесь ничего не указывать?
 }               t_parser;

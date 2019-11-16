@@ -31,36 +31,29 @@ int formatparse(t_parser *list, va_list ap)
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
-		//ft_putstr("I was here");
 		if (list->format[list->i] != '%' && list->format[list->i]) // && format[pos] ???? зачем?
 		{	
-			//ft_putstr("here");
 			list->nprinted += write(1, &(list->format[list->i]), 1);
 		}
 		else if (list->format[list->i] == '%')
 		{
-			//ft_putstr("here");
 			if (!ft_strchr(ALLSYMBOLS, list->format[list->i + 1]))
 				break;
 			while (ft_strchr(ALLSYMBOLS, list->format[list->i + 1]))
 			{
-				//ft_putstr("tut");
 				list->i++;
 				if (ft_strchr("cspdiouxXfyb%", list->format[list->i]))
 				{
 					list->i = parsel2(list, ap) + 2;
-					//ft_putstr("tut");
 					break;
 				}
 				else
 					list->i = parsel2(list, ap);
 			}
-			//ft_putnbr(list->format[list->i]);
 			continue;
 		}
 		list->i++;
 	}
-	//ft_putstr("tuta");
 	return (list->nprinted);
 }
 
@@ -68,24 +61,14 @@ int parsel2(t_parser *f, va_list ap)
 {
 
 	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-	{
 		modifiers(f, ap);
-		//ft_putnbr(f->format[f->i]);
-	}
 	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-	{
-		//ft_putstr("was here");
-		//ft_putnbr(f->format[f->i]);
 		conversions(f->format[f->i], ap, f);
-		//ft_putnbr(f->format[f->i - 1]);
-		//bezerostruct2(f);
-	}
 	return (f->i - 1);
 }
 
 void	conversions(char c, va_list ap, t_parser *f)
 {
-	//ft_putstr("debug");
 	if (c == 'd' || c == 'i')
 		ifint (f, ap);
 	//if (c == 'c')
@@ -107,7 +90,6 @@ void	conversions(char c, va_list ap, t_parser *f)
 	//	ifcat();
 	//else if (c == 'b')
 	//	ifbinary(f, ap);
-	//f->i--;
 }
 
 int ft_printf(const char *format, ...)
@@ -122,7 +104,6 @@ int ft_printf(const char *format, ...)
 	va_list argptr;
 	va_start(argptr, format);
 	numchar = formatparse(&list, argptr);
-	//va_arg(argptr, int);
 	va_end(argptr);
 	return (numchar);
 }
@@ -133,6 +114,7 @@ int main(void)
 	//printf("%+d", 345);
 	//printf("\n%*5d", 3, 17);
 	//printf("\n%-5d", 345);
-	ft_printf("%-d", 345);
+	ft_printf("%-d", -345);
+	printf("\n%05d", -355);
 	return (0);
 }
