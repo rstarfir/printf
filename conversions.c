@@ -21,11 +21,11 @@ void ifint(t_parser *f, va_list ap)
 		number = (int)va_arg(ap, int);
 	if (number < 0)
 	{
-		f->flags[PFL] = '-';
+		f->flags[FSFL] = '-';
 		number = number * -1;
 	}
 	s = ft_itoabase(number, 10);
-	if (f->flags[PFL] == '-')
+	if (f->flags[FSFL] == '-')
 		ft_putchar('-');	
 	if (f->flags[MFL] == 1)
 		left_aligned(f, ft_strlen(s), s);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   modifier.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/15 21:33:44 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/17 14:17:13 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void checkflags(t_parser *f)
 	while (1)
 	{
 		if (f->format[f->i] == '+')
-			f->flags[PFL] = '+'; // изначально f->flags[PFL] проинициализировать нулем
+			f->flags[FSFL] = '+'; // изначально f->flags[FSFL] проинициализировать нулем
 		else if (f->format[f->i] == '-')
 			f->flags[MFL] = 1;
 		else if (f->format[f->i] == '#')
@@ -27,8 +27,8 @@ void checkflags(t_parser *f)
 			f->flags[ZFL] = 1;
 		else if (f->format[f->i] == ' ')
 		{
-			if (f->flags[PFL] == 0)
-			f->flags[PFL] = ' ';
+			if (f->flags[FSFL] == 0)
+			f->flags[FSFL] = ' ';
 		}
 		else
 			break;
