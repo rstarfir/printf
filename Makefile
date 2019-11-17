@@ -17,7 +17,9 @@ LFLAGS = -L$(LIBFT) -lft
 CC = gcc 
 SRCS = main.c \
 		itoa.c \
-		ft_itoabase.c
+		ft_itoabase.c \
+		conversions.c \
+		modifier.c
 OBJS = $(SRCS:%.c=%.o)
 INCLUDES = libft/includes
 
@@ -25,7 +27,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT)
-	$(CC) -o $(NAME) $(OBJS) $(LFLAGS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
 %.o: %.c
 	$(CC) -I$(INCLUDES) -o $@ -c $<
 
