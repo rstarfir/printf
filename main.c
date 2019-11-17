@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/16 15:00:01 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/16 17:36:17 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "libft/includes/libft.h"
 #include "printf.h"
 
-/*char	*ft_itoabase(long long int num, int base); 
+char	*ft_itoabase(long long int num, int base); 
 
 int formatparse(t_parser *list, va_list ap, int pos)
 {
