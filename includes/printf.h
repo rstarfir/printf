@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/17 14:15:14 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/18 13:43:03 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include "libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # define ALLSYMBOLS "cspdiouxXfy%#-+.*0123456789hLljz"
 # define MFL 0
 # define FSFL 1 // first symbol flag '+', '-', ' ' or nothing before number;
@@ -44,5 +44,6 @@ char	*ft_itoabase(long int num, int base);
 void	modifiers(t_parser *f, va_list ap);
 void	conversions(char c, va_list ap, t_parser *f);
 void	ifint (t_parser *f, va_list ap);
+int 	ft_printf(const char *format, ...);
 
 #endif

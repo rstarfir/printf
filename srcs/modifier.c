@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/17 14:17:13 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/17 15:38:53 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ void		checksize(t_parser *f)
 {	
 	if (f->format[f->i] == 'h')
 	{
-		if (f->format[f->i + 1] == 'h')
+		f->i++;
+		if (f->format[f->i] == 'h')
 		{
 			f->size = HH;
 			f->i++;
@@ -97,7 +98,8 @@ void		checksize(t_parser *f)
 	}
 	else if (f->format[f->i] == 'l')
 	{
-		if (f->format[f->i + 1] == 'l')
+		f->i++;
+		if (f->format[f->i] == 'l')
 		{
 			f->size = LL;
 			f->i++;
