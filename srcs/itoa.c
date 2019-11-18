@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
-#include "libft/includes/libft.h"
+#include "../libft/includes/libft.h"
 
 char *ft_itoa(int nbr)
 {
