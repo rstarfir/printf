@@ -6,13 +6,13 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/12 19:04:58 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/17 18:51:18 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include "libft/includes/libft.h"
+#include "../libft/includes/libft.h"
 
 char	*strrev(char *str)
 {
