@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/18 13:39:50 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/18 20:40:01 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,19 @@
 #include <string.h>
 #include <unistd.h>
 #include <limits.h>
-#include "printf.h"
+#include "../includes/printf.h"
 int parsel2(t_parser *f, va_list ap);
+
+void	zerostruct(t_parser *f)
+{
+	f->flags[MFL] = 0;
+	f->flags[FSFL] = 0;
+	f->flags[ZFL] = ' ';
+	f->flags[OFL] = 0;
+	f->width = 0;
+	f->precision = 0;
+	f->size = 0;
+}
 
 int formatparse(t_parser *list, va_list ap)
 {
@@ -71,25 +82,29 @@ void	conversions(char c, va_list ap, t_parser *f)
 {
 	if (c == 'd' || c == 'i')
 		ifint (f, ap);
-	//if (c == 'c')
-	//	ifchar(f, ap);
-	//else if (c == 's')
-	//	ifstring(f, ap);
-	//else if (c == 'p')
-	//	ifpointer(f, ap, 2); //else if (c == 'o')
+	else if (c == 'c')
+		ifchar(f, ap);
+	else if (c == 's')
+		ifstring(f, ap);
+	else if (c == 'p')
+		ifpointer(f, ap);
+	//	ifpointer(f, ap, 2); 
+	//else if (c == 'o')
 	//	ifoctal(f, ap);
 	//else if (c == 'u')
 	//	ifudecint(f, ap);
-	//else if (c == 'x' || c == 'X')
-	//	ifhex(f, ap, c);
+	else if (c == 'x' || c == 'X')
+		ifhex(f, ap, c);
+		//ifhex(f, ap, c);
 	//else if (c == 'f')
 	//	iffloat(f, ap);
-	//else if (c == '%')
-	//	ifpercent(f);
+	else if (c == '%')
+		ifpercent(f);
 	//else if (c == 'y')
 	//	ifcat();
 	//else if (c == 'b')
 	//	ifbinary(f, ap);
+	zerostruct(f);
 }
 
 int ft_printf(const char *format, ...)
