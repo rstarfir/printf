@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/18 14:06:33 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/18 15:32:37 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	modifiers(t_parser *f, va_list ap);
 void	conversions(char c, va_list ap, t_parser *f);
 void	ifint (t_parser *f, va_list ap);
 int 	ft_printf(const char *format, ...);
+
 
 #endif
