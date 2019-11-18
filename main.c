@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/17 15:58:01 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/17 16:03:04 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int formatparse(t_parser *list, va_list ap)
 	list->nprinted = 0;
 	list->i = 0;
 	list->flags[MFL] = 0;
-	list->flags[PFL] = 0;
+	list->flags[FSFL] = 0;
 	list->flags[ZFL] = ' ';
 	list->flags[OFL] = 0;
 	list->width = 0;
