@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/17 18:51:18 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/18 18:33:41 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*strrev(char *str)
 		return (NULL);
 }
 
-char	*ft_itoabase(long int num, int base) 
+char	*ft_itoabase(long long int num, int base) 
 { 
-    long int i = 0; 
+    long long int i = 0; 
     int isNegative = 0; 
 	char *str;
     /* Handle 0 explicitely, otherwise empty string is printed for 0 */
@@ -53,14 +53,18 @@ char	*ft_itoabase(long int num, int base)
         str[i++] = '0'; 
         str[i] = '\0'; 
         return str; 
-    } 
+    }
+    if (base != 10 && num < 0)
+    {
+        num *= -1;
+    }
     // In standard itoa(), negative numbers are handled only with  
     // base 10. Otherwise numbers are considered unsigned. 
-    /*if (num < 0 && base == 10) 
-    { 
+    if (num < 0 && base == 10) 
+    {
         isNegative = 1; 
         num = -num; 
-    }*/
+    }
     // Process individual digits 
     while (num != 0) 
     { 

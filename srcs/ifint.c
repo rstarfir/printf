@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "../includes/printf.h"
 #include <stdarg.h>
 
 
@@ -13,9 +13,9 @@ void left_aligned(t_parser *f, int length, char *s)
 		i = 1;
 	f->precision -= length;
 	b = f->precision;
-	if (f->flags[FSFL] == '-')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == '+')
+	//if (f->flags[FSFL] == '-')
+	//	f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	else if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
@@ -45,9 +45,9 @@ void right_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, " ", 1);
 		f->width--;
 	}
-	if (f->flags[FSFL] == '-')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == '+')
+	//if (f->flags[FSFL] == '-')
+	//	f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	else if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
@@ -74,11 +74,11 @@ void ifint(t_parser *f, va_list ap)
 		number = (long)va_arg(ap, int);
 	else if (f->size == LL)
 		number = (long long)va_arg(ap, int);
-	if (number < 0)
-	{
-		f->flags[FSFL] = '-';
-		number = number * -1;
-	}
+	//if (number < 0)
+	//{
+	//	f->flags[FSFL] = '-';
+	//	number = number * -1;
+	//}
 	s = ft_itoabase(number, 10);
 	if (f->flags[MFL] == 1)
 		left_aligned(f, ft_strlen(s), s);
