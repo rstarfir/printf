@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/18 20:40:01 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:47:17 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ void	conversions(char c, va_list ap, t_parser *f)
 	else if (c == 'p')
 		ifpointer(f, ap);
 	//	ifpointer(f, ap, 2); 
-	//else if (c == 'o')
-	//	ifoctal(f, ap);
-	//else if (c == 'u')
-	//	ifudecint(f, ap);
+	else if (c == 'o')
+		ifoctal(f, ap);
+	else if (c == 'u')
+		ifudecint(f, ap);
 	else if (c == 'x' || c == 'X')
 		ifhex(f, ap, c);
 		//ifhex(f, ap, c);
@@ -118,7 +118,10 @@ int ft_printf(const char *format, ...)
 	list.format = format;
 	va_list argptr;
 	va_start(argptr, format);
-	numchar = formatparse(&list, argptr);
+	if (ft_strlen(format) == 1 && format[0] == '%')
+		return (0);
+	else
+		numchar = formatparse(&list, argptr);
 	va_end(argptr);
 	return (numchar);
 }
