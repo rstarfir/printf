@@ -4,16 +4,8 @@
 
 int main(void)
 {
-    printf("%lu, %lu", 0ul, ULONG_MAX);
-
-
-//INT_MAX;
-//LONG_MAX;
-    //printf("%d\n", printf("%"));
-    //printf("%d\n", printf("%"));
-    //printf("%d", ft_printf("%"));
-    //printf("%d", printf("%"));
-    //ft_printf("%p", &i);
+    printf("{%010d}\n", -42);
+    ft_printf("{%010d}", -42);
     return (0);
 }
 
