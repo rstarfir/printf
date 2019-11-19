@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/18 18:33:41 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:49:58 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,17 @@ char	*strrev(char *str)
 }
 
 char	*ft_itoabase(long long int num, int base) 
-{ 
+{
+    //printf("snova tut %ld\n", num);
     long long int i = 0; 
     int isNegative = 0; 
 	char *str;
+    //printf("ya zdeeeeeees %ld", num);
     /* Handle 0 explicitely, otherwise empty string is printed for 0 */
 	if (!(str = (char *)malloc(sizeof(char) * 21))) // на сколько символов выделить память?
 		return (NULL);
     if (num == 0) 
-    { 
+    {
         str[i++] = '0'; 
         str[i] = '\0'; 
         return str; 
