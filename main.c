@@ -4,8 +4,13 @@
 
 int main(void)
 {
-    printf("{%010d}\n", -42);
-    ft_printf("{%010d}", -42);
+    //printf("{%3c}\n", 0);
+    //ft_printf("{%3c}", 0);
+    //printf("%.d, %.0d\n", 0, 0);
+    ft_printf("%.d, %.0d\n", 0, 0);
+    printf("%.d, %.0d\n", 0, 0);
+    ft_printf("{%+03d}\n", 0);
+    printf("{%+03d}", 0);
     return (0);
 }
 

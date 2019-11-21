@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/19 19:30:31 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/21 19:59:30 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void 	ifudecint(t_parser *f, va_list ap);
 void	ifpercent(t_parser *f);
 int 	ft_printf(const char *format, ...);
 void	zerostruct(t_parser *f);
+int 	ft_max(int one, int two);
 
 #endif
