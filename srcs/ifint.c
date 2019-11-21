@@ -21,7 +21,7 @@ void left_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == ' ')
+	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 		while (f->precision > 0)
 	{
@@ -42,6 +42,14 @@ void left_aligned(t_parser *f, int length, char *s)
 	}
 }
 
+int ft_max(int one, int two)
+{
+	if (one >= two)
+		return (one);
+	else
+		return (two);
+}
+
 void right_aligned(t_parser *f, int length, char *s)
 {
 	int i;
@@ -51,32 +59,27 @@ void right_aligned(t_parser *f, int length, char *s)
 	i = 0;
 	if (f->flags[FSFL] != 0)
 		i = 1;
-	if (f->flags[ZFL] == 1)
+	if (f->flags[FSFL] == '+')
+		f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -2)))
 	{
 		k = '0';
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	}
-	while (f->width - f->precision - length - i > 0)
-	{
+	if (f->flags[FSFL] == ' ')
+		f->nprinted += write(1, &f->flags[FSFL], 1);
+	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-		f->width--;
-	}
 	if (f->flags[FSFL] == '-' && k == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	f->precision -= length;
-	if (f->precision < 0)
-        f->precision = 0;
-	if (f->flags[FSFL] == '+')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	while (f->precision > 0)
+		f->nprinted += write(1, &f->flags[FSFL], 1); 					///// остальные сделать аналогично
+	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	f->nprinted += write(1, s, length);
+	if (!(*s == '0' && f->precision == 0) && !(*s == '0' && f->precision == -1))
+		f->nprinted += write(1, s, length);
 }
 
 void ifint(t_parser *f, va_list ap)
@@ -116,7 +119,10 @@ void ifint(t_parser *f, va_list ap)
 	//}
 	//printf("\n %s", s);
 	if (f->flags[MFL] == 1)
+	{
+		f->flags[ZFL] = 0;
 		left_aligned(f, ft_strlen(s), s);
+	}
 	else if (f->flags[MFL] == 0)
 		right_aligned(f, ft_strlen(s), s);
 	free(s);
@@ -144,7 +150,10 @@ void ifudecint(t_parser *f, va_list ap)
 	//}
 	s = ft_itoabase_unsigned(number, 10);
 	if (f->flags[MFL] == 1)
+	{
+		f->flags[ZFL] = 0;
 		left_aligned(f, ft_strlen(s), s);
+	}
 	else if (f->flags[MFL] == 0)
 		right_aligned(f, ft_strlen(s), s);
 	free(s); 

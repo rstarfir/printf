@@ -12,15 +12,20 @@ void left_aligned_hex(t_parser *f, int length, char *s, char flag)
 	b = 0;
 	if (f->flags[FSFL] != 0)
 		i = 1;
+	//f->precision -= length;
 	f->precision -= length;
+	if (f->precision < 0)
+        f->precision = 0;
 	b = f->precision;
 	if (f->flags[OFL] == 1 && flag == 'o')
 		f->nprinted += write(1, "0", 1);
 	else if (f->flags[OFL] == 1 && flag == 'x')
 		f->nprinted += write(1, "0x", 2);
+	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
+		f->nprinted += write(1, "0X", 2);
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == ' ')
+	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 		while (f->precision > 0)
 	{
@@ -38,25 +43,35 @@ void left_aligned_hex(t_parser *f, int length, char *s, char flag)
 void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 {
 	int i;
+	char k;
 
+	k = ' ';
 	i = 0;
 	if (f->flags[FSFL] != 0)
 		i = 1;
-	f->precision -= length;
-	while (f->width - f->precision - length - i > 0)
+	if (f->flags[ZFL] == 1)
 	{
-		f->nprinted += write(1, " ", 1);
+		k = '0';
+		if (f->flags[FSFL] == '-')
+			f->nprinted += write(1, &f->flags[FSFL], 1);
+	}
+	while (f->width - ft_max(f->precision, length) - i > 0)
+	{
+		f->nprinted += write(1, &k, 1);
 		f->width--;
 	}
-	if (f->flags[OFL] == 1 && flag == 'o')
+	if (f->flags[OFL] == 1 && flag == 'o' && *s != '0')
 		f->nprinted += write(1, "0", 1);
-	else if (f->flags[OFL] == 1 && flag == 'x')
+	else if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
 		f->nprinted += write(1, "0x", 2);
-	if (f->flags[OFL] == '#')											////bug
-		f->nprinted += write(1, &f->flags[OFL], 1);
+	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
+		f->nprinted += write(1, "0X", 2);
+	f->precision -= length;
+	if (f->precision < 0)
+        f->precision = 0;
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	else if (f->flags[FSFL] == ' ')
+	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	while (f->precision > 0)
 	{
@@ -90,9 +105,9 @@ void ifhex(t_parser *f, va_list ap, char c)
 {
 	unsigned long long int number;
 	char *s;
-	char flag;
+	//char flag;
 
-	flag = 'x';
+	//flag = 'x';
 	if (f->size == 0)
 		number = va_arg(ap, unsigned int);
 	else if (f->size == H)
@@ -126,9 +141,9 @@ void ifhex(t_parser *f, va_list ap, char c)
 	else if (c == 'X')
         s = ft_toupperstring(ft_itoabase_unsigned(number, 16));
 	if (f->flags[MFL] == 1)
-		left_aligned_hex(f, ft_strlen(s), s, flag);
+		left_aligned_hex(f, ft_strlen(s), s, c);
 	else if (f->flags[MFL] == 0)
-		right_aligned_hex(f, ft_strlen(s), s, flag);
+		right_aligned_hex(f, ft_strlen(s), s, c);
 	free(s);
 }
 

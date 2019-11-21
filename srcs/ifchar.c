@@ -40,7 +40,7 @@ void right_alignedchar(t_parser *f, char c)
 	int i;
 
 	i = 0;
-	while (f->width - f->precision - 1 - i > 0)
+	while (f->width - ft_max(f->precision, 1) - i > 0)
 	{
 		f->nprinted += write(1, " ", 1);
 		f->width--;
