@@ -2,13 +2,22 @@
 #include "stdio.h"
 #include <limits.h>
 
+#include <float.h>
+
 int main(void)
 {
+	t_double d;
+
+	d.x = -123.3;
+	printf("%llx\n", d.s_field.m);
+	printf("%d\n", d.s_field.e);
+	printf("%x\n", d.s_field.s);
+	printf("%.1000f\n", DBL_MIN);
     int i;
     i = 5;
     //printf("{%}");
     //printf("{% %}");
-    printf("{% 5%}");
+   // printf("%.10000000000000000000000f", 6.9999556);
     //ft_printf("%p", &i);
     return (0);
 }
