@@ -61,12 +61,9 @@ void right_aligned(t_parser *f, int length, char *s)
 		i = 1;
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -2)))
-	{
-		k = '0';
+	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == 1)) && (k = '0'))
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
-	}
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
@@ -78,8 +75,10 @@ void right_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (!(*s == '0' && f->precision == 0) && !(*s == '0' && f->precision == -1))
+	if (*s != '0' || (f->precision != 0 && f->precision != -1))
 		f->nprinted += write(1, s, length);
+	//if (!(*s == '0' && f->precision == 0) && !(*s == '0' && f->precision == -1))
+	//if ((*s != '0' || f->precision != 0) && (*s != '0' || f->precision != -1))
 }
 
 void ifint(t_parser *f, va_list ap)
