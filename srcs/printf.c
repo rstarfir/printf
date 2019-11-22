@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/22 13:34:36 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/22 21:47:09 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	zerostruct(t_parser *f)
 	f->flags[ZFL] = ' ';
 	f->flags[OFL] = 0;
 	f->width = 0;
-	f->precision = 0;
+	//f->precision = -2;
+	f->precision = -1;
 	f->size = 0;
 }
 
@@ -39,7 +40,8 @@ int formatparse(t_parser *list, va_list ap)
 	list->flags[OFL] = 0;
 	list->width = 0;
 	//list->precision = -2;
-	list->precision = 1;
+	list->precision = -1;
+	//list->precision = 1;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
