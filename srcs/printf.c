@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/21 20:56:29 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/22 11:01:59 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int formatparse(t_parser *list, va_list ap)
 	list->flags[ZFL] = ' ';
 	list->flags[OFL] = 0;
 	list->width = 0;
-	list->precision = -2;
+	//list->precision = -2;
+	list->precision = 1;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
