@@ -94,14 +94,14 @@ void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 		i = 1;
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -2)) && (k = '0'))
+	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)) && (k = '0'))
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-	if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -2 || *s != '0') && (f->precision < length))
+	if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
 		f->nprinted += write(1, "0", 1);
 	else if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
 		f->nprinted += write(1, "0x", 2);
@@ -114,7 +114,7 @@ void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (*s != '0' || (f->precision != 0 && f->precision != -1))
+	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
 }
 

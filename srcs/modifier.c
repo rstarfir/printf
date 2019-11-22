@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/22 19:14:42 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/22 20:16:18 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,38 +36,50 @@ void checkflags(t_parser *f)
 	}
 }
 
+void	widthstar(t_parser *f, va_list ap)
+{
+	if (f->format[f->i] == '*')
+	{
+		f->width = va_arg(ap, int);
+		if (f->width < 0)
+		{
+			f->flags[MFL] = 1;
+			f->width = -(f->width);
+		}
+		while (f->format[f->i] == '*')
+			f->i++;
+	}
+}
+
 void	checkwidth(t_parser *f, va_list ap)
 {
+	widthstar(f, ap);
 	if (ft_isdigit(f->format[f->i]))
 	{
-		while(ft_isdigit(f->format[f->i]))
+		f->width = 0;
+		while (ft_isdigit(f->format[f->i]))
 		{
 			f->width = 10 * f->width + f->format[f->i] - '0';
 			f->i++;	
 		}
 	}
-	else if (f->format[f->i] == '*')
+	if (f->format[f->i] == '*')
 	{
-		f->width = va_arg(ap, int);
-		f->i++;
-		if (f->width < 0)
-		{
-			f->flags[MFL] = 1;
-			f->width *= -1;
-		}
+		while (f->format[f->i] == '*')
+					f->i++;
 	}
-
 }
 
 void	checkprecision(t_parser *f, va_list ap)
 {
 	if (f->format[f->i] == '.')
 	{
-		f->precision = -1;
+		//f->precision = -1;
+		f->precision = 0;
 		f->i++;
 		if (ft_isdigit(f->format[f->i]))
 		{
-			f->precision = 0; // изначально precision проинициализировать -1
+			//f->precision = 0; // изначально precision проинициализировать -1
 			while (ft_isdigit(f->format[f->i]))
 			{
 				f->precision = 10 * f->precision + f->format[f->i] - '0';

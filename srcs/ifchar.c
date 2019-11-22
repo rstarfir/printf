@@ -80,7 +80,9 @@ void right_aligned_str(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &f->flags[FSFL], 1); 					///// остальные сделать аналогично
 	while (length-- > 0)
 	{
-		if (f->precision == -2)
+		//if (f->precision == -1)
+		//	f->nprinted += write(1, s, 1);
+		if (f->precision < 0)
 			f->nprinted += write(1, s, 1);
 		else if (f->precision > 0)
 		{

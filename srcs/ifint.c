@@ -24,7 +24,7 @@ void left_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (*s != '0' || (f->precision != 0 && f->precision != -1))
+	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
 	if (f->flags[ZFL] == 1)
 	{
@@ -39,16 +39,19 @@ void left_aligned(t_parser *f, int length, char *s)
 
 void right_aligned(t_parser *f, int length, char *s)
 {
+	//printf("%d", f->flags[ZFL]);
 	int i;
 	char k;
 
 	k = ' ';
 	i = 0;
+	if (f->precision < -1)
+		f->precision = -1;
 	if (f->flags[FSFL] != 0)
 		i = 1;
 	if (f->flags[FSFL] == '+')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -2)) && (k = '0'))
+	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)) && (k = '0'))
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
@@ -62,7 +65,7 @@ void right_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (*s != '0' || (f->precision != 0 && f->precision != -1))
+	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
 }
 

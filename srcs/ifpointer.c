@@ -60,7 +60,7 @@ void right_aligned_pointer(t_parser *f, int length, char *s)
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (*s != '0' || (f->precision != 0 && f->precision != -1))
+	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
 	//f->nprinted += write(1, s, length);
 }
