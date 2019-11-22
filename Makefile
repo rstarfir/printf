@@ -6,7 +6,7 @@
 #    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/18 20:32:27 by hthunder         ###   ########.fr        #
+#    Updated: 2019/11/19 13:17:49 by hthunder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ fclean: clean
 re: fclean all
 
 test: libftprintf.a main.c
-	gcc -Wall -Wextra -Werror libftprintf.a main.c
+	gcc libftprintf.a main.c
 
 tclean: fclean
 	rm -f a.out

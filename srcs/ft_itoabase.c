@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/18 18:33:41 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/19 19:34:17 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,17 @@ char	*strrev(char *str)
 }
 
 char	*ft_itoabase(long long int num, int base) 
-{ 
-    long long int i = 0; 
+{
+    //printf("snova tut %ld\n", num);
+    size_t i = 0; 
     int isNegative = 0; 
 	char *str;
+    //printf("ya zdeeeeeees %ld", num);
     /* Handle 0 explicitely, otherwise empty string is printed for 0 */
 	if (!(str = (char *)malloc(sizeof(char) * 21))) // на сколько символов выделить память?
 		return (NULL);
     if (num == 0) 
-    { 
+    {
         str[i++] = '0'; 
         str[i] = '\0'; 
         return str; 
@@ -65,6 +67,50 @@ char	*ft_itoabase(long long int num, int base)
         isNegative = 1; 
         num = -num; 
     }
+    // Process individual digits 
+    while (num != 0) 
+    { 
+        int rem = num % base; 
+        str[i++] = (rem > 9)? (rem-10) + 'a' : rem + '0'; 
+        num = num/base; 
+    } 
+    // If number is negative, append '-' 
+    if (isNegative) 
+        str[i++] = '-'; 
+    str[i] = '\0'; // Append string terminator 
+    // Reverse the string 
+    //reverse(str, i); 
+    //return str;
+	 return (strrev(str));
+}
+
+char	*ft_itoabase_unsigned(unsigned long long int num, int base) 
+{
+    //printf("snova tut %ld\n", num);
+    size_t i = 0; 
+    int isNegative = 0; 
+	char *str;
+    //printf("ya zdeeeeeees %ld", num);
+    /* Handle 0 explicitely, otherwise empty string is printed for 0 */
+	if (!(str = (char *)malloc(sizeof(char) * 21))) // на сколько символов выделить память?
+		return (NULL);
+    if (num == 0) 
+    {
+        str[i++] = '0'; 
+        str[i] = '\0'; 
+        return str; 
+    }
+    /*if (base != 10 && num < 0)
+    {
+        num *= -1;
+    }*/
+    // In standard itoa(), negative numbers are handled only with  
+    // base 10. Otherwise numbers are considered unsigned. 
+    /*if (num < 0 && base == 10) 
+    {
+        isNegative = 1; 
+        num = -num; 
+    }*/
     // Process individual digits 
     while (num != 0) 
     { 

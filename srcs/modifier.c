@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/18 23:05:33 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/22 13:34:30 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	checkprecision(t_parser *f, va_list ap)
 {
 	if (f->format[f->i] == '.')
 	{
+		f->precision = -1;
 		f->i++;
 		if (ft_isdigit(f->format[f->i]))
 		{
