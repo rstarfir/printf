@@ -41,10 +41,10 @@ void right_aligned_pointer(t_parser *f, int length, char *s)
 	i = 2;
 	if (f->flags[FSFL] != 0)
 		i++;
-	f->precision -= length;
-	if (f->precision < 0)
-        f->precision = 0;
-    while (f->width - f->precision - length - i > 0)
+	//f->precision -= length;
+	//if (f->precision < 0)
+    //    f->precision = 0;
+    while (f->width - ft_max(f->precision, length) - i > 0)
 	{
 		f->nprinted += write(1, " ", 1);
 		f->width--;
@@ -55,12 +55,14 @@ void right_aligned_pointer(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	else if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	while (f->precision > 0)
+	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	f->nprinted += write(1, s, length);
+	if (*s != '0' || (f->precision != 0 && f->precision != -1))
+		f->nprinted += write(1, s, length);
+	//f->nprinted += write(1, s, length);
 }
 
 void    ifpointer(t_parser *f, va_list ap)

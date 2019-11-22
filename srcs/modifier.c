@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/21 20:53:09 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/22 19:14:42 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	checkwidth(t_parser *f, va_list ap)
 		f->i++;
 		if (f->width < 0)
 		{
-			f->flags[MFL] *= -1;
+			f->flags[MFL] = 1;
 			f->width *= -1;
 		}
 	}
