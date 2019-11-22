@@ -6,14 +6,8 @@
 
 int main(void)
 {
-    ft_printf("%.d, %.0d\n", 1, 1);
-    printf("%.d, %.0d\n", 1, 1);
-    ft_printf("{%+03d}\n", 1);
-    printf("{%+03d}", 1);
-    //printf("%.o, %.0o\n", 0, 0);
-    //ft_printf("%.o, %.0o", 0, 0);
-    //printf("%#o\n", 42);
-    //ft_printf("%#o", 42);
+    printf("{%05.*d}\n", -15, 42);
+    ft_printf("{%05.*d}", -15, 42);
     return (0);
 }
 
