@@ -45,7 +45,7 @@ void right_aligned(t_parser *f, int length, char *s)
 
 	k = ' ';
 	i = 0;
-	if (f->precision < -1)
+	if (f->precision < -1) 												//строка для отрицательного wildcard
 		f->precision = -1;
 	if (f->flags[FSFL] != 0)
 		i = 1;
@@ -67,6 +67,8 @@ void right_aligned(t_parser *f, int length, char *s)
 	}
 	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
+	//if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
+	//	f->nprinted += write(1, s, length);
 }
 
 void ifint(t_parser *f, va_list ap)

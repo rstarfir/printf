@@ -10,6 +10,10 @@ void left_aligned_hex(t_parser *f, int length, char *s, char flag)
 
 	i = 0;
 	b = 0;
+	if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
+		i++;
+	else if (f->flags[OFL] == 1 && (flag == 'x' || flag == 'X') && *s != '0')
+		i += 2;
 	if (f->flags[FSFL] != 0)
 		i = 1;
 	//f->precision -= length;
@@ -86,10 +90,17 @@ void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 {
 	int i;
+	int z = 0;
 	char k;
 
 	k = ' ';
 	i = 0;
+	if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
+		i++;
+	else if (f->flags[OFL] == 1 && (flag == 'x' || flag == 'X') && *s != '0')
+		i += 2;
+	if (f->precision < -1) 												//строка для отрицательного wildcard
+		f->precision = -1;
 	if (f->flags[FSFL] != 0)
 		i = 1;
 	if (f->flags[FSFL] == '+')
@@ -99,14 +110,29 @@ void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (k == '0')
+	{
+		if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
+			f->nprinted += write(1, "0", 1);
+		else if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
+			f->nprinted += write(1, "0x", 2);
+		else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
+			f->nprinted += write(1, "0X", 2);
+	}
+	//printf("%d %d %d %d here", f->width, f->precision, length, i);
+	//if (length == 1 && *s == '0')
+	//	z = 0;
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-	if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
-		f->nprinted += write(1, "0", 1);
-	else if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
-		f->nprinted += write(1, "0x", 2);
-	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
-		f->nprinted += write(1, "0X", 2);
+	if (k == ' ')
+	{
+		if (f->flags[OFL] == 1 && flag == 'o'&& (f->precision != -1 || *s != '0') && (f->precision < length))
+			f->nprinted += write(1, "0", 1);
+		else if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
+			f->nprinted += write(1, "0x", 2);
+		else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
+			f->nprinted += write(1, "0X", 2);
+	}
 	if (f->flags[FSFL] == '-' && k == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1); 					///// остальные сделать аналогично
 	while (f->precision > length)
@@ -209,7 +235,10 @@ void ifoctal(t_parser *f, va_list ap)
 	//}
 	s = ft_itoabase_unsigned(number, 8);
 	if (f->flags[MFL] == 1)
+	{
+		f->flags[ZFL] = 0;
 		left_aligned_hex(f, ft_strlen(s), s, flag);
+	}
 	else if (f->flags[MFL] == 0)
 		right_aligned_hex(f, ft_strlen(s), s, flag);
 	free(s);

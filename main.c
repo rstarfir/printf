@@ -4,8 +4,10 @@
 
 int main(void)
 {
-    printf("{%05.*d}\n", -15, 42);
-    ft_printf("{%05.*d}", -15, 42);
+    printf("@moulitest: %05.x %05.0x\n", 0, 0);
+    ft_printf("@moulitest: %05.x %05.0x", 0, 0);
+    //printf("@moulitest: %5x %5x\n", 0, 0);
+    //ft_printf("@moulitest: %5x %5x", 0, 0);
     return (0);
 }
 
