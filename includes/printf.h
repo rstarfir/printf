@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/27 23:46:26 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/28 00:00:22 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define OFL 2
 # define ZFL 3
 
-# define HH 1git 
+# define HH 1
 # define LL 2
 # define L 3
 # define H 4
