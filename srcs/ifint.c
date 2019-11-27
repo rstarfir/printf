@@ -9,10 +9,12 @@ int ft_max(int one, int two)
 	else
 		return (two);
 }
-void left_aligned(t_parser *f, int length, char *s)
+void left_aligned_int(t_parser *f, int length, char *s)
 {
 	int i;
 	char k = ' ';
+	int copy;
+	copy = f->precision;
 
 	i = 0;
 
@@ -24,6 +26,11 @@ void left_aligned(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
+	while (f->precision > length)
+	{
+		f->nprinted += write(1, "0", 1);
+		f->precision--;
+	}
 	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
 		f->nprinted += write(1, s, length);
 	if (f->flags[ZFL] == 1)
@@ -32,43 +39,52 @@ void left_aligned(t_parser *f, int length, char *s)
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	}
-	while (f->width-- - ft_max(f->precision, length) - i > 0)
+	//printf("i'm here %d\n", f->precision);
+	while (f->width-- - ft_max(copy, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
 }
 
 
-void right_aligned(t_parser *f, int length, char *s)
+void right_aligned_int(t_parser *f, int length, char *s)
 {
-	//printf("%d", f->flags[ZFL]);
 	int i;
 	char k;
 
 	k = ' ';
 	i = 0;
+
 	if (f->precision < -1) 												//строка для отрицательного wildcard
 		f->precision = -1;
+	
 	if (f->flags[FSFL] != 0)
 		i = 1;
-	if (f->flags[FSFL] == '+')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)) && (k = '0'))
-		if (f->flags[FSFL] == '-')
+	
+	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)))
+		k = '0';
+
+	if ((f->flags[FSFL] == '-' && k == '0') || (f->flags[FSFL] == '+' && k == '0'))
 			f->nprinted += write(1, &f->flags[FSFL], 1);
+
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
+	
+
+	if (f->precision == 0 && *s == '0')
+		length--;
+
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-	if (f->flags[FSFL] == '-' && k == ' ')
+
+	if ((f->flags[FSFL] == '-' && k == ' ') || (f->flags[FSFL] == '+' && k == ' '))
 		f->nprinted += write(1, &f->flags[FSFL], 1); 					///// остальные сделать аналогично
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
+
+	if (*s != '0' || (f->precision != 0))	//// если числа после точки нет значит precision = 0
 		f->nprinted += write(1, s, length);
-	//if (*s != '0' || (f->precision != 0)) //&& f->precision != -1))
-	//	f->nprinted += write(1, s, length);
 }
 
 void ifint(t_parser *f, va_list ap)
@@ -100,12 +116,60 @@ void ifint(t_parser *f, va_list ap)
 	if (f->flags[MFL] == 1)
 	{
 		f->flags[ZFL] = 0;
-		left_aligned(f, ft_strlen(s), s);
+		left_aligned_int(f, ft_strlen(s), s);
 	}
 	else if (f->flags[MFL] == 0)
-		right_aligned(f, ft_strlen(s), s);
+		right_aligned_int(f, ft_strlen(s), s);
 	free(s);
 }
+
+
+
+void left_aligned_uint(t_parser *f, int length, char *s)
+{
+	char k = ' ';
+	int copy;
+	copy = f->precision;
+
+	while (f->precision > length)
+	{
+		f->nprinted += write(1, "0", 1);
+		f->precision--;
+	}
+	if (*s != '0' || (f->precision != 0))
+		f->nprinted += write(1, s, length);
+	if (f->flags[ZFL] == 1)
+		k = '0';
+	while (f->width-- - ft_max(copy, length) > 0)
+		f->nprinted += write(1, &k, 1);
+}
+
+
+void right_aligned_uint(t_parser *f, int length, char *s)
+{
+	char k;
+
+	k = ' ';
+	if (f->precision < -1) 												//строка для отрицательного wildcard
+		f->precision = -1;
+	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)))
+		k = '0';
+	if (f->precision == 0 && *s == '0')
+		length--;
+
+	while (f->width-- - ft_max(f->precision, length) > 0)
+		f->nprinted += write(1, &k, 1);
+	while (f->precision > length)
+	{
+		f->nprinted += write(1, "0", 1);
+		f->precision--;
+	}
+	if (*s != '0' || (f->precision != 0))	//// если числа после точки нет значит precision = 0
+		f->nprinted += write(1, s, length);
+}
+
+
+
 
 void ifudecint(t_parser *f, va_list ap)
 {
@@ -126,9 +190,9 @@ void ifudecint(t_parser *f, va_list ap)
 	if (f->flags[MFL] == 1)
 	{
 		f->flags[ZFL] = 0;
-		left_aligned(f, ft_strlen(s), s);
+		left_aligned_uint(f, ft_strlen(s), s);
 	}
 	else if (f->flags[MFL] == 0)
-		right_aligned(f, ft_strlen(s), s);
+		right_aligned_uint(f, ft_strlen(s), s);
 	free(s); 
 }

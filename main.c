@@ -4,10 +4,8 @@
 
 int main(void)
 {
-    printf("@moulitest: %05.x %05.0x\n", 0, 0);
-    ft_printf("@moulitest: %05.x %05.0x", 0, 0);
-    //printf("@moulitest: %5x %5x\n", 0, 0);
-    //ft_printf("@moulitest: %5x %5x", 0, 0);
+    printf("%-5.2s is a string\n", "this");
+    ft_printf("%-5.2s is a string", "this");
     return (0);
 }
 
