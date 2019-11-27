@@ -6,9 +6,9 @@
 
 int main(void)
 {
-    printf("%f.0\n", 3.6);
-    ft_printf("%f", 3.14);
-    return (0);
+    //printf("%f.0\n", 3.6);
+    ft_printf("%.0f", 3.5);
+    return (0);	
 }
 
 /*
