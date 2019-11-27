@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/22 21:47:09 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/25 16:38:15 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ void	conversions(char c, va_list ap, t_parser *f)
 	else if (c == 'x' || c == 'X')
 		ifhex(f, ap, c);
 		//ifhex(f, ap, c);
-	//else if (c == 'f')
-	//	iffloat(f, ap);
+	else if (c == 'f')
+		iffloat(f, ap);
 	else if (c == '%')
 		ifpercent(f);
 	//else if (c == 'y')

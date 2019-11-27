@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
+#    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/19 13:17:49 by hthunder         ###   ########.fr        #
+#    Updated: 2019/11/27 19:18:52 by rstarfir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SOURCES = printf.c \
 		itoa.c \
 		ft_itoabase.c \
 		ifint.c \
+		iffloat.c \
 		ifchar.c \
 		ifhex.c \
 		ifpointer.c \

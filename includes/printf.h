@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/22 13:37:55 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/25 17:57:38 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,6 @@ typedef struct  s_parser
 	int			precision;
 	int			size;
 }               t_parser;
-
-/*
-** union struct for double: mantissa(52bit), exponent(11bit), sign(1bit) 
-*/
-#include <stdint.h>
-
-typedef union	u_double
-{
-	double		x;
-	struct
-	{
-		long long	m : 52;
-		unsigned	e : 11;
-		int			s : 1;
-	}			s_field;
-}				t_double;
 
 char	*ft_itoabase(long long int num, int base);
 char	*ft_itoabase_unsigned(long long int num, int base);

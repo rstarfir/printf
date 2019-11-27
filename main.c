@@ -6,8 +6,8 @@
 
 int main(void)
 {
-    printf("{%05.*d}\n", -15, 42);
-    ft_printf("{%05.*d}", -15, 42);
+    printf("%f.0\n", 3.6);
+    ft_printf("%f", 3.14);
     return (0);
 }
 
