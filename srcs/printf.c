@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/22 21:47:09 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/28 17:38:57 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	zerostruct(t_parser *f)
 	f->flags[ZFL] = ' ';
 	f->flags[OFL] = 0;
 	f->width = 0;
-	//f->precision = -2;
 	f->precision = -1;
 	f->size = 0;
 }
@@ -39,9 +38,7 @@ int formatparse(t_parser *list, va_list ap)
 	list->flags[ZFL] = ' ';
 	list->flags[OFL] = 0;
 	list->width = 0;
-	//list->precision = -2;
 	list->precision = -1;
-	//list->precision = 1;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
@@ -98,7 +95,6 @@ void	conversions(char c, va_list ap, t_parser *f)
 		ifudecint(f, ap);
 	else if (c == 'x' || c == 'X')
 		ifhex(f, ap, c);
-		//ifhex(f, ap, c);
 	//else if (c == 'f')
 	//	iffloat(f, ap);
 	else if (c == '%')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/22 13:35:31 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/28 17:14:37 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	ifpercent(t_parser *f);
 int 	ft_printf(const char *format, ...);
 void	zerostruct(t_parser *f);
 int 	ft_max(int one, int two);
+int		ft_min(int one, int two);
 
 
 #endif

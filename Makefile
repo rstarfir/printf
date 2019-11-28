@@ -6,7 +6,7 @@
 #    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/19 13:17:49 by hthunder         ###   ########.fr        #
+#    Updated: 2019/11/28 17:12:57 by hthunder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SOURCES = printf.c \
 		ifint.c \
 		ifchar.c \
 		ifhex.c \
+		ifoctal.c \
 		ifpointer.c \
+		ifudecint.c \
+		ifstring.c \
 		modifier.c
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
