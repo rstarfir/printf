@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "printf.h": "c",
-        "limits.h": "c",
-        "stdint.h": "c"
-    }
-}
