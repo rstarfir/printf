@@ -6,14 +6,14 @@
 #    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/27 19:18:52 by rstarfir         ###   ########.fr        #
+#    Updated: 2019/11/28 17:28:41 by rstarfir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBFT = libft
 CFLAGS = -Wall -Wextra -Werror
-CC = gcc
+CC = gcc -g
 DIR_S = srcs
 DIR_O = temporary
 INCLUDES = includes

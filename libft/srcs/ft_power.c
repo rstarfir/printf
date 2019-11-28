@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 21:51:44 by hthunder          #+#    #+#             */
-/*   Updated: 2019/09/17 17:01:05 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/28 17:40:00 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_power(int val, int pow)
+long long	ft_power(int val, int pow)
 {
-	long res;
+	long long  res;
 
 	res = 1;
 	while (pow > 0)
