@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    printf("%-5.2s is a string\n", "this");
-    ft_printf("%-5.2s is a string", "this");
+    printf("%+- 07.06s<--\n", "hi low");
+    ft_printf("%+- 07.06s<--", "hi low");
     return (0);
 }
 
