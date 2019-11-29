@@ -20,7 +20,7 @@
 # include "../libft/includes/libft.h"
 # define ALLSYMBOLS "cspdiouxXfyb%#-+ .*0123456789hLljz"
 # define MFL 0
-# define FSFL 1 // first symbol flag '+', ' ' or nothing before number;
+# define FSFL 1
 # define OFL 2
 # define ZFL 3
 
@@ -31,33 +31,32 @@
 # define J 5
 # define Z 6
 
-typedef struct  s_parser
+typedef struct	s_parser
 {
-	const char  *format;
+	const char	*format;
 	int			nprinted;
 	int			i;
-	int			flags[4]; //minus flag, first symbol flag(includes space flag), # flag, 0 flag;
-	int			width; //минимальная ширина
+	int			flags[4];
+	int			width;
 	int			precision;
-	int			size;//а здесь ничего не указывать?
-}               t_parser;
+	int			size;
+}				t_parser;
 
-char	*ft_itoabase(long long int num, int base);
-char	*ft_itoabase_unsigned(long long int num, int base);
-void	modifiers(t_parser *f, va_list ap);
-void	conversions(char c, va_list ap, t_parser *f);
-void	ifint (t_parser *f, va_list ap);
-void	ifchar (t_parser *f, va_list ap);
-void	ifhex (t_parser *f, va_list ap, char c);
-void    ifpointer(t_parser *f, va_list ap);
-void	ifstring(t_parser *f, va_list ap);
-void 	ifoctal(t_parser *f, va_list ap);
-void 	ifudecint(t_parser *f, va_list ap);
-void	ifpercent(t_parser *f);
-int 	ft_printf(const char *format, ...);
-void	zerostruct(t_parser *f);
-int 	ft_max(int one, int two);
-int		ft_min(int one, int two);
-
+char			*ft_itoabase(long long int num, int base);
+char			*ft_itoabase_unsigned(long long int num, int base);
+void			modifiers(t_parser *f, va_list ap);
+void			conversions(char c, va_list ap, t_parser *f);
+void			ifint (t_parser *f, va_list ap);
+void			ifchar (t_parser *f, va_list ap);
+void			ifhex (t_parser *f, va_list ap, char c);
+void			ifpointer(t_parser *f, va_list ap);
+void			ifstring(t_parser *f, va_list ap);
+void			ifoctal(t_parser *f, va_list ap);
+void			ifudecint(t_parser *f, va_list ap);
+void			ifpercent(t_parser *f);
+int				ft_printf(const char *format, ...);
+void			zerostruct(t_parser *f);
+int				ft_max(int one, int two);
+int				ft_min(int one, int two);
 
 #endif

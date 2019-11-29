@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 
-int ft_min(int one, int two)
+int		ft_min(int one, int two)
 {
 	if (one < two)
 	{
@@ -13,7 +13,7 @@ int ft_min(int one, int two)
 		return (two);
 }
 
-void left_alignedchar(t_parser *f, char c)
+void	left_alignedchar(t_parser *f, char c)
 {
 	int i;
 
@@ -24,20 +24,20 @@ void left_alignedchar(t_parser *f, char c)
 		f->precision--;
 	}
 	f->nprinted += write(1, &c, 1);
-	while(f->width - 1 - i > 0)
+	while (f->width - 1 - i > 0)
 	{
 		f->nprinted += write(1, " ", 1);
 		f->width--;
 	}
 }
 
-void right_alignedchar(t_parser *f, char c)
+void	right_alignedchar(t_parser *f, char c)
 {
-	int i;
-	char k = ' ';
+	int		i;
+	char	k;
 
+	k = ' ';
 	i = 0;
-
 	if (f->flags[ZFL] == 1)
 		k = '0';
 	while (f->width - ft_max(f->precision, 1) - i > 0)
@@ -48,22 +48,23 @@ void right_alignedchar(t_parser *f, char c)
 	f->nprinted += write(1, &c, 1);
 }
 
-void    ifpercent(t_parser *f)
+void	ifpercent(t_parser *f)
 {
-    char c;
+	char	c;
 
-    c = '%';
-    if (f->flags[MFL] == 1)
+	c = '%';
+	if (f->flags[MFL] == 1)
 		left_alignedchar(f, c);
 	else if (f->flags[MFL] == 0)
 		right_alignedchar(f, c);
 }
 
-void	ifchar (t_parser *f, va_list ap)
+void	ifchar(t_parser *f, va_list ap)
 {
-    char c;
-    c = va_arg(ap, int);
-    if (f->flags[MFL] == 1)
+	char c;
+
+	c = va_arg(ap, int);
+	if (f->flags[MFL] == 1)
 		left_alignedchar(f, c);
 	else if (f->flags[MFL] == 0)
 		right_alignedchar(f, c);
