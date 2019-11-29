@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    printf("%+- 07.06s<--\n", "hi low");
-    ft_printf("%+- 07.06s<--", "hi low");
+    printf("%d\n", ft_printf("%5"));
+    printf("%d", ft_printf("%5"));
     return (0);
 }
 

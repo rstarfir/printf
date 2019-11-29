@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:38:57 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/29 19:26:11 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ void	zerostruct(t_parser *f)
 
 int formatparse(t_parser *list, va_list ap)
 {
-	list->nprinted = 0;
-	list->i = 0;
-	list->flags[MFL] = 0;
-	list->flags[FSFL] = 0;
-	list->flags[ZFL] = ' ';
-	list->flags[OFL] = 0;
-	list->width = 0;
-	list->precision = -1;
-	list->size = 0;
-	while (list->format[list->i] != '\0')
+	//list->nprinted = 0;
+	//list->i = 0;
+	//list->flags[MFL] = 0;
+	//list->flags[FSFL] = 0;
+	//list->flags[ZFL] = ' ';
+	//list->flags[OFL] = 0;
+	//list->width = 0;
+	//list->precision = -1;
+	//list->size = 0;
+	while ((list->format)[list->i] != '\0')
 	{
 		if (list->format[list->i] != '%' && list->format[list->i]) // && format[pos] ???? зачем?
 		{	
@@ -50,7 +50,7 @@ int formatparse(t_parser *list, va_list ap)
 		{
 			if (!ft_strchr(ALLSYMBOLS, list->format[list->i + 1]))
 				break;
-			while (ft_strchr(ALLSYMBOLS, list->format[list->i + 1]))
+			while (list->format[list->i + 1] && ft_strchr(ALLSYMBOLS, list->format[list->i + 1]))
 			{
 				list->i++;
 				if (ft_strchr("cspdiouxXfyb%", list->format[list->i]))
@@ -65,6 +65,7 @@ int formatparse(t_parser *list, va_list ap)
 		}
 		list->i++;
 	}
+	//printf("here we go %d\n", list->nprinted);
 	return (list->nprinted);
 }
 
@@ -74,12 +75,17 @@ int parsel2(t_parser *f, va_list ap)
 	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
 		modifiers(f, ap);
 	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
+	{
 		conversions(f->format[f->i], ap, f);
+		zerostruct(f);
+		//printf("and here %d\n", f->nprinted);
+	}
 	return (f->i - 1);
 }
 
 void	conversions(char c, va_list ap, t_parser *f)
 {
+	//printf("zdes %d\n", c);
 	if (c == 'd' || c == 'i')
 		ifint (f, ap);
 	else if (c == 'c')
@@ -103,7 +109,9 @@ void	conversions(char c, va_list ap, t_parser *f)
 	//	ifcat();
 	//else if (c == 'b')
 	//	ifbinary(f, ap);
-	zerostruct(f);
+	//printf("%d ya tut", f->nprinted);
+
+	//zerostruct(f);
 }
 
 int ft_printf(const char *format, ...)
@@ -115,12 +123,23 @@ int ft_printf(const char *format, ...)
 	if (!format)
 		return (0);
 	list.format = format;
+	list.nprinted = 0;
+	list.i = 0;
+	list.flags[MFL] = 0;
+	list.flags[FSFL] = 0;
+	list.flags[ZFL] = ' ';
+	list.flags[OFL] = 0;
+	list.width = 0;
+	list.precision = -1;
+	list.size = 0;
 	va_list argptr;
 	va_start(argptr, format);
 	if (ft_strlen(format) == 1 && format[0] == '%')
 		return (0);
 	else
 		numchar = formatparse(&list, argptr);
+	//printf("is it trash %d\n", numchar);
 	va_end(argptr);
+	//printf("i was here");
 	return (numchar);
 }

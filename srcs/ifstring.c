@@ -2,16 +2,12 @@
 
 void left_aligned_str(t_parser *f, int length, char *s)
 {
-	//int i;
 	char k = ' ';
 	int copylen;
 	int copyprec;
 
-	//i = 0;
 	copylen = length;
 	copyprec = f->precision;
-	//if (f->flags[FSFL] != 0)
-	//	i = 1;
 	if (f->flags[FSFL] == '-' && k == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	while (length-- > 0)
@@ -25,7 +21,7 @@ void left_aligned_str(t_parser *f, int length, char *s)
 		}
 		s++;	
 	}
-	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == 1)) && (k = '0'))
+	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)) && (k = '0'))
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	while (f->width-- - ft_min(copyprec, copylen) > 0)
@@ -34,14 +30,10 @@ void left_aligned_str(t_parser *f, int length, char *s)
 
 void right_aligned_str(t_parser *f, int length, char *s)
 {
-	//int i;
 	char k;
 
 	k = ' ';
-	//i = 0;
-	//if (f->flags[FSFL] != 0)
-	//	i = 1;
-	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == 1)) && (k = '0'))
+	if ( f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)) && (k = '0'))
 		if (f->flags[FSFL] == '-')
 			f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')

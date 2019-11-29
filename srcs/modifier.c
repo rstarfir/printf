@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   modifier.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/22 21:47:02 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/11/29 18:44:19 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,6 @@ void		modifiers(t_parser *f, va_list ap)
 	checkwidth(f, ap);
 	checkprecision(f, ap);
 	checksize(f);
+	//printf("%d ya zdes\n", f->nprinted);
 }
 
