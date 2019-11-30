@@ -42,7 +42,7 @@ typedef struct	s_parser
 	int			size;
 }				t_parser;
 
-char			*ft_itoabase(long long int num, int base);
+//char			*ft_itoabase(long long int num, int base);
 char			*ft_itoabase_unsigned(long long int num, int base);
 void			modifiers(t_parser *f, va_list ap);
 void			conversions(char c, va_list ap, t_parser *f);
@@ -58,5 +58,6 @@ int				ft_printf(const char *format, ...);
 void			zerostruct(t_parser *f);
 int				ft_max(int one, int two);
 int				ft_min(int one, int two);
+char			*ft_llitoa(long long int n);
 
 #endif

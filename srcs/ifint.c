@@ -1,6 +1,6 @@
 #include "../includes/printf.h"
 #include <stdarg.h>
-
+#include <stdio.h> // remove it
 
 int ft_max(int one, int two)
 {
@@ -105,15 +105,19 @@ void ifint(t_parser *f, va_list ap)
 		number = (long long int)va_arg(ap, long long int);
 	if (number == LLONG_MIN)
 	{
-		f->nprinted += write(1, "-9223372036854775808", 20);
-		return ;
-	}
-	if (number < 0)
-	{
-		number *= -1;
 		f->flags[FSFL] = '-';
+		s = ft_strdup("9223372036854775808");
 	}
-	s = ft_itoabase(number, 10);
+	else
+	{
+		if (number < 0)
+		{
+			number *= -1;
+			f->flags[FSFL] = '-';
+		}
+		s = ft_llitoa(number);
+	}
+
 	if (f->flags[MFL] == 1)
 	{
 		f->flags[ZFL] = 0;

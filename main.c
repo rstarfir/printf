@@ -4,9 +4,22 @@
 
 int main(void)
 {
-    printf("%d\n", ft_printf("%5"));
-    printf("%d", ft_printf("%5"));
-    return (0);
+    //printf("%d\n", ft_printf("%5"));
+    //printf("%d", ft_printf("%5"));
+    //printf("%lld\n", LLONG_MAX); // 9223372036854775807
+	//ft_printf("%lld\n", LLONG_MAX); // 9223372036854775807
+	//ft_printf("%lld", 0);
+	//printf("%o\n", -50);
+	//ft_printf("%o\n", -50);
+	//printf("%lld\n", LLONG_MIN);
+	//ft_printf("%lld", LLONG_MIN);
+	//printf("%li\n", 22337203685477);
+	//ft_printf("%li", 22337203685477);
+	//printf("% -10.5i\n", -216);
+	//ft_printf("% -10.5i", -216);
+	printf("%25.23lld\n", LLONG_MIN);
+	ft_printf("%25.23lld", LLONG_MIN);
+return (0);
 }
 
 /*

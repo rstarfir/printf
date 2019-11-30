@@ -143,7 +143,7 @@ void ifhex(t_parser *f, va_list ap, char c)
 		}
 	}
 	if (c == 'x')
-		s = ft_itoabase(number, 16);
+		s = ft_itoabase_unsigned(number, 16);
 	else if (c == 'X')
         s = ft_toupperstring(ft_itoabase_unsigned(number, 16));
 	if (f->flags[MFL] == 1)

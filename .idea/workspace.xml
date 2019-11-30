@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="printf" targetName="printf" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -10,9 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c37cdb97-8ebe-4567-b604-46cb95cd11ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_itoabase.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_itoabase.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ifchar.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifchar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifhex.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifhex.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifint.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifint.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +28,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -45,6 +51,13 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="printf" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="printf" TARGET_NAME="printf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="printf" RUN_TARGET_NAME="printf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -57,7 +70,9 @@
       <updated>1575046645163</updated>
       <workItem from="1575046652477" duration="167000" />
       <workItem from="1575046823433" duration="39000" />
-      <workItem from="1575046865482" duration="6231000" />
+      <workItem from="1575046865482" duration="6299000" />
+      <workItem from="1575117088969" duration="4182000" />
+      <workItem from="1575122772583" duration="959000" />
     </task>
     <servers />
   </component>
@@ -84,6 +99,11 @@
           <url>file://$PROJECT_DIR$/srcs/printf.c</url>
           <line>135</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/ft_itoabase.c</url>
+          <line>99</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
