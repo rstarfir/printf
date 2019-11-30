@@ -41,11 +41,6 @@ static	void				left_hex(t_parser *f, int length, char *s, char fl)
 		f->nprinted += write(1, " ", 1);
 }
 
-/*
-**  if (f->precision < -1) 	для отрицательного wildcard
-**	f->precision = -1;
-*/
-
 static	void				put_oct(t_parser *f, char flag, char *s)
 {
 	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
@@ -57,10 +52,8 @@ static	void				put_oct(t_parser *f, char flag, char *s)
 static	void				right_hex(t_parser *f, int length, char *s, char fl)
 {
 	int		i;
-	int		z;
 	char	k;
 
-	z = 0;
 	k = ' ';
 	i = 0;
 	if (f->flags[OFL] == 1 && *s != '0')
@@ -80,25 +73,6 @@ static	void				right_hex(t_parser *f, int length, char *s, char fl)
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 }
-/*
-static	char				*ft_toupperstring(char *c)
-{
-	char *temp;
-
-	temp = c;
-	if (c)
-	{
-		while (*c)
-		{
-			if (*c > 96 && *c < 123)
-				*c = *c - 32;
-			c++;
-		}
-		return (temp);
-	}
-	else
-		return (NULL);
-}*/
 
 static unsigned long long	cast_size(t_parser *f, va_list ap)
 {
@@ -125,15 +99,9 @@ void						ifhex(t_parser *f, va_list ap, char c)
 	if (c == 'x' || c == 'X')
 	{
 		if (number == ULONG_MAX && c == 'x')
-		{
-			f->nprinted += write(1, "ffffffffffffffff", 16);
-			return ;
-		}
+			s = ft_strdup("ffffffffffffffff");
 		else if (number == ULONG_MAX && c == 'X')
-		{
-			f->nprinted += write(1, "FFFFFFFFFFFFFFFF", 16);
-			return ;
-		}
+			s = ft_strdup("FFFFFFFFFFFFFFFF");
 	}
 	if (c == 'x')
 		s = ft_itoabase_unsigned(number, 16);
