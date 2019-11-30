@@ -15,6 +15,14 @@
 #include <limits.h>
 #include <stdio.h>
 
+static	void				put_oct(t_parser *f, char flag, char *s)
+{
+	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
+		f->nprinted += write(1, "0x", 2);
+	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
+		f->nprinted += write(1, "0X", 2);
+}
+
 static	void				left_hex(t_parser *f, int length, char *s, char fl)
 {
 	int i;
@@ -26,10 +34,7 @@ static	void				left_hex(t_parser *f, int length, char *s, char fl)
 	{
 		if (f->flags[OFL] == 1)
 			i += 2;
-		if (f->flags[OFL] == 1 && fl == 'x')
-			f->nprinted += write(1, "0x", 2);
-		else if (f->flags[OFL] == 1 && fl == 'X')
-			f->nprinted += write(1, "0X", 2);
+		put_oct(f, fl, s);
 	}
 	while (f->precision-- > length)
 		f->nprinted += write(1, "0", 1);
@@ -39,14 +44,6 @@ static	void				left_hex(t_parser *f, int length, char *s, char fl)
 		length--;
 	while (f->width-- - ft_max(copyprec, length) - i > 0)
 		f->nprinted += write(1, " ", 1);
-}
-
-static	void				put_oct(t_parser *f, char flag, char *s)
-{
-	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
-		f->nprinted += write(1, "0x", 2);
-	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
-		f->nprinted += write(1, "0X", 2);
 }
 
 static	void				right_hex(t_parser *f, int length, char *s, char fl)

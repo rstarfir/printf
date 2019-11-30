@@ -12,37 +12,28 @@
 
 #include "../includes/printf.h"
 #include <stdarg.h>
-#include <stdio.h> // remove it
 
-int ft_max(int one, int two)
+int				ft_max(int one, int two)
 {
 	if (one >= two)
 		return (one);
 	else
 		return (two);
 }
-void left_aligned_int(t_parser *f, int length, char *s)
-{
-	int i;
-	char k = ' ';
-	int copy;
 
+static	void	left_aligned_int(t_parser *f, int length, char *s)
+{
+	int		i;
+	char	k;
+	int		copy;
+
+	k = ' ';
 	copy = f->precision;
 	i = 0;
-
-	if (f->flags[FSFL] != 0)
-		i = 1;
-	if (f->flags[FSFL] == '-')
+	if (f->flags[FSFL] != 0 && ++i)
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (f->flags[FSFL] == '+')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (f->flags[FSFL] == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	while (f->precision > length)
-	{
+	while (f->precision > length && f->precision--)
 		f->nprinted += write(1, "0", 1);
-		f->precision--;
-	}
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 	if (f->flags[ZFL] == 1)
@@ -57,53 +48,39 @@ void left_aligned_int(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &k, 1);
 }
 
-
-void right_aligned_int(t_parser *f, int length, char *s)
+static	void	right_aligned_int(t_parser *f, int length, char *s)
 {
-	int i;
-	char k;
+	int		i;
+	char	k;
 
 	k = ' ';
 	i = 0;
-
-	if (f->precision < -1) 												//строка для отрицательного wildcard
+	if (f->precision < -1)
 		f->precision = -1;
-	
 	if (f->flags[FSFL] != 0)
 		i = 1;
-	
-	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)))
+	if (f->flags[ZFL] == 1 && (f->precision > f->width || f->precision == -1))
 		k = '0';
-
-	if ((f->flags[FSFL] == '-' && k == '0') || (f->flags[FSFL] == '+' && k == '0'))
-			f->nprinted += write(1, &f->flags[FSFL], 1);
-
+	if ((k == '0') && (f->flags[FSFL] == '-' || f->flags[FSFL] == '+'))
+		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
-	
-
 	if (f->precision == 0 && *s == '0')
 		length--;
-
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-
-	if ((f->flags[FSFL] == '-' && k == ' ') || (f->flags[FSFL] == '+' && k == ' '))
-		f->nprinted += write(1, &f->flags[FSFL], 1); 					///// остальные сделать аналогично
-	while (f->precision > length)
-	{
+	if ((k == ' ') && (f->flags[FSFL] == '-' || f->flags[FSFL] == '+'))
+		f->nprinted += write(1, &f->flags[FSFL], 1);
+	while (f->precision > length && f->precision--)
 		f->nprinted += write(1, "0", 1);
-		f->precision--;
-	}
-
-	if (*s != '0' || (f->precision != 0))	//// если числа после точки нет значит precision = 0
+	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 }
 
-void ifint(t_parser *f, va_list ap)
+void			ifint(t_parser *f, va_list ap)
 {
-	long long int number;
-	char *s;
+	long long int	number;
+	char			*s;
 
 	if (f->size == 0)
 		number = (int)va_arg(ap, int);
@@ -129,7 +106,6 @@ void ifint(t_parser *f, va_list ap)
 		}
 		s = ft_llitoa(number);
 	}
-
 	if (f->flags[MFL] == 1)
 	{
 		f->flags[ZFL] = 0;
