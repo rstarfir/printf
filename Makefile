@@ -26,6 +26,7 @@ SOURCES = printf.c \
 		ifpointer.c \
 		ifudecint.c \
 		ifstring.c \
+		auxiliary.c \
 		modifier.c
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))

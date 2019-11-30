@@ -72,6 +72,7 @@ add_executable(printf
         libft/srcs/ft_swap.c
         libft/srcs/ft_tolower.c
         libft/srcs/ft_toupper.c
+        srcs/auxiliary.c
         srcs/ft_itoabase.c
         srcs/ifchar.c
         srcs/ifhex.c

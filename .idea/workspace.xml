@@ -13,11 +13,20 @@
   <component name="ChangeListManager">
     <list default="true" id="c37cdb97-8ebe-4567-b604-46cb95cd11ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/printf.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ft_itoabase.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_itoabase.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifchar.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifchar.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ifhex.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifhex.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/ifint.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifint.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifoctal.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifoctal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifpointer.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifpointer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifstring.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifstring.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ifudecint.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ifudecint.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/modifier.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/modifier.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/printf.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,7 +81,9 @@
       <workItem from="1575046823433" duration="39000" />
       <workItem from="1575046865482" duration="6299000" />
       <workItem from="1575117088969" duration="4182000" />
-      <workItem from="1575122772583" duration="959000" />
+      <workItem from="1575122772583" duration="4258000" />
+      <workItem from="1575130940072" duration="3714000" />
+      <workItem from="1575134661218" duration="130000" />
     </task>
     <servers />
   </component>

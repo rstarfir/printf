@@ -59,5 +59,6 @@ void			zerostruct(t_parser *f);
 int				ft_max(int one, int two);
 int				ft_min(int one, int two);
 char			*ft_llitoa(long long int n);
+char			*ft_toupperstring(char *c);
 
 #endif

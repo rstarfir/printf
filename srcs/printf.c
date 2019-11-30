@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/29 19:26:11 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/30 17:40:52 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	zerostruct(t_parser *f)
 {
 	f->flags[MFL] = 0;
 	f->flags[FSFL] = 0;
-	f->flags[ZFL] = ' ';
+	f->flags[ZFL] = 0;
 	f->flags[OFL] = 0;
 	f->width = 0;
 	f->precision = -1;
@@ -127,7 +127,7 @@ int ft_printf(const char *format, ...)
 	list.i = 0;
 	list.flags[MFL] = 0;
 	list.flags[FSFL] = 0;
-	list.flags[ZFL] = ' ';
+	list.flags[ZFL] = 0;
 	list.flags[OFL] = 0;
 	list.width = 0;
 	list.precision = -1;

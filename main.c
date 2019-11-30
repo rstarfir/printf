@@ -17,8 +17,11 @@ int main(void)
 	//ft_printf("%li", 22337203685477);
 	//printf("% -10.5i\n", -216);
 	//ft_printf("% -10.5i", -216);
-	printf("%25.23lld\n", LLONG_MIN);
-	ft_printf("%25.23lld", LLONG_MIN);
+	//printf("%25.23lld\n", LLONG_MIN);
+	//ft_printf("%25.23lld", LLONG_MIN);
+	printf("%-5.*x<--\n", -6, 150);
+	ft_printf("%-5.*x<--", -6, 150);
+
 return (0);
 }
 
