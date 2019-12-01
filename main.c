@@ -19,8 +19,8 @@ int main(void)
 	//ft_printf("% -10.5i", -216);
 	//printf("%25.23lld\n", LLONG_MIN);
 	//ft_printf("%25.23lld", LLONG_MIN);
-	printf("%-5.*x<--\n", -6, 150);
-	ft_printf("%-5.*x<--", -6, 150);
+	printf("%-20lx<--\n", ULONG_MAX);
+	ft_printf("%-20lx<--", ULONG_MAX);
 
 return (0);
 }
