@@ -10,7 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/printf.h"
 #include <string.h>
+#include <stdarg.h>
+
+void	widthstar(t_parser *f, va_list ap)
+{
+	if (f->format[f->i] == '*')
+	{
+		f->width = va_arg(ap, int);
+		if (f->width < 0)
+		{
+			f->flags[MFL] = 1;
+			f->width = -(f->width);
+		}
+		while (f->format[f->i] == '*')
+			f->i++;
+	}
+}
 
 char	*ft_toupperstring(char *c)
 {

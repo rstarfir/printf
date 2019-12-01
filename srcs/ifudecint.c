@@ -13,12 +13,13 @@
 #include "../includes/printf.h"
 #include <stdarg.h>
 
-void left_aligned_uint(t_parser *f, int length, char *s)
+static	void	left_aligned_uint(t_parser *f, int length, char *s)
 {
-	char k = ' ';
-	int copy;
-	copy = f->precision;
+	char	k;
+	int		copy;
 
+	k = ' ';
+	copy = f->precision;
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -28,24 +29,24 @@ void left_aligned_uint(t_parser *f, int length, char *s)
 		f->nprinted += write(1, s, length);
 	if (f->flags[ZFL] == 1)
 		k = '0';
-    if (f->precision == 0 && *s == '0')
+	if (f->precision == 0 && *s == '0')
 		length--;
 	while (f->width-- - ft_max(copy, length) > 0)
 		f->nprinted += write(1, &k, 1);
 }
 
-void right_aligned_uint(t_parser *f, int length, char *s)
+static	void	right_aligned_uint(t_parser *f, int length, char *s)
 {
 	char k;
 
 	k = ' ';
-	if (f->precision < -1) 												//строка для отрицательного wildcard
+	if (f->precision < -1)
 		f->precision = -1;
-	if (f->flags[ZFL] == 1 && ((f->precision > f->width) || (f->precision == -1)))
+	if (f->flags[ZFL] == 1 && ((f->precision > f->width)
+	|| (f->precision == -1)))
 		k = '0';
 	if (f->precision == 0 && *s == '0')
 		length--;
-
 	while (f->width-- - ft_max(f->precision, length) > 0)
 		f->nprinted += write(1, &k, 1);
 	while (f->precision > length)
@@ -53,14 +54,14 @@ void right_aligned_uint(t_parser *f, int length, char *s)
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
 	}
-	if (*s != '0' || (f->precision != 0))	//// если числа после точки нет значит precision = 0
+	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 }
 
-void ifudecint(t_parser *f, va_list ap)
+void			ifudecint(t_parser *f, va_list ap)
 {
-	unsigned long long int number;
-	char *s;
+	unsigned long long int	number;
+	char					*s;
 
 	if (f->size == 0)
 		number = va_arg(ap, unsigned int);
@@ -80,5 +81,5 @@ void ifudecint(t_parser *f, va_list ap)
 	}
 	else if (f->flags[MFL] == 0)
 		right_aligned_uint(f, ft_strlen(s), s);
-	free(s); 
+	free(s);
 }

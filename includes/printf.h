@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <limits.h>
 # include "../libft/includes/libft.h"
-# define ALLSYMBOLS "cspdiouxXfyb%#-+ .*0123456789hLljz"
+# define ALL "cspdiouxXfyb%#-+ .*0123456789hLljz"
 # define MFL 0
 # define FSFL 1
 # define OFL 2
@@ -45,7 +45,7 @@ typedef struct	s_parser
 //char			*ft_itoabase(long long int num, int base);
 char			*ft_itoabase_unsigned(long long int num, int base);
 void			modifiers(t_parser *f, va_list ap);
-void			conversions(char c, va_list ap, t_parser *f);
+//void			conversions(char c, va_list ap, t_parser *f);
 void			ifint (t_parser *f, va_list ap);
 void			ifchar (t_parser *f, va_list ap);
 void			ifhex (t_parser *f, va_list ap, char c);
@@ -55,7 +55,8 @@ void			ifoctal(t_parser *f, va_list ap);
 void			ifudecint(t_parser *f, va_list ap);
 void			ifpercent(t_parser *f);
 int				ft_printf(const char *format, ...);
-void			zerostruct(t_parser *f);
+void			widthstar(t_parser *f, va_list ap);
+//void			zerostruct(t_parser *f);
 int				ft_max(int one, int two);
 int				ft_min(int one, int two);
 char			*ft_llitoa(long long int n);

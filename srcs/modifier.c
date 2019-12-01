@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include	<stdarg.h>
+#include <stdarg.h>
 
-void checkflags(t_parser *f)
+static	void	checkflags(t_parser *f)
 {
 	while (1)
 	{
 		if (f->format[f->i] == '+')
-			f->flags[FSFL] = '+'; // изначально f->flags[FSFL] проинициализировать нулем
+			f->flags[FSFL] = '+';
 		else if (f->format[f->i] == '-')
 			f->flags[MFL] = 1;
 		else if (f->format[f->i] == '#')
@@ -28,30 +28,15 @@ void checkflags(t_parser *f)
 		else if (f->format[f->i] == ' ')
 		{
 			if (f->flags[FSFL] == 0)
-			f->flags[FSFL] = ' ';
+				f->flags[FSFL] = ' ';
 		}
 		else
-			break;
+			break ;
 		f->i++;
 	}
 }
 
-void	widthstar(t_parser *f, va_list ap)
-{
-	if (f->format[f->i] == '*')
-	{
-		f->width = va_arg(ap, int);
-		if (f->width < 0)
-		{
-			f->flags[MFL] = 1;
-			f->width = -(f->width);
-		}
-		while (f->format[f->i] == '*')
-			f->i++;
-	}
-}
-
-void	checkwidth(t_parser *f, va_list ap)
+static	void	checkwidth(t_parser *f, va_list ap)
 {
 	widthstar(f, ap);
 	if (ft_isdigit(f->format[f->i]))
@@ -60,44 +45,40 @@ void	checkwidth(t_parser *f, va_list ap)
 		while (ft_isdigit(f->format[f->i]))
 		{
 			f->width = 10 * f->width + f->format[f->i] - '0';
-			f->i++;	
+			f->i++;
 		}
 	}
 	if (f->format[f->i] == '*')
 	{
 		while (f->format[f->i] == '*')
-					f->i++;
+			f->i++;
 	}
 }
 
-void	checkprecision(t_parser *f, va_list ap)
+static	void	checkprecision(t_parser *f, va_list ap)
 {
 	if (f->format[f->i] == '.')
 	{
-		//f->precision = -1;
 		f->precision = 0;
 		f->i++;
 		if (ft_isdigit(f->format[f->i]))
 		{
-			//f->precision = 0; // изначально precision проинициализировать -1
 			while (ft_isdigit(f->format[f->i]))
 			{
 				f->precision = 10 * f->precision + f->format[f->i] - '0';
 				f->i++;
 			}
-			
 		}
 		else if (f->format[f->i] == '*')
 		{
 			f->precision = va_arg(ap, int);
 			f->i++;
 		}
-
 	}
 }
 
-void		checksize(t_parser *f)
-{	
+static	void	checksize(t_parser *f)
+{
 	if (f->format[f->i] == 'h')
 	{
 		f->i++;
@@ -118,16 +99,14 @@ void		checksize(t_parser *f)
 			f->i++;
 		}
 		else
-			f->size = L; 
+			f->size = L;
 	}
 }
 
-void		modifiers(t_parser *f, va_list ap)
+void			modifiers(t_parser *f, va_list ap)
 {
 	checkflags(f);
 	checkwidth(f, ap);
 	checkprecision(f, ap);
 	checksize(f);
-	//printf("%d ya zdes\n", f->nprinted);
 }
-
