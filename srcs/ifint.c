@@ -13,7 +13,7 @@
 #include "../includes/printf.h"
 #include <stdarg.h>
 
-int				ft_max(int one, int two)
+int						ft_max(int one, int two)
 {
 	if (one >= two)
 		return (one);
@@ -21,7 +21,7 @@ int				ft_max(int one, int two)
 		return (two);
 }
 
-static	void	left_aligned_int(t_parser *f, int length, char *s)
+static	void			left_aligned_int(t_parser *f, int length, char *s)
 {
 	int		i;
 	char	k;
@@ -48,7 +48,7 @@ static	void	left_aligned_int(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &k, 1);
 }
 
-static	void	right_aligned_int(t_parser *f, int length, char *s)
+static	void			right_aligned_int(t_parser *f, int length, char *s)
 {
 	int		i;
 	char	k;
@@ -77,26 +77,30 @@ static	void	right_aligned_int(t_parser *f, int length, char *s)
 		f->nprinted += write(1, s, length);
 }
 
-void			ifint(t_parser *f, va_list ap)
+static long long int	cast_size_int(t_parser *f, va_list ap)
+{
+	if (f->size == 0)
+		return ((int)va_arg(ap, int));
+	else if (f->size == H)
+		return ((short)va_arg(ap, int));
+	else if (f->size == HH)
+		return ((signed char)va_arg(ap, int));
+	else if (f->size == L)
+		return ((long int)va_arg(ap, long int));
+	else if (f->size == LL)
+		return ((long long int)va_arg(ap, long long int));
+	else
+		return (0);
+}
+
+void					ifint(t_parser *f, va_list ap)
 {
 	long long int	number;
 	char			*s;
 
-	if (f->size == 0)
-		number = (int)va_arg(ap, int);
-	else if (f->size == H)
-		number = (short)va_arg(ap, int);
-	else if (f->size == HH)
-		number = (signed char)va_arg(ap, int);
-	else if (f->size == L)
-		number = (long int)va_arg(ap, long int);
-	else if (f->size == LL)
-		number = (long long int)va_arg(ap, long long int);
-	if (number == LLONG_MIN)
-	{
-		f->flags[FSFL] = '-';
+	number = cast_size_int(f, ap);
+	if (number == LLONG_MIN && (f->flags[FSFL] = '-'))
 		s = ft_strdup("9223372036854775808");
-	}
 	else
 	{
 		if (number < 0)

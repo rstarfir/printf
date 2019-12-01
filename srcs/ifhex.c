@@ -15,7 +15,7 @@
 #include <limits.h>
 #include <stdio.h>
 
-static	void				put_oct(t_parser *f, char flag, char *s)
+static	void				put_oct_hex(t_parser *f, char flag, char *s)
 {
 	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
 		f->nprinted += write(1, "0x", 2);
@@ -34,7 +34,7 @@ static	void				left_hex(t_parser *f, int length, char *s, char fl)
 	{
 		if (f->flags[OFL] == 1)
 			i += 2;
-		put_oct(f, fl, s);
+		put_oct_hex(f, fl, s);
 	}
 	while (f->precision-- > length)
 		f->nprinted += write(1, "0", 1);
@@ -58,20 +58,20 @@ static	void				right_hex(t_parser *f, int length, char *s, char fl)
 	if (f->flags[ZFL] && ((f->precision > f->width) || (f->precision == -1)))
 		k = '0';
 	if (k == '0')
-		put_oct(f, fl, s);
+		put_oct_hex(f, fl, s);
 	if (f->precision == 0 && *s == '0')
 		length--;
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
 	if (k == ' ')
-		put_oct(f, fl, s);
+		put_oct_hex(f, fl, s);
 	while (f->precision > length && f->precision--)
 		f->nprinted += write(1, "0", 1);
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 }
 
-static unsigned long long	cast_size(t_parser *f, va_list ap)
+static unsigned long long	cast_size_hex(t_parser *f, va_list ap)
 {
 	if (f->size == 0)
 		return (va_arg(ap, unsigned int));
@@ -92,7 +92,7 @@ void						ifhex(t_parser *f, va_list ap, char c)
 	unsigned long long int	number;
 	char					*s;
 
-	number = cast_size(f, ap);
+	number = cast_size_hex(f, ap);
 	if (c == 'x' || c == 'X')
 	{
 		if (number == ULONG_MAX && c == 'x')
