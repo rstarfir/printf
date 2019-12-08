@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 00:00:22 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/06 16:31:55 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct  s_parser
 	int			width; //минимальная ширина
 	int			precision;
 	int			size;
+	int			int_part;
 }               t_parser;
 
 char	*ft_itoabase(long long int num, int base);
@@ -55,7 +56,8 @@ void	ifstring(t_parser *f, va_list ap);
 void 	ifoctal(t_parser *f, va_list ap);
 void 	ifudecint(t_parser *f, va_list ap);
 void	ifpercent(t_parser *f);
-void	iffloat (t_parser *f, va_list ap);
+void	iffloat(t_parser *f, va_list ap);
+long long int	acc_round(double dou_n, long long int number);
 int 	ft_printf(const char *format, ...);
 void	zerostruct(t_parser *f);
 int 	ft_max(int one, int two);

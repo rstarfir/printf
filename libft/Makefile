@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
+#    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/09/28 15:35:27 by hthunder          #+#    #+#              #
-#    Updated: 2019/09/28 15:38:38 by hthunder         ###   ########.fr        #
+#    Created: 2019/12/06 22:40:51 by rstarfir          #+#    #+#              #
+#    Updated: 2019/12/06 22:41:20 by rstarfir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 CC = gcc

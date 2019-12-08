@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 18:33:43 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:07:22 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/08 17:36:28 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void				ft_bubblesort(int *num, int size);
 long long			ft_power(int val, int pow);
 void				ft_lstpushback(t_list **alst, t_list *new);
 int					get_next_line(const int fd, char **line);
+int					ft_exponent(long double value);
 
 #endif

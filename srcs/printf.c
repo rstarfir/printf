@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/25 16:38:15 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/04 22:08:57 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int formatparse(t_parser *list, va_list ap)
 					break;
 				}
 				else
+	
 					list->i = parsel2(list, ap);
 			}
 			continue;
