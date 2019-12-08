@@ -6,7 +6,7 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/19 19:34:17 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/11/30 17:39:32 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdlib.h>
 #include "../libft/includes/libft.h"
 
-char	*strrev(char *str)
+static char	*strrev(char *str)
 {
-	int				i;
-	int				j;
-	char			a;
-	size_t			len;
+	int		i;
+	int		j;
+	char	a;
+	size_t	len;
 
 	if (str)
 	{
@@ -40,90 +40,107 @@ char	*strrev(char *str)
 		return (NULL);
 }
 
-char	*ft_itoabase(long long int num, int base) 
+/*
+** char	*ft_itoabase(long long int num, int base)
+** {
+** size_t	i;
+** int		is_negative;
+** int		rem;
+** char	*str;
+**
+** i = 0;
+** is_negative = 0;
+** if (!(str = (char *)malloc(sizeof(char) * 21)))
+** return (NULL);
+** if (num == 0)
+** {
+** str[i++] = '0';
+** str[i] = '\0';
+** return (str);
+** }
+** //if (base != 10 && num < 0)
+** //	num *= -1;
+** if (num < 0 && base == 10)
+** {
+** is_negative = 1;
+** num = -num;
+** }
+** while (num != 0)
+** {
+** rem = num % base;
+** str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+** num = num / base;
+** }
+** if (is_negative)
+** str[i++] = '-';
+** str[i] = '\0';
+** return (strrev(str));
+** }
+*/
+
+static	int	ft_nsize(long long int nb)
 {
-    //printf("snova tut %ld\n", num);
-    size_t i = 0; 
-    int isNegative = 0; 
-	char *str;
-    //printf("ya zdeeeeeees %ld", num);
-    /* Handle 0 explicitely, otherwise empty string is printed for 0 */
-	if (!(str = (char *)malloc(sizeof(char) * 21))) // на сколько символов выделить память?
-		return (NULL);
-    if (num == 0) 
-    {
-        str[i++] = '0'; 
-        str[i] = '\0'; 
-        return str; 
-    }
-    if (base != 10 && num < 0)
-    {
-        num *= -1;
-    }
-    // In standard itoa(), negative numbers are handled only with  
-    // base 10. Otherwise numbers are considered unsigned. 
-    if (num < 0 && base == 10) 
-    {
-        isNegative = 1; 
-        num = -num; 
-    }
-    // Process individual digits 
-    while (num != 0) 
-    { 
-        int rem = num % base; 
-        str[i++] = (rem > 9)? (rem-10) + 'a' : rem + '0'; 
-        num = num/base; 
-    } 
-    // If number is negative, append '-' 
-    if (isNegative) 
-        str[i++] = '-'; 
-    str[i] = '\0'; // Append string terminator 
-    // Reverse the string 
-    //reverse(str, i); 
-    //return str;
-	 return (strrev(str));
+	int	size;
+
+	size = 0;
+	if (nb == 0)
+		return (1);
+	else if (nb < 0)
+		size += 1;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		size++;
+	}
+	return (size);
 }
 
-char	*ft_itoabase_unsigned(unsigned long long int num, int base) 
+char		*ft_llitoa(long long int n)
 {
-    //printf("snova tut %ld\n", num);
-    size_t i = 0; 
-    int isNegative = 0; 
-	char *str;
-    //printf("ya zdeeeeeees %ld", num);
-    /* Handle 0 explicitely, otherwise empty string is printed for 0 */
-	if (!(str = (char *)malloc(sizeof(char) * 21))) // на сколько символов выделить память?
+	char	*ptr;
+	int		i;
+	int		size;
+
+	size = ft_nsize(n);
+	i = 0;
+	if (!(ptr = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-    if (num == 0) 
-    {
-        str[i++] = '0'; 
-        str[i] = '\0'; 
-        return str; 
-    }
-    /*if (base != 10 && num < 0)
-    {
-        num *= -1;
-    }*/
-    // In standard itoa(), negative numbers are handled only with  
-    // base 10. Otherwise numbers are considered unsigned. 
-    /*if (num < 0 && base == 10) 
-    {
-        isNegative = 1; 
-        num = -num; 
-    }*/
-    // Process individual digits 
-    while (num != 0) 
-    { 
-        int rem = num % base; 
-        str[i++] = (rem > 9)? (rem-10) + 'a' : rem + '0'; 
-        num = num/base; 
-    } 
-    // If number is negative, append '-' 
-    if (isNegative) 
-        str[i++] = '-'; 
-    str[i] = '\0'; // Append string terminator 
-    // Reverse the string 
-    //reverse(str, i); 
-    //return str;
-	 return (strrev(str));
-} 
+	ptr[size] = '\0';
+	if (n < 0)
+	{
+		ptr[i] = '-';
+		n *= -1;
+		i++;
+	}
+	while (i < size--)
+	{
+		ptr[size] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (ptr);
+}
+
+char		*ft_itoabase_unsigned(unsigned long long int num, int base)
+{
+	size_t	i;
+	int		rem;
+	char	*str;
+
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * 21)))
+		return (NULL);
+	if (num == 0)
+	{
+		str[i++] = '0';
+		str[i] = '\0';
+		return (str);
+	}
+	while (num != 0)
+	{
+		rem = num % base;
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+		num = num / base;
+	}
+	str[i] = '\0';
+	return (strrev(str));
+}

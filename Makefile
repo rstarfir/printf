@@ -6,7 +6,7 @@
 #    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/19 13:17:49 by hthunder         ###   ########.fr        #
+#    Updated: 2019/11/29 19:44:52 by hthunder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,15 @@ DIR_S = srcs
 DIR_O = temporary
 INCLUDES = includes
 SOURCES = printf.c \
-		itoa.c \
 		ft_itoabase.c \
 		ifint.c \
 		ifchar.c \
 		ifhex.c \
+		ifoctal.c \
 		ifpointer.c \
+		ifudecint.c \
+		ifstring.c \
+		auxiliary.c \
 		modifier.c
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))

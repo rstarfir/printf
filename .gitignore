@@ -3,3 +3,7 @@
 
 # .DS_Store file
 **/.DS_Store
+
+# CLION
+**/CMakeLists.txt
+**/.idea
