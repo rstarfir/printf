@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/22 21:47:02 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/16 15:21:11 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	checkprecision(t_parser *f, va_list ap)
 {
 	if (f->format[f->i] == '.')
 	{
-		//f->precision = -1;
+		f->double_prec = 0;
 		f->precision = 0;
 		f->i++;
 		if (ft_isdigit(f->format[f->i]))
@@ -82,6 +82,7 @@ void	checkprecision(t_parser *f, va_list ap)
 			//f->precision = 0; // изначально precision проинициализировать -1
 			while (ft_isdigit(f->format[f->i]))
 			{
+				f->double_prec = 10 * f->double_prec + f->format[f->i] - '0';
 				f->precision = 10 * f->precision + f->format[f->i] - '0';
 				f->i++;
 			}
@@ -89,7 +90,8 @@ void	checkprecision(t_parser *f, va_list ap)
 		}
 		else if (f->format[f->i] == '*')
 		{
-			f->precision = va_arg(ap, int);
+			f->precision = va_arg(ap, long double);
+			f->double_prec = f->precision;
 			f->i++;
 		}
 
@@ -119,6 +121,11 @@ void		checksize(t_parser *f)
 		}
 		else
 			f->size = L; 
+	}
+	else if (f->format[f->i] == 'L')
+	{
+		f->size = UCL;
+		f->i++;
 	}
 }
 
