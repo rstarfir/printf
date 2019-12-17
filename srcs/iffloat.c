@@ -6,24 +6,22 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:36:10 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/16 21:24:01 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/17 19:00:27 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
 #include <stdio.h>
 
-void			outputthis(t_parser *f, long long int number)
+void			outputthis(t_parser *f, long long int nbr)
 {
 	char	*nonfr;
 	char	*frac;
 	char	point[2];
 	char	*s;
 
-	//printf("\n%lld", number);
 	nonfr = ft_itoabase_unsigned(f->int_part, 10);
-	//printf("%lld\n", f->int_part);
-	frac = ft_itoabase_unsigned(number, 10);
+	frac = ft_itoabase_unsigned(nbr, 10);
 	point[0] = '.';
 	point[1] = 0;
 	if (f->flags[FSFL] == '-')
@@ -39,89 +37,69 @@ void			outputthis(t_parser *f, long long int number)
 	}
 }
 
-int				acc_round(long double dou_n, long long int number)
+int				acc_round(long double do_n, long long int nbr)
 {
-	if (number % 2 == 1)//check if number is odd
+	if (nbr % 2 == 1)//check if nbr is odd
 	{
-		if ((number = (dou_n * 10)) % 10 >= 5) //checks if 34.5 -> 345 and >= 5
-		{
-			if ((number = (dou_n * 10)) % 10 >= 5)
-				number = (number / 10) + 1;// returns to prev value 34 and adds 1 -> 35
-			else 
-				number = number / 10;
-		}
-		else if ((number = (dou_n * 10)) % 10 < 5)//checks if 34.5 -> 345 and < 5
-		{
-			if ((number = (dou_n * 10)) % 10 >= 5)
-				number = (number / 10) + 1;
-			else
-				number = (number / 10);
-		}
+		if ((nbr = (do_n * 10)) % 10 >= 5) //checks if 34.5 -> 345 and >= 5
+			((nbr = (do_n * 10)) % 10 >= 5) ? (nbr = (nbr / 10) + 1) : (nbr /= 10);
+		else if ((nbr = (do_n * 10)) % 10 < 5)//checks if 34.5 -> 345 and < 5
+			((nbr = (do_n * 10)) % 10 >= 5) ? (nbr = (nbr / 10) + 1) : (nbr /= 10);
 	}
 	else
 	{
-		if ((number = (dou_n * 10)) % 10 > 5)
-		{
-			if ((number = (dou_n * 10)) % 10 >= 5)
-				number = (number / 10) + 1;
-			else
-				number /= 10;
-		}
-		else if ((number = (dou_n * 10)) % 10 <= 5)
-		{
-			if ((number = (dou_n * 10)) % 10 >= 5)
-				number = (number / 10) + 1;
-			else
-				number /= 10;
-		}	
+		if ((nbr = (do_n * 10)) % 10 > 5)
+			((nbr = (do_n * 10)) % 10 >= 5) ? (nbr = (nbr / 10) + 1) : (nbr /= 10);
+		else if ((nbr = (do_n * 10)) % 10 <= 5)
+			((nbr = (do_n * 10)) % 10 >= 5) ? (nbr = (nbr / 10) + 1) : (nbr /= 10);
 	} 
-	return (number);
+	return (nbr);
 }
 
-long long int		doubleprec(t_parser *f, long long int number, long double dou_n)
+long long int		doubleprec(t_parser *f, long long int nbr, long double do_n)
 {
 	if (f->double_prec < 0)
 		f->double_prec = 6;
 	if (f->double_prec== 6)
 	{
-		number = (dou_n *= 1000000);//6 digits after floating point
-		number = acc_round(dou_n, number);//rounding
+		nbr = (do_n *= 1000000);//6 digits after floating point
+		nbr = acc_round(do_n, nbr);//rounding
 	}
 	else if (f->double_prec > 0)
 	{
-		number = (dou_n *= (ft_power(10, f->double_prec)));
-		number = acc_round(dou_n, number);
+		nbr = (do_n *= (ft_power(10, f->double_prec)));
+		nbr = acc_round(do_n, nbr);
 	}
 	else if (f->double_prec == 0)
 	{
-		number += f->int_part;
-		number = acc_round(dou_n, number);
-		f->int_part += number;
-		number = 0;
+		nbr += f->int_part;
+		nbr = acc_round(do_n, nbr);
+		f->int_part += nbr;
+		nbr = 0;
 	}
-	return (number);
+	return (nbr);
 }
 
 void			iffloat(t_parser *f, va_list ap)
 {
-	long double			dou_n;
-	long long int	number;
-		
+	long double			do_n;
+	long long int		nbr;
+
 	if (f->size == L || f->size == 0)
-		dou_n = va_arg(ap, double);
+		do_n = va_arg(ap, double);
 	if (f->size == UCL)
-		dou_n = va_arg(ap,long double);
-	if (dou_n < 0)
+		do_n = va_arg(ap, long double);
+	if (do_n < 0)
 	{
-		dou_n *= -1;
+		do_n *= -1;
 		f->flags[FSFL] = '-';
 	}
-	f->int_part = dou_n;//put integer part in array
-	dou_n -= (long double)f->int_part;
-	number = 0;//0.__ left
+	f->int_part = do_n;//put integer part in array
+	do_n -= (long double)f->int_part;
+	nbr = 0;//0.__ left
 	//ft_putnbr((int)f->int_part);
 	//write(1, ".", 10);
-	number = doubleprec(f, number, dou_n);
-	outputthis(f, number);
-	//printf("\n%lld", number);
+	nbr = doubleprec(f, nbr, do_n);
+	outputthis(f, nbr);
+	//printf("\n%lld", nbr);
 }
