@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:36:10 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/17 19:00:27 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/23 21:52:04 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void			outputthis(t_parser *f, long long int nbr)
 	if (f->flags[FSFL] == '-')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->flags[FSFL] == '+')
+		f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->precision == 0)
 		f->nprinted += write(1, nonfr, ft_strlen(nonfr));
