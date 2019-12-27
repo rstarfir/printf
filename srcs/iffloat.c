@@ -12,7 +12,7 @@
 
 #include "../includes/printf.h"
 #include <stdio.h>
-
+/*
 long long int		acc_round(double dou_n, long long int number)
 {
 	printf("number0--%lld\n", number);
@@ -80,3 +80,4 @@ void	iffloat(t_parser *f, va_list ap)
 	}
 	s = ft_itoabase(number, 10);
 }
+ */

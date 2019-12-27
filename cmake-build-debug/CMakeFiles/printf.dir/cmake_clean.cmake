@@ -62,6 +62,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf.dir/libft/srcs/ft_swap.c.o"
   "CMakeFiles/printf.dir/libft/srcs/ft_tolower.c.o"
   "CMakeFiles/printf.dir/libft/srcs/ft_toupper.c.o"
+  "CMakeFiles/printf.dir/main.c.o"
   "CMakeFiles/printf.dir/srcs/auxiliary.c.o"
   "CMakeFiles/printf.dir/srcs/ft_itoabase.c.o"
   "CMakeFiles/printf.dir/srcs/ifchar.c.o"
@@ -73,9 +74,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf.dir/srcs/ifudecint.c.o"
   "CMakeFiles/printf.dir/srcs/modifier.c.o"
   "CMakeFiles/printf.dir/srcs/printf.c.o"
-  "CMakeFiles/printf.dir/main.c.o"
-  "printf.pdb"
   "printf"
+  "printf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
