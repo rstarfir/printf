@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 18:33:43 by hthunder          #+#    #+#             */
-/*   Updated: 2019/10/16 17:46:03 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/12/08 17:36:28 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_swap(int *a, int *b);
 int					ft_numsign(int n);
 void				ft_bubblesort(int *num, int size);
-int					ft_power(int val, int pow);
+long long			ft_power(int val, int pow);
 void				ft_lstpushback(t_list **alst, t_list *new);
 int					get_next_line(const int fd, char **line);
+int					ft_exponent(long double value);
 
 #endif

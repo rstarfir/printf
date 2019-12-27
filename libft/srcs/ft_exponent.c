@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_exponent.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 21:51:44 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:40:00 by rstarfir         ###   ########.fr       */
+/*   Created: 2019/12/08 17:35:20 by rstarfir          #+#    #+#             */
+/*   Updated: 2019/12/08 17:35:26 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-long long	ft_power(int val, int pow)
+int				ft_exponent(long double value)
 {
-	long long  res;
+	int			exp;
 
-	res = 1;
-	while (pow > 0)
+	exp = 0;
+	if (!value || ((value >= 1) && (value <= 9)))
+		return (exp);
+	if (value < 0)
+		value *= -1;
+	if (value >= 10)
 	{
-		if (pow % 2 == 0)
+		while (value >= 10)
 		{
-			pow /= 2;
-			val *= val;
+			value /= 10;
+			++exp;
 		}
-		else
-		{
-			pow--;
-			res *= val;
-		}
+		return (exp);
 	}
-	return (res);
+	while (value < 1)
+	{
+		value *= 10;
+		++exp;
+	}
+	return (-exp);
 }

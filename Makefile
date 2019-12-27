@@ -3,23 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+         #
+#    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/11/29 19:44:52 by hthunder         ###   ########.fr        #
+#    Updated: 2019/12/08 21:44:40 by rstarfir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBFT = libft
 CFLAGS = -Wall -Wextra -Werror
-CC = gcc
+CC = gcc -g
 DIR_S = srcs
 DIR_O = temporary
 INCLUDES = includes
 SOURCES = printf.c \
 		ft_itoabase.c \
 		ifint.c \
+		iffloat.c \
 		ifchar.c \
 		ifhex.c \
 		ifoctal.c \

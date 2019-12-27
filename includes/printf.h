@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:14:37 by hthunder         ###   ########.fr       */
+/*   Updated: 2019/12/08 21:46:16 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define H 4
 # define J 5
 # define Z 6
+# define UCL 7
 
 typedef struct	s_parser
 {
@@ -55,6 +56,7 @@ void			ifoctal(t_parser *f, va_list ap);
 void			ifudecint(t_parser *f, va_list ap);
 void			ifpercent(t_parser *f);
 int				ft_printf(const char *format, ...);
+long long int	acc_round(double dou_n, long long int number);
 void			widthstar(t_parser *f, va_list ap);
 //void			zerostruct(t_parser *f);
 int				ft_max(int one, int two);
