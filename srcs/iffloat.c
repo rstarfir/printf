@@ -6,22 +6,19 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:36:10 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/23 21:52:04 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/30 00:55:55 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+/*#include "../includes/printf.h"
 #include <stdio.h>
 
-void			outputthis(t_parser *f, long long int nbr)
+void			outputthis(t_parser *f)
 {
-	char	*nonfr;
-	char	*frac;
 	char	point[2];
 	char	*s;
 
-	nonfr = ft_itoabase_unsigned(f->int_part, 10);
-	frac = ft_itoabase_unsigned(nbr, 10);
+	f->nonfr = ft_itoabase_unsigned(f->int_part, 10);
 	point[0] = '.';
 	point[1] = 0;
 	if (f->flags[FSFL] == '-')
@@ -31,10 +28,10 @@ void			outputthis(t_parser *f, long long int nbr)
 	if (f->flags[FSFL] == ' ')
 		f->nprinted += write(1, &f->flags[FSFL], 1);
 	if (f->precision == 0)
-		f->nprinted += write(1, nonfr, ft_strlen(nonfr));
+		f->nprinted += write(1, f->nonfr, ft_strlen(f->nonfr));
 	else
 	{
-		s = (ft_strjoin(nonfr, ft_strjoin(point, frac)));
+		s = (ft_strjoin(f->nonfr, ft_strjoin(point, f->frac)));
 		f->nprinted += write(1, s, ft_strlen(s));
 	}
 }
@@ -82,6 +79,36 @@ long long int		doubleprec(t_parser *f, long long int nbr, long double do_n)
 	return (nbr);
 }
 
+long long int		doubleprec(t_parser *f, long long int nbr, long double do_n)
+{
+	int		i;
+	
+	i = 0;
+	if (f->double_prec < 0)
+		f->double_prec = 6;
+	if (f->double_prec > 0)
+	{
+		while (i < f->double_prec) // i <= 3
+		{
+			//printf("\nnbr1 %lld\n" , nbr);
+			nbr = (do_n *= 10);//0.05 = 0
+			f->frac = ft_itoabase(nbr, 10);//005
+			//printf("\nf->frac %s\n" , f->frac);
+			f->nprinted += write(1, f->frac, ft_strlen(f->frac));
+			i++;
+		}
+		nbr = acc_round(do_n, nbr);
+	}
+	if (f->double_prec == 0)
+	{
+		nbr += f->int_part;
+		nbr = acc_round(do_n, nbr);
+		f->int_part += nbr;
+		nbr = 0;
+	}
+	return (nbr);
+}
+
 void			iffloat(t_parser *f, va_list ap)
 {
 	long double			do_n;
@@ -99,9 +126,103 @@ void			iffloat(t_parser *f, va_list ap)
 	f->int_part = do_n;//put integer part in array
 	do_n -= (long double)f->int_part;
 	nbr = 0;//0.__ left
-	//ft_putnbr((int)f->int_part);
-	//write(1, ".", 10);
+	f->nonfr = ft_itoabase_unsigned(f->int_part, 10);
+	f->nprinted += write(1, f->nonfr, ft_strlen(f->nonfr));
+	f->nprinted += write(1, ".", 10);
 	nbr = doubleprec(f, nbr, do_n);
-	outputthis(f, nbr);
+	
+	//outputthis(f);
 	//printf("\n%lld", nbr);
+}
+*/
+#include "../includes/printf.h"
+#include <stdio.h>
+
+long long int		acc_round(long double do_n, long long int nbr)
+{
+	int i;
+
+	if (nbr % 2 == 1)
+	{
+		if ((nbr = (do_n * 10)) % 10 >= 5)
+			nbr = (nbr / 10) + 1;
+		else if ((nbr = (do_n * 10)) % 10 < 5)
+			nbr = (nbr / 10);
+	}
+	else
+	{
+		
+		if ((nbr = (do_n * 10)) % 10 > 5)
+			nbr = (nbr / 10) + 1;
+		else if ((nbr = (do_n * 10)) % 10 <= 5)
+		{
+			printf("\nnbr1 %lld\n", nbr);
+			nbr /= 10;
+			while (i < 2)
+			{
+				printf("\nnbr2 %lld\n", nbr);
+				if ((nbr = (do_n * 10)) % 10 > 0)
+				{
+					nbr = (nbr / 10) + 1;
+					printf("\nnbr3 %lld\n", nbr);
+				}
+				else
+					nbr /= 10;
+				i++;
+			}
+		}
+	}
+	return (nbr);
+}
+
+long long int		doubleprec(t_parser *f, long long int nbr, long double do_n)
+{
+	int		i;
+	
+	i = 0;
+	if (f->double_prec < 0)
+		f->double_prec = 6;
+	if (f->double_prec > 0)
+	{
+		nbr = do_n -= f->int_part;
+		while (i++ < f->double_prec)
+		{
+			do_n -= nbr;
+			nbr = (do_n *= 10);
+			if (i == f->double_prec - 1)
+				nbr = acc_round(do_n, nbr);;
+			f->frac = ft_itoabase(nbr, 10);
+			f->nprinted += write(1, f->frac, ft_strlen(f->frac));
+		}
+	}
+	if (f->double_prec == 0)
+	{
+		nbr += f->int_part;
+		nbr = acc_round(do_n, nbr);
+		f->int_part += nbr;
+		nbr = 0;
+	}
+	return (nbr);
+}
+
+void			iffloat(t_parser *f, va_list ap)
+{
+	long double			do_n;
+	long long int		nbr;
+
+	if (f->size == L || f->size == 0)
+		do_n = va_arg(ap, double);
+	if (f->size == UCL)
+		do_n = va_arg(ap, long double);
+	if (do_n < 0)
+	{
+		do_n *= -1;
+		f->flags[FSFL] = '-';
+	}
+	f->int_part = do_n;
+	f->nonfr = ft_itoabase_unsigned(f->int_part, 10);
+	f->nprinted += write(1, f->nonfr, ft_strlen(f->nonfr));
+	if (f->double_prec != 0)
+		f->nprinted += write(1, ".", 1);
+	doubleprec(f, nbr, do_n);
 }

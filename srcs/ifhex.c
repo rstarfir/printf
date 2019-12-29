@@ -119,7 +119,7 @@ void right_aligned_hex(t_parser *f, int length, char *s, char flag)
 }
 
 
-char    *ft_toupperstring(char *c)
+char    *ft_toupperstring(char *c) 
 {
     char *temp;
 

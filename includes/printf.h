@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/06 16:31:55 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/29 22:11:57 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,20 @@
 # define Z 6
 # define UCL 7
 
-typedef struct  s_parser
+typedef struct		s_parser
 {
-	const char  *format;
-	int			nprinted;
-	int			i;
-	int			flags[4]; //minus flag, first symbol flag(includes space flag), # flag, 0 flag;
-	int			width; //минимальная ширина
-	int			precision;
-	int			size;
-	int			int_part;
-}               t_parser;
+	const char		*format;
+	int				nprinted;
+	int				i;
+	int				flags[4]; //minus flag, first symbol flag(includes space flag), # flag, 0 flag;
+	int				width; //минимальная ширина
+	int				precision;
+	long long		double_prec;
+	int				size;
+	long long int		int_part;
+	char			*nonfr;
+	char			*frac;
+}					t_parser;
 
 char	*ft_itoabase(long long int num, int base);
 char	*ft_itoabase_unsigned(long long int num, int base);
@@ -57,7 +60,8 @@ void 	ifoctal(t_parser *f, va_list ap);
 void 	ifudecint(t_parser *f, va_list ap);
 void	ifpercent(t_parser *f);
 void	iffloat(t_parser *f, va_list ap);
-long long int	acc_round(double dou_n, long long int number);
+long long int	acc_round(long double dou_n, long long int nbr);
+void	outputthis(t_parser *f);
 int 	ft_printf(const char *format, ...);
 void	zerostruct(t_parser *f);
 int 	ft_max(int one, int two);

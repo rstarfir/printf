@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/04 22:08:57 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/29 16:13:43 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	zerostruct(t_parser *f)
 	f->flags[ZFL] = ' ';
 	f->flags[OFL] = 0;
 	f->width = 0;
-	//f->precision = -2;
+	f->double_prec = 6;
 	f->precision = -1;
 	f->size = 0;
 }
@@ -41,7 +41,7 @@ int formatparse(t_parser *list, va_list ap)
 	list->width = 0;
 	//list->precision = -2;
 	list->precision = -1;
-	//list->precision = 1;
+	list->double_prec = 6;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
@@ -74,11 +74,13 @@ int formatparse(t_parser *list, va_list ap)
 
 int parsel2(t_parser *f, va_list ap)
 {
-
 	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		modifiers(f, ap);
+		{
+			////trouble in parcer here
+			modifiers(f, ap);
+		}
 	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		conversions(f->format[f->i], ap, f);
+			conversions(f->format[f->i], ap, f);
 	return (f->i - 1);
 }
 
