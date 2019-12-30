@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 22:40:35 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/30 00:46:14 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/30 20:00:27 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 
 int main(void)
 {
-	printf("%.5f\n", 2.005226);
-	ft_printf("%.5f\n", 2.005227);
+	 //printf("Double max: %Lf\n", LDBL_MAX);
+	//ft_printf("%.3f\n", 2.00250027);
+	printf("\n{%f}{%lf}{%Lf}\n", 1.62, 1.42, 1.42l);
+	ft_printf("\n{%f}{%lf}{%Lf}", 1.62, 1.62, 1.72l);
 	return (0);
 }
 

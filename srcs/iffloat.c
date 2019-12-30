@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:36:10 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/30 00:55:55 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/30 17:44:06 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,36 +140,35 @@ void			iffloat(t_parser *f, va_list ap)
 
 long long int		acc_round(long double do_n, long long int nbr)
 {
-	int i;
+	int j;
 
+	j = 0;
 	if (nbr % 2 == 1)
 	{
-		if ((nbr = (do_n * 10)) % 10 >= 5)
+		if ((nbr = (long long int)(do_n * 10)) % 10 >= 5)
+		{
 			nbr = (nbr / 10) + 1;
+		}
 		else if ((nbr = (do_n * 10)) % 10 < 5)
+		{
 			nbr = (nbr / 10);
+		}
 	}
 	else
 	{
-		
 		if ((nbr = (do_n * 10)) % 10 > 5)
 			nbr = (nbr / 10) + 1;
 		else if ((nbr = (do_n * 10)) % 10 <= 5)
 		{
-			printf("\nnbr1 %lld\n", nbr);
 			nbr /= 10;
-			while (i < 2)
+		while (++j < 2)
 			{
-				printf("\nnbr2 %lld\n", nbr);
-				if ((nbr = (do_n * 10)) % 10 > 0)
-				{
-					nbr = (nbr / 10) + 1;
-					printf("\nnbr3 %lld\n", nbr);
-				}
+				if ((nbr = (do_n *= 10)) % 10 > 0)
+					nbr = (nbr / (10 * j) + 1);
 				else
-					nbr /= 10;
-				i++;
+					nbr /= (10 * j);
 			}
+			
 		}
 	}
 	return (nbr);
@@ -185,11 +184,11 @@ long long int		doubleprec(t_parser *f, long long int nbr, long double do_n)
 	if (f->double_prec > 0)
 	{
 		nbr = do_n -= f->int_part;
-		while (i++ < f->double_prec)
+		while (++i <= f->double_prec)
 		{
 			do_n -= nbr;
 			nbr = (do_n *= 10);
-			if (i == f->double_prec - 1)
+			if (i == f->double_prec)
 				nbr = acc_round(do_n, nbr);;
 			f->frac = ft_itoabase(nbr, 10);
 			f->nprinted += write(1, f->frac, ft_strlen(f->frac));
