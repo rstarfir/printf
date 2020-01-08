@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <stdarg.h>
-#include <limits.h>
 
 static	void	put_oct_octal(t_parser *f, char *s)
 {

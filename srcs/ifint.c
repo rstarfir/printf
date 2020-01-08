@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <stdarg.h>
 
 int						ft_max(int one, int two)
 {

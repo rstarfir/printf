@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <stdarg.h>
 
 static	void	left_aligned_uint(t_parser *f, int length, char *s)
 {

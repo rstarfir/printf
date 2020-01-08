@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <stdarg.h>
-#include <limits.h>
-#include <stdio.h>
 
 static	void				put_oct_hex(t_parser *f, char flag, char *s)
 {

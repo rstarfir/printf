@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <limits.h>
 #include "../includes/printf.h"
 
 static	void	zerostruct(t_parser *f)
@@ -49,60 +44,6 @@ void	conversions(char c, va_list ap, t_parser *f)
 	else if (c == '%')
 		ifpercent(f);
 }
-/*
-int parsel2(t_parser *f, va_list ap)
-{
-
-	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		modifiers(f, ap);
-	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		conversions(f->format[f->i], ap, f);
-	return (f->i - 1);
-}
-
-int formatparse(t_parser *list, va_list ap)
-{
-	list->nprinted = 0;
-	list->i = 0;
-	list->flags[MFL] = 0;
-	list->flags[FSFL] = 0;
-	list->flags[ZFL] = ' ';
-	list->flags[OFL] = 0;
-	list->width = 0;
-	//list->precision = -2;
-	list->precision = -1;
-	//list->precision = 1;
-	list->size = 0;
-	while (list->format[list->i] != '\0')
-	{
-		if (list->format[list->i] != '%' && list->format[list->i]) // && format[pos] ???? зачем?
-		{
-			list->nprinted += write(1, &(list->format[list->i]), 1);
-		}
-		else if (list->format[list->i] == '%')
-		{
-			if (!ft_strchr(ALL, list->format[list->i + 1]))
-				break;
-			while (ft_strchr(ALL, list->format[list->i + 1]))
-			{
-				list->i++;
-				if (ft_strchr("cspdiouxXfyb%", list->format[list->i]))
-				{
-					list->i = parsel2(list, ap) + 2;
-					break;
-				}
-				else
-
-					list->i = parsel2(list, ap);
-			}
-			continue;
-		}
-		list->i++;
-	}
-	return (list->nprinted);
-}
-*/
-
 
 static	int		parsel2(t_parser *f, va_list ap)
 {

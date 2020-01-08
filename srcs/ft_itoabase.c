@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
 #include "../libft/includes/libft.h"
 
 static char	*strrev(char *str)
@@ -97,7 +95,7 @@ static	int	ft_nsize(long long int nb)
 
 char		*ft_llitoa(long long int n)
 {
-	char	*ptr;
+    char    *ptr;
 	int		i;
 	int		size;
 

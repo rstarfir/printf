@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <string.h>
-#include <stdarg.h>
 
 void	widthstar(t_parser *f, va_list ap)
 {

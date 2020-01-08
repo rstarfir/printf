@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-#include <stdarg.h>
 
 static	void	checkflags(t_parser *f)
 {
