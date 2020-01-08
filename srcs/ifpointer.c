@@ -21,8 +21,8 @@ static	void	left_aligned_pointer(t_parser *f, int length, char *s)
 	i = 2;
 	if (f->precision < -1)
 		f->precision = -1;
-	if (f->flags[OFL] == 1)
-		f->nprinted += write(1, "0x", 2);
+	if (f->flags & OFL)
+	    f->nprinted += write(1, "0x", 2);
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -46,8 +46,8 @@ static	void	right_aligned_pointer(t_parser *f, int length, char *s)
 		f->nprinted += write(1, " ", 1);
 		f->width--;
 	}
-	if (f->flags[OFL] == 1)
-		f->nprinted += write(1, "0x", 2);
+	if (f->flags & OFL)
+	    f->nprinted += write(1, "0x", 2);
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -62,11 +62,11 @@ void			ifpointer(t_parser *f, va_list ap)
 	char					*s;
 	unsigned long long int	number;
 
-	f->flags[OFL] = 1;
+	f->flags |= OFL;
 	number = (unsigned long long int)va_arg(ap, void *);
 	s = ft_itoabase_unsigned(number, 16);
-	if (f->flags[MFL] == 1)
-		left_aligned_pointer(f, ft_strlen(s), s);
-	else if (f->flags[MFL] == 0)
-		right_aligned_pointer(f, ft_strlen(s), s);
+    if (f->flags & MFL)
+        	left_aligned_pointer(f, ft_strlen(s), s);
+    else
+    	right_aligned_pointer(f, ft_strlen(s), s);
 }

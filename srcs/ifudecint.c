@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-
+/*
 static	void	left_aligned_uint(t_parser *f, int length, char *s)
 {
 	char	k;
@@ -82,3 +82,4 @@ void			ifudecint(t_parser *f, va_list ap)
 		right_aligned_uint(f, ft_strlen(s), s);
 	free(s);
 }
+*/

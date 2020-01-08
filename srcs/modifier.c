@@ -17,17 +17,20 @@ static	void	checkflags(t_parser *f)
 	while (1)
 	{
 		if (f->format[f->i] == '+')
-			f->flags[FSFL] = '+';
+		{
+            f->flags |= PFL;
+            f->beforeNum = '+';
+        }
 		else if (f->format[f->i] == '-')
-			f->flags[MFL] = 1;
+			f->flags |= MFL;
 		else if (f->format[f->i] == '#')
-			f->flags[OFL] = 1;
+			f->flags |= OFL;
 		else if (f->format[f->i] == '0')
-			f->flags[ZFL] = 1;
+			f->flags |= ZFL;
 		else if (f->format[f->i] == ' ')
 		{
-			if (f->flags[FSFL] == 0)
-				f->flags[FSFL] = ' ';
+			if (!(f->flags & PFL))
+                f->flags |= SFL;
 		}
 		else
 			break ;

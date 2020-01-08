@@ -19,7 +19,7 @@ void	widthstar(t_parser *f, va_list ap)
 		f->width = va_arg(ap, int);
 		if (f->width < 0)
 		{
-			f->flags[MFL] = 1;
+			f->flags |= MFL;
 			f->width = -(f->width);
 		}
 		while (f->format[f->i] == '*')

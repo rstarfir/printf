@@ -19,10 +19,10 @@
 # include <limits.h>
 # include "../libft/includes/libft.h"
 # define ALL "cspdiouxXfyb%#-+ .*0123456789hLljz"
-# define MFL 0
-# define FSFL 1
-# define OFL 2
-# define ZFL 3
+//# define MFL 0
+//# define FSFL 1
+//# define OFL 2
+//# define ZFL 3
 
 # define HH 1
 # define LL 2
@@ -32,16 +32,34 @@
 # define Z 6
 # define UCL 7
 
+/*
+ * flags
+ * unsigned int 32 bits
+ * 00001 MFL
+ * 00010 PFL
+ * 00100 SFL
+ * 01000 OFL
+ * 10000 ZFL
+ */
+
+# define MFL   0x1
+# define PFL    0x2
+# define SFL   0x4
+# define OFL    0x8
+# define ZFL    0x10
+
 typedef struct	s_parser
 {
-	const char	*format;
-	int			nprinted;
-	int			i;
-	int			flags[4];
-	int			width;
-	int			precision;
-	int			size;
-}				t_parser;
+	const char	    *format;
+	int			    nprinted;
+	int			    i;
+	//int			flags[4];
+	unsigned int    flags;
+	int             beforeNum;
+	int			    width;
+	int			    precision;
+	int			    size;
+}				    t_parser;
 
 //char			*ft_itoabase(long long int num, int base);
 char			*ft_itoabase_unsigned(long long int num, int base);

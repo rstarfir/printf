@@ -21,8 +21,8 @@ static	void	left_aligned_str(t_parser *f, int length, char *s)
 	k = ' ';
 	copylen = length;
 	copyprec = f->precision;
-	if (f->flags[FSFL] == '-' && k == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+    if (f->beforeNum == '-' && k == ' ')
+    	f->nprinted += write(1, &f->beforeNum, 1);
 	while (length-- > 0)
 	{
 		if (f->precision < 0)
@@ -31,10 +31,10 @@ static	void	left_aligned_str(t_parser *f, int length, char *s)
 			f->nprinted += write(1, s, 1);
 		s++;
 	}
-	if (f->flags[ZFL] == 1 && ((f->precision > f->width)
-	|| (f->precision == -1)) && (k = '0'))
-		if (f->flags[FSFL] == '-')
-			f->nprinted += write(1, &f->flags[FSFL], 1);
+    if ((f->flags & ZFL) && ((f->precision > f->width)
+    || (f->precision == -1)) && (k = '0'))
+    	if (f->beforeNum == '-')
+    		f->nprinted += write(1, &f->beforeNum, 1);
 	while (f->width-- - ft_min(copyprec, copylen) > 0)
 		f->nprinted += write(1, &k, 1);
 }
@@ -44,15 +44,15 @@ static	void	right_aligned_str(t_parser *f, int length, char *s)
 	char k;
 
 	k = ' ';
-	if (f->flags[ZFL] == 1 && (f->precision > f->width || f->precision == -1))
-		if ((k = '0') && f->flags[FSFL] == '-')
-			f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (f->flags[FSFL] == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+    if ((f->flags & ZFL) && (f->precision > f->width || f->precision == -1))
+    	if ((k = '0') && f->beforeNum == '-')
+    		f->nprinted += write(1, &f->beforeNum, 1);
+    if (f->beforeNum == ' ')
+        	f->nprinted += write(1, &f->beforeNum, 1);
 	while (f->width-- - ft_min(f->precision, length) > 0)
 		f->nprinted += write(1, &k, 1);
-	if (f->flags[FSFL] == '-' && k == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+    if (f->beforeNum == '-' && k == ' ')
+        	f->nprinted += write(1, &f->beforeNum, 1);
 	while (length-- > 0)
 	{
 		if (f->precision < 0)
@@ -80,13 +80,13 @@ void			ifstring(t_parser *f, va_list ap)
 		s = ft_strdup("(null)");
 		flag = 1;
 	}
-	if (f->flags[MFL] == 1)
+	if (f->flags & MFL)
 	{
-		f->flags[ZFL] = 0;
+		f->flags &= (0xFFFFFFFF - ZFL);
 		left_aligned_str(f, ft_strlen(s), s);
 	}
-	else if (f->flags[MFL] == 0)
-		right_aligned_str(f, ft_strlen(s), s);
+	else
+	    right_aligned_str(f, ft_strlen(s), s);
 	if (flag == 1)
 		free(s);
 }

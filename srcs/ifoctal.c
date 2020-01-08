@@ -14,10 +14,14 @@
 
 static	void	put_oct_octal(t_parser *f, char *s)
 {
-	if (f->flags[OFL] == 1 && (f->precision == 0 || *s != '0'))
-		f->nprinted += write(1, "0", 1);
+	//if (f->flags[OFL] == 1 && (f->precision == 0 || *s != '0'))
+	//	f->nprinted += write(1, "0", 1);
+    if ((f->flags & OFL) && (f->precision == 0 || *s != '0'))
+        	f->nprinted += write(1, "0", 1);
 	else
-		f->flags[OFL] = 0;
+	    f->flags &= (0xFFFFFFFF - OFL);
+    //else
+	//	f->flags[OFL] = 0;
 }
 
 static	void	left_aligned_oct(t_parser *f, int length, char *s)
@@ -27,12 +31,20 @@ static	void	left_aligned_oct(t_parser *f, int length, char *s)
 
 	copyprec = f->precision;
 	i = 0;
+	/*
 	if ((*s != '0' || copyprec == 0) && (copyprec <= length))
 		if (f->flags[OFL] == 1)
 		{
 			i++;
 			f->nprinted += write(1, "0", 1);
 		}
+	 */
+    if ((*s != '0' || copyprec == 0) && (copyprec <= length))
+        if (f->flags & OFL)
+        {
+            i++;
+            f->nprinted += write(1, "0", 1);
+        }
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -56,11 +68,16 @@ static	void	right_aligned_oct(t_parser *f, int length, char *s)
 
 	k = ' ';
 	i = 0;
-	if (f->flags[OFL] == 1 && (f->precision != -1 || *s != '0')
+	/*if (f->flags[OFL] == 1 && (f->precision != -1 || *s != '0')
 	&& (f->precision < length))
-		i++;
-	if (f->flags[ZFL] == 1 && (f->precision > f->width || f->precision == -1))
-		k = '0';
+		i++;*/
+    if ((f->flags & OFL) && (f->precision != -1 || *s != '0')
+        && (f->precision < length))
+        i++;
+	/*if (f->flags[ZFL] == 1 && (f->precision > f->width || f->precision == -1))
+		k = '0';*/
+    if ((f->flags & ZFL) && (f->precision > f->width || f->precision == -1))
+        k = '0';
 	if (k == '0')
 		put_oct_octal(f, s);
 	if (f->precision == 0 && *s == '0')
@@ -69,11 +86,17 @@ static	void	right_aligned_oct(t_parser *f, int length, char *s)
 		f->nprinted += write(1, &k, 1);
 	if (k == ' ')
 		put_oct_octal(f, s);
+	/*
 	while (f->precision > length + f->flags[OFL])
 	{
 		f->nprinted += write(1, "0", 1);
 		f->precision--;
-	}
+	}*/
+    while (f->precision > length + (int)!!(f->flags & OFL))
+    {
+        f->nprinted += write(1, "0", 1);
+        f->precision--;
+    }
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
 }
@@ -94,12 +117,20 @@ void			ifoctal(t_parser *f, va_list ap)
 	else if (f->size == LL)
 		number = (unsigned long long int)va_arg(ap, unsigned long long int);
 	s = ft_itoabase_unsigned(number, 8);
+	/*
 	if (f->flags[MFL] == 1)
 	{
 		f->flags[ZFL] = 0;
 		left_aligned_oct(f, ft_strlen(s), s);
-	}
-	else if (f->flags[MFL] == 0)
-		right_aligned_oct(f, ft_strlen(s), s);
+	}*/
+    if (f->flags & MFL)
+    {
+        f->flags &= (0xFFFFFFFF - ZFL);
+        left_aligned_oct(f, ft_strlen(s), s);
+    }
+    else
+        right_aligned_oct(f, ft_strlen(s), s);
+	//else if (f->flags[MFL] == 0)
+	//	right_aligned_oct(f, ft_strlen(s), s);
 	free(s);
 }

@@ -29,17 +29,17 @@ static	void			left_aligned_int(t_parser *f, int length, char *s)
 	k = ' ';
 	copy = f->precision;
 	i = 0;
-	if (f->flags[FSFL] != 0 && ++i)
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+	if (f->beforeNum && ++i)
+	    f->nprinted += write(1, &f->beforeNum, 1);
 	while (f->precision > length && f->precision--)
 		f->nprinted += write(1, "0", 1);
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
-	if (f->flags[ZFL] == 1)
+	if (f->flags & ZFL)
 	{
 		k = '0';
-		if (f->flags[FSFL] == '-')
-			f->nprinted += write(1, &f->flags[FSFL], 1);
+		if (f->beforeNum == '-')
+			f->nprinted += write(1, &f->beforeNum, 1);
 	}
 	if (length == 1 && *s == '0' && f->precision == 0)
 		length--;
@@ -56,20 +56,20 @@ static	void			right_aligned_int(t_parser *f, int length, char *s)
 	i = 0;
 	if (f->precision < -1)
 		f->precision = -1;
-	if (f->flags[FSFL] != 0)
+	if (f->beforeNum)
 		i = 1;
-	if (f->flags[ZFL] == 1 && (f->precision > f->width || f->precision == -1))
-		k = '0';
-	if ((k == '0') && (f->flags[FSFL] == '-' || f->flags[FSFL] == '+'))
-		f->nprinted += write(1, &f->flags[FSFL], 1);
-	if (f->flags[FSFL] == ' ')
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+	if ((f->flags & ZFL) && (f->precision > f->width || f->precision == -1))
+	    k = '0';
+	if ((k == '0') && (f->beforeNum == '-' || f->beforeNum == '+'))
+	    f->nprinted += write(1, &f->beforeNum, 1);
+    if (f->beforeNum == ' ')
+    	f->nprinted += write(1, &f->beforeNum, 1);
 	if (f->precision == 0 && *s == '0')
 		length--;
 	while (f->width-- - ft_max(f->precision, length) - i > 0)
 		f->nprinted += write(1, &k, 1);
-	if ((k == ' ') && (f->flags[FSFL] == '-' || f->flags[FSFL] == '+'))
-		f->nprinted += write(1, &f->flags[FSFL], 1);
+    if ((k == ' ') && (f->beforeNum == '-' || f->beforeNum == '+'))
+    	f->nprinted += write(1, &f->beforeNum, 1);
 	while (f->precision > length && f->precision--)
 		f->nprinted += write(1, "0", 1);
 	if (*s != '0' || (f->precision != 0))
@@ -98,23 +98,22 @@ void					ifint(t_parser *f, va_list ap)
 	char			*s;
 
 	number = cast_size_int(f, ap);
-	if (number == LLONG_MIN && (f->flags[FSFL] = '-'))
+	if (number == LLONG_MIN && (f->beforeNum = '-'))
 		s = ft_strdup("9223372036854775808");
 	else
 	{
 		if (number < 0)
 		{
 			number *= -1;
-			f->flags[FSFL] = '-';
+			f->beforeNum = '-';
 		}
 		s = ft_llitoa(number);
 	}
-	if (f->flags[MFL] == 1)
-	{
-		f->flags[ZFL] = 0;
+    if ((f->flags & SFL) && !f->beforeNum)
+        f->beforeNum = ' ';
+	if (f->flags & MFL)
 		left_aligned_int(f, ft_strlen(s), s);
-	}
-	else if (f->flags[MFL] == 0)
+	else if (!(f->flags & MFL))
 		right_aligned_int(f, ft_strlen(s), s);
 	free(s);
 }

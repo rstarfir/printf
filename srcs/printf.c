@@ -14,10 +14,12 @@
 
 static	void	zerostruct(t_parser *f)
 {
-	f->flags[MFL] = 0;
-	f->flags[FSFL] = 0;
-	f->flags[ZFL] = 0;
-	f->flags[OFL] = 0;
+	//f->flags[MFL] = 0;
+	//f->flags[FSFL] = 0;
+	//f->flags[ZFL] = 0;
+	//f->flags[OFL] = 0;
+	f->beforeNum = 0;
+	f->flags = 0;
 	f->width = 0;
 	f->precision = -1;
 	f->size = 0;
@@ -29,20 +31,21 @@ void	conversions(char c, va_list ap, t_parser *f)
 		ifint(f, ap);
 	else if (c == 'c')
 		ifchar(f, ap);
+	else if (c == '%')
+        ifpercent(f);
 	else if (c == 's')
 		ifstring(f, ap);
 	else if (c == 'p')
 		ifpointer(f, ap);
 	else if (c == 'o')
 		ifoctal(f, ap);
-	else if (c == 'u')
-		ifudecint(f, ap);
-	else if (c == 'x' || c == 'X')
-		ifhex(f, ap, c);
+	//else if (c == 'u')
+	//	ifudecint(f, ap);
+	//else if (c == 'x' || c == 'X')
+	//	ifhex(f, ap, c);
 	//else if (c == 'f')
 	//	iffloat(f, ap);
-	else if (c == '%')
-		ifpercent(f);
+
 }
 
 static	int		parsel2(t_parser *f, va_list ap)
@@ -97,10 +100,8 @@ int				ft_printf(const char *format, ...)
 	list.format = format;
 	list.nprinted = 0;
 	list.i = 0;
-	list.flags[MFL] = 0;
-	list.flags[FSFL] = 0;
-	list.flags[ZFL] = 0;
-	list.flags[OFL] = 0;
+	list.beforeNum = 0;
+	list.flags = 0;
 	list.width = 0;
 	list.precision = -1;
 	list.size = 0;

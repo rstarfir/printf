@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-
+/*
 static	void				put_oct_hex(t_parser *f, char flag, char *s)
 {
 	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
@@ -110,3 +110,4 @@ void						ifhex(t_parser *f, va_list ap, char c)
 		right_hex(f, ft_strlen(s), s, c);
 	free(s);
 }
+*/
