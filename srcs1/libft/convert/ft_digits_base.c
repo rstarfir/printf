@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_digits_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 22:18:19 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/16 15:07:13 by rstarfir         ###   ########.fr       */
+/*   Created: 2019/02/23 15:46:14 by jkettani          #+#    #+#             */
+/*   Updated: 2019/02/23 17:37:28 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int		ft_digits_base(intmax_t n, int radix)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
+	int			count;
+
+	if (radix < 1)
+		return (-1);
+	else if (radix == 1)
+		return (n);
+	else if (n == 0)
+		return (1);
 	else
 	{
-		if (n < 0)
+		count = 0;
+		while (n != 0)
 		{
-			ft_putchar('-');
-			n *= -1;
-		}
-		if (n < 10)
-			ft_putchar(n + '0');
-		else
-		{
-			ft_putnbr(n / 10);
-			ft_putchar(n % 10 + '0');
+			count++;
+			n /= radix;
 		}
 	}
+	return (count);
 }

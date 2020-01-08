@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/12 20:20:09 by hthunder          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/11/30 17:40:52 by hthunder         ###   ########.fr       */
-=======
-/*   Updated: 2019/12/04 22:08:57 by rstarfir         ###   ########.fr       */
->>>>>>> rstarfir
+/*   Created: 2020/01/08 16:41:52 by rstarfir          #+#    #+#             */
+/*   Updated: 2020/01/08 16:42:10 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -43,7 +40,7 @@ int formatparse(t_parser *list, va_list ap)
 	list->width = 0;
 	//list->precision = -2;
 	list->precision = -1;
-	//list->precision = 1;
+	list->double_prec = 6;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
@@ -76,11 +73,13 @@ int formatparse(t_parser *list, va_list ap)
 
 int parsel2(t_parser *f, va_list ap)
 {
-
 	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		modifiers(f, ap);
+		{
+			////trouble in parcer here
+			modifiers(f, ap);
+		}
 	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
-		conversions(f->format[f->i], ap, f);
+			conversions(f->format[f->i], ap, f);
 	return (f->i - 1);
 }
 
