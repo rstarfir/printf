@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: hthunder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 13:04:14 by hthunder          #+#    #+#             */
 /*   Updated: 2019/12/27 13:04:19 by hthunder         ###   ########.fr       */
+=======
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/08 16:41:52 by rstarfir          #+#    #+#             */
+/*   Updated: 2020/01/08 16:42:10 by rstarfir         ###   ########.fr       */
+>>>>>>> e0892d03f9fa091609c06ab8ee7ca958648cfc79
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -71,7 +79,7 @@ int formatparse(t_parser *list, va_list ap)
 	list->width = 0;
 	//list->precision = -2;
 	list->precision = -1;
-	//list->precision = 1;
+	list->double_prec = 6;
 	list->size = 0;
 	while (list->format[list->i] != '\0')
 	{
@@ -103,6 +111,42 @@ int formatparse(t_parser *list, va_list ap)
 }
 */
 
+<<<<<<< HEAD
+=======
+int parsel2(t_parser *f, va_list ap)
+{
+	if (!ft_strchr("cspdiouxXfyb%", f->format[f->i]))
+		{
+			////trouble in parcer here
+			modifiers(f, ap);
+		}
+	else if (ft_strchr("cspdiouxXfyb%", f->format[f->i]))
+			conversions(f->format[f->i], ap, f);
+	return (f->i - 1);
+}
+
+void	conversions(char c, va_list ap, t_parser *f)
+{
+	if (c == 'd' || c == 'i')
+		ifint(f, ap);
+	else if (c == 'c')
+		ifchar(f, ap);
+	else if (c == 's')
+		ifstring(f, ap);
+	else if (c == 'p')
+		ifpointer(f, ap);
+	else if (c == 'o')
+		ifoctal(f, ap);
+	else if (c == 'u')
+		ifudecint(f, ap);
+	else if (c == 'x' || c == 'X')
+		ifhex(f, ap, c);
+	else if (c == 'f')
+		iffloat(f, ap);
+	else if (c == '%')
+		ifpercent(f);
+}
+>>>>>>> e0892d03f9fa091609c06ab8ee7ca958648cfc79
 
 static	int		parsel2(t_parser *f, va_list ap)
 {

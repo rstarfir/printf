@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 18:33:43 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/08 17:36:28 by rstarfir         ###   ########.fr       */
+/*   Updated: 2019/12/28 18:22:47 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef	struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef	unsigned char	t_bool;
+enum {false, true};
 
 void				*ft_memset(void *b, int c, size_t len);
 int					ft_isdigit(int c);
@@ -91,5 +94,6 @@ long long			ft_power(int val, int pow);
 void				ft_lstpushback(t_list **alst, t_list *new);
 int					get_next_line(const int fd, char **line);
 int					ft_exponent(long double value);
+void				ft_putnbr_base(unsigned long long nbr, int base, t_bool upper);
 
 #endif

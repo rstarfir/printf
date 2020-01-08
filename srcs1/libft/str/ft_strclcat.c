@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strclcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 22:18:19 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/16 15:07:13 by rstarfir         ###   ########.fr       */
+/*   Created: 2019/03/13 16:19:46 by jkettani          #+#    #+#             */
+/*   Updated: 2019/03/13 16:21:41 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+size_t		ft_strclcat(char *dst, size_t dst_size, char c, size_t size)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else
-	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n *= -1;
-		}
-		if (n < 10)
-			ft_putchar(n + '0');
-		else
-		{
-			ft_putnbr(n / 10);
-			ft_putchar(n % 10 + '0');
-		}
-	}
+	char	*insert;
+	size_t	ret;
+
+	if (!(insert = ft_strcnew(size, c)))
+		return (ft_strlen(dst));
+	ret = ft_strlcat(dst, insert, dst_size);
+	ft_strdel(&insert);
+	return (ret);
 }

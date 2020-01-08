@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   modifier.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/30 17:40:35 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/08 16:41:36 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,15 @@ static	void	checkprecision(t_parser *f, va_list ap)
 		{
 			while (ft_isdigit(f->format[f->i]))
 			{
+				f->double_prec = 10 * f->double_prec + f->format[f->i] - '0';
 				f->precision = 10 * f->precision + f->format[f->i] - '0';
 				f->i++;
 			}
 		}
 		else if (f->format[f->i] == '*')
 		{
-			f->precision = va_arg(ap, int);
+			f->precision = va_arg(ap, long double);
+			f->double_prec = f->precision;
 			f->i++;
 		}
 	}
@@ -100,6 +102,11 @@ static	void	checksize(t_parser *f)
 		}
 		else
 			f->size = L;
+	}
+	else if (f->format[f->i] == 'L')
+	{
+		f->size = UCL;
+		f->i++;
 	}
 }
 

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkettani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 22:18:19 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/16 15:07:13 by rstarfir         ###   ########.fr       */
+/*   Created: 2018/11/20 18:32:07 by jkettani          #+#    #+#             */
+/*   Updated: 2018/11/28 14:39:27 by jkettani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	ft_putnbr(int n)
+char	*ft_strchr(const char *s, int c)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else
+	while (*s)
 	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n *= -1;
-		}
-		if (n < 10)
-			ft_putchar(n + '0');
-		else
-		{
-			ft_putnbr(n / 10);
-			ft_putchar(n % 10 + '0');
-		}
+		if (*s == (char)c)
+			return ((char*)s);
+		s++;
 	}
+	return (((char)c == 0) ? (char *)s : NULL);
 }
