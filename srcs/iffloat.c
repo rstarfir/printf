@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:36:10 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/30 17:44:06 by rstarfir         ###   ########.fr       */
+/*   Updated: 2020/01/04 16:54:52 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,11 @@ void			iffloat(t_parser *f, va_list ap)
 #include "../includes/printf.h"
 #include <stdio.h>
 
+void				left_alligned(t_parser *f, int len, char *s)
+{
+	
+}
+
 long long int		acc_round(long double do_n, long long int nbr)
 {
 	int j;
@@ -208,6 +213,7 @@ void			iffloat(t_parser *f, va_list ap)
 {
 	long double			do_n;
 	long long int		nbr;
+	char				*s;
 
 	if (f->size == L || f->size == 0)
 		do_n = va_arg(ap, double);
@@ -218,6 +224,14 @@ void			iffloat(t_parser *f, va_list ap)
 		do_n *= -1;
 		f->flags[FSFL] = '-';
 	}
+	s = ft_itoabase_unsigned((long long)do_n * ft_power(10, f->double_prec + 1), 10);
+	if (f->flags[MFL] == 1)
+	{
+		f->flags[ZFL] = 0;
+		left_aligned(f, ft_strlen(s), s);
+	}
+	else if (f->flags[MFL] == 0)
+		right_aligned(f, ft_strlen(s), s);
 	f->int_part = do_n;
 	f->nonfr = ft_itoabase_unsigned(f->int_part, 10);
 	f->nprinted += write(1, f->nonfr, ft_strlen(f->nonfr));
