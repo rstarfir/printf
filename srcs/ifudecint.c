@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-/*
+
 static	void	left_aligned_uint(t_parser *f, int length, char *s)
 {
 	char	k;
@@ -26,8 +26,8 @@ static	void	left_aligned_uint(t_parser *f, int length, char *s)
 	}
 	if (*s != '0' || (f->precision != 0))
 		f->nprinted += write(1, s, length);
-	if (f->flags[ZFL] == 1)
-		k = '0';
+    if (f->flags & ZFL)
+        k = '0';
 	if (f->precision == 0 && *s == '0')
 		length--;
 	while (f->width-- - ft_max(copy, length) > 0)
@@ -41,9 +41,9 @@ static	void	right_aligned_uint(t_parser *f, int length, char *s)
 	k = ' ';
 	if (f->precision < -1)
 		f->precision = -1;
-	if (f->flags[ZFL] == 1 && ((f->precision > f->width)
-	|| (f->precision == -1)))
-		k = '0';
+    if ((f->flags & ZFL) && ((f->precision > f->width)
+                               || (f->precision == -1)))
+        k = '0';
 	if (f->precision == 0 && *s == '0')
 		length--;
 	while (f->width-- - ft_max(f->precision, length) > 0)
@@ -73,13 +73,12 @@ void			ifudecint(t_parser *f, va_list ap)
 	else if (f->size == LL)
 		number = (unsigned long long int)va_arg(ap, unsigned long long int);
 	s = ft_itoabase_unsigned(number, 10);
-	if (f->flags[MFL] == 1)
-	{
-		f->flags[ZFL] = 0;
-		left_aligned_uint(f, ft_strlen(s), s);
-	}
-	else if (f->flags[MFL] == 0)
-		right_aligned_uint(f, ft_strlen(s), s);
+    if (f->flags & MFL)
+    {
+        f->flags &= 0xFFFFFFFF - ZFL;
+        left_aligned_uint(f, ft_strlen(s), s);
+    }
+	else
+	    right_aligned_uint(f, ft_strlen(s), s);
 	free(s);
 }
-*/

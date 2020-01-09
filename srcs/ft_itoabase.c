@@ -38,45 +38,8 @@ static char	*strrev(char *str)
 		return (NULL);
 }
 
-/*
-** char	*ft_itoabase(long long int num, int base)
-** {
-** size_t	i;
-** int		is_negative;
-** int		rem;
-** char	*str;
-**
-** i = 0;
-** is_negative = 0;
-** if (!(str = (char *)malloc(sizeof(char) * 21)))
-** return (NULL);
-** if (num == 0)
-** {
-** str[i++] = '0';
-** str[i] = '\0';
-** return (str);
-** }
-** //if (base != 10 && num < 0)
-** //	num *= -1;
-** if (num < 0 && base == 10)
-** {
-** is_negative = 1;
-** num = -num;
-** }
-** while (num != 0)
-** {
-** rem = num % base;
-** str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-** num = num / base;
-** }
-** if (is_negative)
-** str[i++] = '-';
-** str[i] = '\0';
-** return (strrev(str));
-** }
-*/
-
-static	int	ft_nsize(long long int nb)
+//static	int	ft_nsize(long long int nb)
+static      int ft_nsize(t_llint nb)
 {
 	int	size;
 
@@ -93,7 +56,8 @@ static	int	ft_nsize(long long int nb)
 	return (size);
 }
 
-char		*ft_llitoa(long long int n)
+//char		*ft_llitoa(long long int n)
+char		*ft_llitoa(t_llint n)
 {
     char    *ptr;
 	int		i;
@@ -118,7 +82,8 @@ char		*ft_llitoa(long long int n)
 	return (ptr);
 }
 
-char		*ft_itoabase_unsigned(unsigned long long int num, int base)
+//char		*ft_itoabase_unsigned(unsigned long long int num, int base)
+char		*ft_itoabase_unsigned(t_ullint num, int base)
 {
 	size_t	i;
 	int		rem;

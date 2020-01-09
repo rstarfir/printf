@@ -14,10 +14,6 @@
 
 static	void	zerostruct(t_parser *f)
 {
-	//f->flags[MFL] = 0;
-	//f->flags[FSFL] = 0;
-	//f->flags[ZFL] = 0;
-	//f->flags[OFL] = 0;
 	f->beforeNum = 0;
 	f->flags = 0;
 	f->width = 0;
@@ -39,10 +35,10 @@ void	conversions(char c, va_list ap, t_parser *f)
 		ifpointer(f, ap);
 	else if (c == 'o')
 		ifoctal(f, ap);
-	//else if (c == 'u')
-	//	ifudecint(f, ap);
-	//else if (c == 'x' || c == 'X')
-	//	ifhex(f, ap, c);
+	else if (c == 'u')
+		ifudecint(f, ap);
+	else if (c == 'x' || c == 'X')
+		ifhex(f, ap, c);
 	//else if (c == 'f')
 	//	iffloat(f, ap);
 

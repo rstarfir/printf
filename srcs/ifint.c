@@ -112,8 +112,11 @@ void					ifint(t_parser *f, va_list ap)
     if ((f->flags & SFL) && !f->beforeNum)
         f->beforeNum = ' ';
 	if (f->flags & MFL)
-		left_aligned_int(f, ft_strlen(s), s);
-	else if (!(f->flags & MFL))
+	{
+        f->flags &= (0xFFFFFFFF - ZFL);
+        left_aligned_int(f, ft_strlen(s), s);
+    }
+	else
 		right_aligned_int(f, ft_strlen(s), s);
 	free(s);
 }

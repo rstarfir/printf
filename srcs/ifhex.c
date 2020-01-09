@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
-/*
+
 static	void				put_oct_hex(t_parser *f, char flag, char *s)
 {
-	if (f->flags[OFL] == 1 && flag == 'x' && *s != '0')
-		f->nprinted += write(1, "0x", 2);
-	else if (f->flags[OFL] == 1 && flag == 'X' && *s != '0')
-		f->nprinted += write(1, "0X", 2);
+    if ((f->flags & OFL) && flag == 'x' && *s != '0')
+        f->nprinted += write(1, "0x", 2);
+    else if ((f->flags & OFL) && flag == 'X' && *s != '0')
+        f->nprinted += write(1, "0X", 2);
 }
 
 static	void				left_hex(t_parser *f, int length, char *s, char fl)
@@ -27,12 +27,12 @@ static	void				left_hex(t_parser *f, int length, char *s, char fl)
 
 	copyprec = f->precision;
 	i = 0;
-	if (!(length == 1 && *s == '0'))
-	{
-		if (f->flags[OFL] == 1)
-			i += 2;
-		put_oct_hex(f, fl, s);
-	}
+    if (!(length == 1 && *s == '0'))
+    {
+        if (f->flags & OFL)
+            i += 2;
+        put_oct_hex(f, fl, s);
+    }
 	while (f->precision-- > length)
 		f->nprinted += write(1, "0", 1);
 	if (copyprec != 0)
@@ -50,10 +50,10 @@ static	void				right_hex(t_parser *f, int length, char *s, char fl)
 
 	k = ' ';
 	i = 0;
-	if (f->flags[OFL] == 1 && *s != '0')
-		i += 2;
-	if (f->flags[ZFL] && ((f->precision > f->width) || (f->precision == -1)))
-		k = '0';
+    if ((f->flags & OFL) && *s != '0')
+        i += 2;
+    if ((f->flags & ZFL) && ((f->precision > f->width) || (f->precision == -1)))
+        k = '0';
 	if (k == '0')
 		put_oct_hex(f, fl, s);
 	if (f->precision == 0 && *s == '0')
@@ -101,13 +101,12 @@ void						ifhex(t_parser *f, va_list ap, char c)
 		s = ft_itoabase_unsigned(number, 16);
 	else if (c == 'X')
 		s = ft_toupperstring(ft_itoabase_unsigned(number, 16));
-	if (f->flags[MFL] == 1)
+	if (f->flags & MFL)
 	{
-		f->flags[ZFL] = 0;
+		f->flags &= 0xFFFFFFFF - ZFL;
 		left_hex(f, ft_strlen(s), s, c);
 	}
-	else if (f->flags[MFL] == 0)
-		right_hex(f, ft_strlen(s), s, c);
+    else
+    	right_hex(f, ft_strlen(s), s, c);
 	free(s);
 }
-*/

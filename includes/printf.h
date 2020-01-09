@@ -19,10 +19,10 @@
 # include <limits.h>
 # include "../libft/includes/libft.h"
 # define ALL "cspdiouxXfyb%#-+ .*0123456789hLljz"
-//# define MFL 0
-//# define FSFL 1
-//# define OFL 2
-//# define ZFL 3
+
+/*
+ * length field
+ */
 
 # define HH 1
 # define LL 2
@@ -42,11 +42,23 @@
  * 10000 ZFL
  */
 
-# define MFL   0x1
+# define MFL    0x1
 # define PFL    0x2
-# define SFL   0x4
+# define SFL    0x4
 # define OFL    0x8
 # define ZFL    0x10
+
+/*
+ * typedefs for classical types
+ */
+
+typedef short int               t_sint;
+typedef unsigned short int      t_usint;
+typedef unsigned int            t_uint;
+typedef long int                t_lint;
+typedef unsigned long int       t_ulint;
+typedef long long int           t_llint;
+typedef unsigned long long int  t_ullint;
 
 typedef struct	s_parser
 {
@@ -61,10 +73,8 @@ typedef struct	s_parser
 	int			    size;
 }				    t_parser;
 
-//char			*ft_itoabase(long long int num, int base);
-char			*ft_itoabase_unsigned(long long int num, int base);
+char			*ft_itoabase_unsigned(t_llint num, int base);
 void			modifiers(t_parser *f, va_list ap);
-//void			conversions(char c, va_list ap, t_parser *f);
 void			ifint (t_parser *f, va_list ap);
 void			ifchar (t_parser *f, va_list ap);
 void			ifhex (t_parser *f, va_list ap, char c);
@@ -74,12 +84,11 @@ void			ifoctal(t_parser *f, va_list ap);
 void			ifudecint(t_parser *f, va_list ap);
 void			ifpercent(t_parser *f);
 int				ft_printf(const char *format, ...);
-long long int	acc_round(double dou_n, long long int number);
+t_llint         acc_round(double dou_n, t_llint number);
 void			widthstar(t_parser *f, va_list ap);
-//void			zerostruct(t_parser *f);
 int				ft_max(int one, int two);
 int				ft_min(int one, int two);
-char			*ft_llitoa(long long int n);
+char			*ft_llitoa(t_llint n);
 char			*ft_toupperstring(char *c);
 
 #endif
