@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoabase.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:39:32 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/09 20:03:06 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/includes/libft.h"
+#include "../includes/printf.h"
 
 static char	*strrev(char *str)
 {

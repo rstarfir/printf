@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ifint.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:39:57 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:39:59 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/09 18:55:36 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static long long int	cast_size_int(t_parser *f, va_list ap)
 
 void					ifint(t_parser *f, va_list ap)
 {
-	long long int	number;
+	t_lint		number;
 	char			*s;
 
 	number = cast_size_int(f, ap);

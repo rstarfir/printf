@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ifoctal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:40:04 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:40:06 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/09 19:01:56 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,19 @@ static	void	right_aligned_oct(t_parser *f, int length, char *s)
 
 void			ifoctal(t_parser *f, va_list ap)
 {
-	unsigned long long int	number;
+	t_ullint			number;
 	char					*s;
 
 	if (f->size == 0)
-		number = va_arg(ap, unsigned int);
+		number = va_arg(ap, t_uint);
 	else if (f->size == H)
-		number = (unsigned short)va_arg(ap, unsigned int);
+		number = (t_usint)va_arg(ap, t_uint);
 	else if (f->size == HH)
-		number = (unsigned char)va_arg(ap, unsigned int);
+		number = (t_uchar)va_arg(ap, t_uint);
 	else if (f->size == L)
-		number = (unsigned long long int)va_arg(ap, unsigned long long int);
+		number = (t_ullint)va_arg(ap, t_ullint);
 	else if (f->size == LL)
-		number = (unsigned long long int)va_arg(ap, unsigned long long int);
+		number = (t_ullint)va_arg(ap, t_ullint);
 	s = ft_itoabase_unsigned(number, 8);
     if (f->flags & MFL)
     {

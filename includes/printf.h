@@ -6,7 +6,7 @@
 /*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:57:31 by hthunder          #+#    #+#             */
-/*   Updated: 2019/12/08 21:46:16 by rstarfir         ###   ########.fr       */
+/*   Updated: 2020/01/09 20:05:29 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef long int                t_lint;
 typedef unsigned long int       t_ulint;
 typedef long long int           t_llint;
 typedef unsigned long long int  t_ullint;
+typedef unsigned char			t_uchar;
 
 typedef struct	s_parser
 {
@@ -73,7 +74,7 @@ typedef struct	s_parser
 	int			    size;
 }				    t_parser;
 
-char			*ft_itoabase_unsigned(t_llint num, int base);
+char			*ft_itoabase_unsigned(t_ullint num, int base);
 void			modifiers(t_parser *f, va_list ap);
 void			ifint (t_parser *f, va_list ap);
 void			ifchar (t_parser *f, va_list ap);

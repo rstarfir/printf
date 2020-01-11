@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ifhex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:39:49 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:39:51 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/09 19:09:23 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,22 @@ static	void				right_hex(t_parser *f, int length, char *s, char fl)
 static unsigned long long	cast_size_hex(t_parser *f, va_list ap)
 {
 	if (f->size == 0)
-		return (va_arg(ap, unsigned int));
+		return (va_arg(ap, t_uint));
 	else if (f->size == H)
-		return ((unsigned short)va_arg(ap, unsigned int));
+		return ((t_usint)va_arg(ap, t_uint));
 	else if (f->size == HH)
-		return ((unsigned char)va_arg(ap, unsigned int));
+		return ((t_uchar)va_arg(ap, t_uint));
 	else if (f->size == L)
-		return (va_arg(ap, unsigned long int));
+		return (va_arg(ap, t_ulint));
 	else if (f->size == LL)
-		return (va_arg(ap, unsigned long long int));
+		return (va_arg(ap, t_ullint));
 	else
 		return (0);
 }
 
 void						ifhex(t_parser *f, va_list ap, char c)
 {
-	unsigned long long int	number;
+	t_ullint			number;
 	char					*s;
 
 	number = cast_size_hex(f, ap);

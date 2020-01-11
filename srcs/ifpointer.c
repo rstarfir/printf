@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ifpointer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:40:11 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:40:13 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/01/09 19:10:15 by rstarfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ static	void	right_aligned_pointer(t_parser *f, int length, char *s)
 void			ifpointer(t_parser *f, va_list ap)
 {
 	char					*s;
-	unsigned long long int	number;
+	t_ullint			number;
 
 	f->flags |= OFL;
-	number = (unsigned long long int)va_arg(ap, void *);
+	number = (t_ullint)va_arg(ap, void *);
 	s = ft_itoabase_unsigned(number, 16);
     if (f->flags & MFL)
         	left_aligned_pointer(f, ft_strlen(s), s);
