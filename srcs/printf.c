@@ -18,6 +18,7 @@ static	void	zerostruct(t_parser *f)
 	f->flags = 0;
 	f->width = 0;
 	f->precision = -1;
+	f->flprecision = 6;
 	f->size = 0;
 }
 
@@ -39,8 +40,8 @@ void	conversions(char c, va_list ap, t_parser *f)
 		ifudecint(f, ap);
 	else if (c == 'x' || c == 'X')
 		ifhex(f, ap, c);
-	//else if (c == 'f')
-	//	iffloat(f, ap);
+	else if (c == 'f')
+		iffloat(f, ap);
 
 }
 
@@ -100,6 +101,7 @@ int				ft_printf(const char *format, ...)
 	list.flags = 0;
 	list.width = 0;
 	list.precision = -1;
+	list.flprecision = 6;
 	list.size = 0;
 	va_start(argptr, format);
 	if (ft_strlen(format) == 1 && format[0] == '%')

@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/hthunder/printf/includes -I/Users/hthunder/printf/libft/includes 
+C_INCLUDES = -I/Users/hthunder/printf/includes1 -I/Users/hthunder/printf/srcs1 
 

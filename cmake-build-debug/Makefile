@@ -110,6 +110,2017 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named printf
+
+# Build rule for target.
+printf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 printf
+.PHONY : printf
+
+# fast build rule for target.
+printf/fast:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/build
+.PHONY : printf/fast
+
+srcs1/conv_spec_parser.o: srcs1/conv_spec_parser.c.o
+
+.PHONY : srcs1/conv_spec_parser.o
+
+# target to build an object file
+srcs1/conv_spec_parser.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser.c.o
+.PHONY : srcs1/conv_spec_parser.c.o
+
+srcs1/conv_spec_parser.i: srcs1/conv_spec_parser.c.i
+
+.PHONY : srcs1/conv_spec_parser.i
+
+# target to preprocess a source file
+srcs1/conv_spec_parser.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser.c.i
+.PHONY : srcs1/conv_spec_parser.c.i
+
+srcs1/conv_spec_parser.s: srcs1/conv_spec_parser.c.s
+
+.PHONY : srcs1/conv_spec_parser.s
+
+# target to generate assembly for a file
+srcs1/conv_spec_parser.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser.c.s
+.PHONY : srcs1/conv_spec_parser.c.s
+
+srcs1/conv_spec_parser_utils.o: srcs1/conv_spec_parser_utils.c.o
+
+.PHONY : srcs1/conv_spec_parser_utils.o
+
+# target to build an object file
+srcs1/conv_spec_parser_utils.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser_utils.c.o
+.PHONY : srcs1/conv_spec_parser_utils.c.o
+
+srcs1/conv_spec_parser_utils.i: srcs1/conv_spec_parser_utils.c.i
+
+.PHONY : srcs1/conv_spec_parser_utils.i
+
+# target to preprocess a source file
+srcs1/conv_spec_parser_utils.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser_utils.c.i
+.PHONY : srcs1/conv_spec_parser_utils.c.i
+
+srcs1/conv_spec_parser_utils.s: srcs1/conv_spec_parser_utils.c.s
+
+.PHONY : srcs1/conv_spec_parser_utils.s
+
+# target to generate assembly for a file
+srcs1/conv_spec_parser_utils.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/conv_spec_parser_utils.c.s
+.PHONY : srcs1/conv_spec_parser_utils.c.s
+
+srcs1/dbl_digits_buf_rfmt.o: srcs1/dbl_digits_buf_rfmt.c.o
+
+.PHONY : srcs1/dbl_digits_buf_rfmt.o
+
+# target to build an object file
+srcs1/dbl_digits_buf_rfmt.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_digits_buf_rfmt.c.o
+.PHONY : srcs1/dbl_digits_buf_rfmt.c.o
+
+srcs1/dbl_digits_buf_rfmt.i: srcs1/dbl_digits_buf_rfmt.c.i
+
+.PHONY : srcs1/dbl_digits_buf_rfmt.i
+
+# target to preprocess a source file
+srcs1/dbl_digits_buf_rfmt.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_digits_buf_rfmt.c.i
+.PHONY : srcs1/dbl_digits_buf_rfmt.c.i
+
+srcs1/dbl_digits_buf_rfmt.s: srcs1/dbl_digits_buf_rfmt.c.s
+
+.PHONY : srcs1/dbl_digits_buf_rfmt.s
+
+# target to generate assembly for a file
+srcs1/dbl_digits_buf_rfmt.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_digits_buf_rfmt.c.s
+.PHONY : srcs1/dbl_digits_buf_rfmt.c.s
+
+srcs1/dbl_prec_utils.o: srcs1/dbl_prec_utils.c.o
+
+.PHONY : srcs1/dbl_prec_utils.o
+
+# target to build an object file
+srcs1/dbl_prec_utils.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_prec_utils.c.o
+.PHONY : srcs1/dbl_prec_utils.c.o
+
+srcs1/dbl_prec_utils.i: srcs1/dbl_prec_utils.c.i
+
+.PHONY : srcs1/dbl_prec_utils.i
+
+# target to preprocess a source file
+srcs1/dbl_prec_utils.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_prec_utils.c.i
+.PHONY : srcs1/dbl_prec_utils.c.i
+
+srcs1/dbl_prec_utils.s: srcs1/dbl_prec_utils.c.s
+
+.PHONY : srcs1/dbl_prec_utils.s
+
+# target to generate assembly for a file
+srcs1/dbl_prec_utils.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_prec_utils.c.s
+.PHONY : srcs1/dbl_prec_utils.c.s
+
+srcs1/dbl_to_str_conv.o: srcs1/dbl_to_str_conv.c.o
+
+.PHONY : srcs1/dbl_to_str_conv.o
+
+# target to build an object file
+srcs1/dbl_to_str_conv.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_to_str_conv.c.o
+.PHONY : srcs1/dbl_to_str_conv.c.o
+
+srcs1/dbl_to_str_conv.i: srcs1/dbl_to_str_conv.c.i
+
+.PHONY : srcs1/dbl_to_str_conv.i
+
+# target to preprocess a source file
+srcs1/dbl_to_str_conv.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_to_str_conv.c.i
+.PHONY : srcs1/dbl_to_str_conv.c.i
+
+srcs1/dbl_to_str_conv.s: srcs1/dbl_to_str_conv.c.s
+
+.PHONY : srcs1/dbl_to_str_conv.s
+
+# target to generate assembly for a file
+srcs1/dbl_to_str_conv.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_to_str_conv.c.s
+.PHONY : srcs1/dbl_to_str_conv.c.s
+
+srcs1/dbl_type_handler.o: srcs1/dbl_type_handler.c.o
+
+.PHONY : srcs1/dbl_type_handler.o
+
+# target to build an object file
+srcs1/dbl_type_handler.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_type_handler.c.o
+.PHONY : srcs1/dbl_type_handler.c.o
+
+srcs1/dbl_type_handler.i: srcs1/dbl_type_handler.c.i
+
+.PHONY : srcs1/dbl_type_handler.i
+
+# target to preprocess a source file
+srcs1/dbl_type_handler.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_type_handler.c.i
+.PHONY : srcs1/dbl_type_handler.c.i
+
+srcs1/dbl_type_handler.s: srcs1/dbl_type_handler.c.s
+
+.PHONY : srcs1/dbl_type_handler.s
+
+# target to generate assembly for a file
+srcs1/dbl_type_handler.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_type_handler.c.s
+.PHONY : srcs1/dbl_type_handler.c.s
+
+srcs1/dbl_utils.o: srcs1/dbl_utils.c.o
+
+.PHONY : srcs1/dbl_utils.o
+
+# target to build an object file
+srcs1/dbl_utils.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_utils.c.o
+.PHONY : srcs1/dbl_utils.c.o
+
+srcs1/dbl_utils.i: srcs1/dbl_utils.c.i
+
+.PHONY : srcs1/dbl_utils.i
+
+# target to preprocess a source file
+srcs1/dbl_utils.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_utils.c.i
+.PHONY : srcs1/dbl_utils.c.i
+
+srcs1/dbl_utils.s: srcs1/dbl_utils.c.s
+
+.PHONY : srcs1/dbl_utils.s
+
+# target to generate assembly for a file
+srcs1/dbl_utils.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/dbl_utils.c.s
+.PHONY : srcs1/dbl_utils.c.s
+
+srcs1/format_parser.o: srcs1/format_parser.c.o
+
+.PHONY : srcs1/format_parser.o
+
+# target to build an object file
+srcs1/format_parser.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/format_parser.c.o
+.PHONY : srcs1/format_parser.c.o
+
+srcs1/format_parser.i: srcs1/format_parser.c.i
+
+.PHONY : srcs1/format_parser.i
+
+# target to preprocess a source file
+srcs1/format_parser.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/format_parser.c.i
+.PHONY : srcs1/format_parser.c.i
+
+srcs1/format_parser.s: srcs1/format_parser.c.s
+
+.PHONY : srcs1/format_parser.s
+
+# target to generate assembly for a file
+srcs1/format_parser.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/format_parser.c.s
+.PHONY : srcs1/format_parser.c.s
+
+srcs1/formatting_utils.o: srcs1/formatting_utils.c.o
+
+.PHONY : srcs1/formatting_utils.o
+
+# target to build an object file
+srcs1/formatting_utils.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/formatting_utils.c.o
+.PHONY : srcs1/formatting_utils.c.o
+
+srcs1/formatting_utils.i: srcs1/formatting_utils.c.i
+
+.PHONY : srcs1/formatting_utils.i
+
+# target to preprocess a source file
+srcs1/formatting_utils.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/formatting_utils.c.i
+.PHONY : srcs1/formatting_utils.c.i
+
+srcs1/formatting_utils.s: srcs1/formatting_utils.c.s
+
+.PHONY : srcs1/formatting_utils.s
+
+# target to generate assembly for a file
+srcs1/formatting_utils.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/formatting_utils.c.s
+.PHONY : srcs1/formatting_utils.c.s
+
+srcs1/ft_printf.o: srcs1/ft_printf.c.o
+
+.PHONY : srcs1/ft_printf.o
+
+# target to build an object file
+srcs1/ft_printf.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/ft_printf.c.o
+.PHONY : srcs1/ft_printf.c.o
+
+srcs1/ft_printf.i: srcs1/ft_printf.c.i
+
+.PHONY : srcs1/ft_printf.i
+
+# target to preprocess a source file
+srcs1/ft_printf.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/ft_printf.c.i
+.PHONY : srcs1/ft_printf.c.i
+
+srcs1/ft_printf.s: srcs1/ft_printf.c.s
+
+.PHONY : srcs1/ft_printf.s
+
+# target to generate assembly for a file
+srcs1/ft_printf.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/ft_printf.c.s
+.PHONY : srcs1/ft_printf.c.s
+
+srcs1/get_formatted_str.o: srcs1/get_formatted_str.c.o
+
+.PHONY : srcs1/get_formatted_str.o
+
+# target to build an object file
+srcs1/get_formatted_str.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/get_formatted_str.c.o
+.PHONY : srcs1/get_formatted_str.c.o
+
+srcs1/get_formatted_str.i: srcs1/get_formatted_str.c.i
+
+.PHONY : srcs1/get_formatted_str.i
+
+# target to preprocess a source file
+srcs1/get_formatted_str.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/get_formatted_str.c.i
+.PHONY : srcs1/get_formatted_str.c.i
+
+srcs1/get_formatted_str.s: srcs1/get_formatted_str.c.s
+
+.PHONY : srcs1/get_formatted_str.s
+
+# target to generate assembly for a file
+srcs1/get_formatted_str.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/get_formatted_str.c.s
+.PHONY : srcs1/get_formatted_str.c.s
+
+srcs1/int_formatting_utils.o: srcs1/int_formatting_utils.c.o
+
+.PHONY : srcs1/int_formatting_utils.o
+
+# target to build an object file
+srcs1/int_formatting_utils.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_formatting_utils.c.o
+.PHONY : srcs1/int_formatting_utils.c.o
+
+srcs1/int_formatting_utils.i: srcs1/int_formatting_utils.c.i
+
+.PHONY : srcs1/int_formatting_utils.i
+
+# target to preprocess a source file
+srcs1/int_formatting_utils.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_formatting_utils.c.i
+.PHONY : srcs1/int_formatting_utils.c.i
+
+srcs1/int_formatting_utils.s: srcs1/int_formatting_utils.c.s
+
+.PHONY : srcs1/int_formatting_utils.s
+
+# target to generate assembly for a file
+srcs1/int_formatting_utils.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_formatting_utils.c.s
+.PHONY : srcs1/int_formatting_utils.c.s
+
+srcs1/int_to_str_conv.o: srcs1/int_to_str_conv.c.o
+
+.PHONY : srcs1/int_to_str_conv.o
+
+# target to build an object file
+srcs1/int_to_str_conv.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_to_str_conv.c.o
+.PHONY : srcs1/int_to_str_conv.c.o
+
+srcs1/int_to_str_conv.i: srcs1/int_to_str_conv.c.i
+
+.PHONY : srcs1/int_to_str_conv.i
+
+# target to preprocess a source file
+srcs1/int_to_str_conv.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_to_str_conv.c.i
+.PHONY : srcs1/int_to_str_conv.c.i
+
+srcs1/int_to_str_conv.s: srcs1/int_to_str_conv.c.s
+
+.PHONY : srcs1/int_to_str_conv.s
+
+# target to generate assembly for a file
+srcs1/int_to_str_conv.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_to_str_conv.c.s
+.PHONY : srcs1/int_to_str_conv.c.s
+
+srcs1/int_type_handler.o: srcs1/int_type_handler.c.o
+
+.PHONY : srcs1/int_type_handler.o
+
+# target to build an object file
+srcs1/int_type_handler.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_type_handler.c.o
+.PHONY : srcs1/int_type_handler.c.o
+
+srcs1/int_type_handler.i: srcs1/int_type_handler.c.i
+
+.PHONY : srcs1/int_type_handler.i
+
+# target to preprocess a source file
+srcs1/int_type_handler.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_type_handler.c.i
+.PHONY : srcs1/int_type_handler.c.i
+
+srcs1/int_type_handler.s: srcs1/int_type_handler.c.s
+
+.PHONY : srcs1/int_type_handler.s
+
+# target to generate assembly for a file
+srcs1/int_type_handler.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/int_type_handler.c.s
+.PHONY : srcs1/int_type_handler.c.s
+
+srcs1/libft/bigint/ft_bigint_add.o: srcs1/libft/bigint/ft_bigint_add.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_add.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_add.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_add.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_add.c.o
+
+srcs1/libft/bigint/ft_bigint_add.i: srcs1/libft/bigint/ft_bigint_add.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_add.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_add.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_add.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_add.c.i
+
+srcs1/libft/bigint/ft_bigint_add.s: srcs1/libft/bigint/ft_bigint_add.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_add.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_add.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_add.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_add.c.s
+
+srcs1/libft/bigint/ft_bigint_comp.o: srcs1/libft/bigint/ft_bigint_comp.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_comp.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_comp.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.c.o
+
+srcs1/libft/bigint/ft_bigint_comp.i: srcs1/libft/bigint/ft_bigint_comp.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_comp.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_comp.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.c.i
+
+srcs1/libft/bigint/ft_bigint_comp.s: srcs1/libft/bigint/ft_bigint_comp.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_comp.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_comp.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_comp.c.s
+
+srcs1/libft/bigint/ft_bigint_divide.o: srcs1/libft/bigint/ft_bigint_divide.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_divide.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_divide.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.c.o
+
+srcs1/libft/bigint/ft_bigint_divide.i: srcs1/libft/bigint/ft_bigint_divide.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_divide.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_divide.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.c.i
+
+srcs1/libft/bigint/ft_bigint_divide.s: srcs1/libft/bigint/ft_bigint_divide.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_divide.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_divide.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_divide.c.s
+
+srcs1/libft/bigint/ft_bigint_multiply.o: srcs1/libft/bigint/ft_bigint_multiply.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_multiply.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.c.o
+
+srcs1/libft/bigint/ft_bigint_multiply.i: srcs1/libft/bigint/ft_bigint_multiply.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_multiply.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.c.i
+
+srcs1/libft/bigint/ft_bigint_multiply.s: srcs1/libft/bigint/ft_bigint_multiply.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_multiply.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply.c.s
+
+srcs1/libft/bigint/ft_bigint_multiply_uint.o: srcs1/libft/bigint/ft_bigint_multiply_uint.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_multiply_uint.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply_uint.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.c.o
+
+srcs1/libft/bigint/ft_bigint_multiply_uint.i: srcs1/libft/bigint/ft_bigint_multiply_uint.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_multiply_uint.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply_uint.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.c.i
+
+srcs1/libft/bigint/ft_bigint_multiply_uint.s: srcs1/libft/bigint/ft_bigint_multiply_uint.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_multiply_uint.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_multiply_uint.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_multiply_uint.c.s
+
+srcs1/libft/bigint/ft_bigint_order.o: srcs1/libft/bigint/ft_bigint_order.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_order.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_order.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_order.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_order.c.o
+
+srcs1/libft/bigint/ft_bigint_order.i: srcs1/libft/bigint/ft_bigint_order.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_order.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_order.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_order.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_order.c.i
+
+srcs1/libft/bigint/ft_bigint_order.s: srcs1/libft/bigint/ft_bigint_order.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_order.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_order.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_order.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_order.c.s
+
+srcs1/libft/bigint/ft_bigint_pow10.o: srcs1/libft/bigint/ft_bigint_pow10.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_pow10.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_pow10.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.c.o
+
+srcs1/libft/bigint/ft_bigint_pow10.i: srcs1/libft/bigint/ft_bigint_pow10.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_pow10.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_pow10.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.c.i
+
+srcs1/libft/bigint/ft_bigint_pow10.s: srcs1/libft/bigint/ft_bigint_pow10.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_pow10.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_pow10.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_pow10.c.s
+
+srcs1/libft/bigint/ft_bigint_shiftleft.o: srcs1/libft/bigint/ft_bigint_shiftleft.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_shiftleft.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_shiftleft.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.c.o
+
+srcs1/libft/bigint/ft_bigint_shiftleft.i: srcs1/libft/bigint/ft_bigint_shiftleft.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_shiftleft.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_shiftleft.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.c.i
+
+srcs1/libft/bigint/ft_bigint_shiftleft.s: srcs1/libft/bigint/ft_bigint_shiftleft.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_shiftleft.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_shiftleft.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_shiftleft.c.s
+
+srcs1/libft/bigint/ft_bigint_size.o: srcs1/libft/bigint/ft_bigint_size.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_size.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_size.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_size.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_size.c.o
+
+srcs1/libft/bigint/ft_bigint_size.i: srcs1/libft/bigint/ft_bigint_size.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_size.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_size.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_size.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_size.c.i
+
+srcs1/libft/bigint/ft_bigint_size.s: srcs1/libft/bigint/ft_bigint_size.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_size.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_size.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_size.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_size.c.s
+
+srcs1/libft/bigint/ft_bigint_subst.o: srcs1/libft/bigint/ft_bigint_subst.c.o
+
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_bigint_subst.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_subst.c.o
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.c.o
+
+srcs1/libft/bigint/ft_bigint_subst.i: srcs1/libft/bigint/ft_bigint_subst.c.i
+
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_bigint_subst.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_subst.c.i
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.c.i
+
+srcs1/libft/bigint/ft_bigint_subst.s: srcs1/libft/bigint/ft_bigint_subst.c.s
+
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_bigint_subst.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_bigint_subst.c.s
+.PHONY : srcs1/libft/bigint/ft_bigint_subst.c.s
+
+srcs1/libft/bigint/ft_uimax_to_bigint.o: srcs1/libft/bigint/ft_uimax_to_bigint.c.o
+
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.o
+
+# target to build an object file
+srcs1/libft/bigint/ft_uimax_to_bigint.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_uimax_to_bigint.c.o
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.c.o
+
+srcs1/libft/bigint/ft_uimax_to_bigint.i: srcs1/libft/bigint/ft_uimax_to_bigint.c.i
+
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.i
+
+# target to preprocess a source file
+srcs1/libft/bigint/ft_uimax_to_bigint.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_uimax_to_bigint.c.i
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.c.i
+
+srcs1/libft/bigint/ft_uimax_to_bigint.s: srcs1/libft/bigint/ft_uimax_to_bigint.c.s
+
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.s
+
+# target to generate assembly for a file
+srcs1/libft/bigint/ft_uimax_to_bigint.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/bigint/ft_uimax_to_bigint.c.s
+.PHONY : srcs1/libft/bigint/ft_uimax_to_bigint.c.s
+
+srcs1/libft/char/ft_isdigit.o: srcs1/libft/char/ft_isdigit.c.o
+
+.PHONY : srcs1/libft/char/ft_isdigit.o
+
+# target to build an object file
+srcs1/libft/char/ft_isdigit.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isdigit.c.o
+.PHONY : srcs1/libft/char/ft_isdigit.c.o
+
+srcs1/libft/char/ft_isdigit.i: srcs1/libft/char/ft_isdigit.c.i
+
+.PHONY : srcs1/libft/char/ft_isdigit.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_isdigit.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isdigit.c.i
+.PHONY : srcs1/libft/char/ft_isdigit.c.i
+
+srcs1/libft/char/ft_isdigit.s: srcs1/libft/char/ft_isdigit.c.s
+
+.PHONY : srcs1/libft/char/ft_isdigit.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_isdigit.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isdigit.c.s
+.PHONY : srcs1/libft/char/ft_isdigit.c.s
+
+srcs1/libft/char/ft_islower.o: srcs1/libft/char/ft_islower.c.o
+
+.PHONY : srcs1/libft/char/ft_islower.o
+
+# target to build an object file
+srcs1/libft/char/ft_islower.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_islower.c.o
+.PHONY : srcs1/libft/char/ft_islower.c.o
+
+srcs1/libft/char/ft_islower.i: srcs1/libft/char/ft_islower.c.i
+
+.PHONY : srcs1/libft/char/ft_islower.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_islower.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_islower.c.i
+.PHONY : srcs1/libft/char/ft_islower.c.i
+
+srcs1/libft/char/ft_islower.s: srcs1/libft/char/ft_islower.c.s
+
+.PHONY : srcs1/libft/char/ft_islower.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_islower.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_islower.c.s
+.PHONY : srcs1/libft/char/ft_islower.c.s
+
+srcs1/libft/char/ft_isprint.o: srcs1/libft/char/ft_isprint.c.o
+
+.PHONY : srcs1/libft/char/ft_isprint.o
+
+# target to build an object file
+srcs1/libft/char/ft_isprint.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isprint.c.o
+.PHONY : srcs1/libft/char/ft_isprint.c.o
+
+srcs1/libft/char/ft_isprint.i: srcs1/libft/char/ft_isprint.c.i
+
+.PHONY : srcs1/libft/char/ft_isprint.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_isprint.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isprint.c.i
+.PHONY : srcs1/libft/char/ft_isprint.c.i
+
+srcs1/libft/char/ft_isprint.s: srcs1/libft/char/ft_isprint.c.s
+
+.PHONY : srcs1/libft/char/ft_isprint.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_isprint.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isprint.c.s
+.PHONY : srcs1/libft/char/ft_isprint.c.s
+
+srcs1/libft/char/ft_issign.o: srcs1/libft/char/ft_issign.c.o
+
+.PHONY : srcs1/libft/char/ft_issign.o
+
+# target to build an object file
+srcs1/libft/char/ft_issign.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_issign.c.o
+.PHONY : srcs1/libft/char/ft_issign.c.o
+
+srcs1/libft/char/ft_issign.i: srcs1/libft/char/ft_issign.c.i
+
+.PHONY : srcs1/libft/char/ft_issign.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_issign.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_issign.c.i
+.PHONY : srcs1/libft/char/ft_issign.c.i
+
+srcs1/libft/char/ft_issign.s: srcs1/libft/char/ft_issign.c.s
+
+.PHONY : srcs1/libft/char/ft_issign.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_issign.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_issign.c.s
+.PHONY : srcs1/libft/char/ft_issign.c.s
+
+srcs1/libft/char/ft_isspace.o: srcs1/libft/char/ft_isspace.c.o
+
+.PHONY : srcs1/libft/char/ft_isspace.o
+
+# target to build an object file
+srcs1/libft/char/ft_isspace.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isspace.c.o
+.PHONY : srcs1/libft/char/ft_isspace.c.o
+
+srcs1/libft/char/ft_isspace.i: srcs1/libft/char/ft_isspace.c.i
+
+.PHONY : srcs1/libft/char/ft_isspace.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_isspace.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isspace.c.i
+.PHONY : srcs1/libft/char/ft_isspace.c.i
+
+srcs1/libft/char/ft_isspace.s: srcs1/libft/char/ft_isspace.c.s
+
+.PHONY : srcs1/libft/char/ft_isspace.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_isspace.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isspace.c.s
+.PHONY : srcs1/libft/char/ft_isspace.c.s
+
+srcs1/libft/char/ft_isupper.o: srcs1/libft/char/ft_isupper.c.o
+
+.PHONY : srcs1/libft/char/ft_isupper.o
+
+# target to build an object file
+srcs1/libft/char/ft_isupper.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isupper.c.o
+.PHONY : srcs1/libft/char/ft_isupper.c.o
+
+srcs1/libft/char/ft_isupper.i: srcs1/libft/char/ft_isupper.c.i
+
+.PHONY : srcs1/libft/char/ft_isupper.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_isupper.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isupper.c.i
+.PHONY : srcs1/libft/char/ft_isupper.c.i
+
+srcs1/libft/char/ft_isupper.s: srcs1/libft/char/ft_isupper.c.s
+
+.PHONY : srcs1/libft/char/ft_isupper.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_isupper.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_isupper.c.s
+.PHONY : srcs1/libft/char/ft_isupper.c.s
+
+srcs1/libft/char/ft_tolower.o: srcs1/libft/char/ft_tolower.c.o
+
+.PHONY : srcs1/libft/char/ft_tolower.o
+
+# target to build an object file
+srcs1/libft/char/ft_tolower.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_tolower.c.o
+.PHONY : srcs1/libft/char/ft_tolower.c.o
+
+srcs1/libft/char/ft_tolower.i: srcs1/libft/char/ft_tolower.c.i
+
+.PHONY : srcs1/libft/char/ft_tolower.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_tolower.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_tolower.c.i
+.PHONY : srcs1/libft/char/ft_tolower.c.i
+
+srcs1/libft/char/ft_tolower.s: srcs1/libft/char/ft_tolower.c.s
+
+.PHONY : srcs1/libft/char/ft_tolower.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_tolower.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_tolower.c.s
+.PHONY : srcs1/libft/char/ft_tolower.c.s
+
+srcs1/libft/char/ft_toupper.o: srcs1/libft/char/ft_toupper.c.o
+
+.PHONY : srcs1/libft/char/ft_toupper.o
+
+# target to build an object file
+srcs1/libft/char/ft_toupper.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_toupper.c.o
+.PHONY : srcs1/libft/char/ft_toupper.c.o
+
+srcs1/libft/char/ft_toupper.i: srcs1/libft/char/ft_toupper.c.i
+
+.PHONY : srcs1/libft/char/ft_toupper.i
+
+# target to preprocess a source file
+srcs1/libft/char/ft_toupper.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_toupper.c.i
+.PHONY : srcs1/libft/char/ft_toupper.c.i
+
+srcs1/libft/char/ft_toupper.s: srcs1/libft/char/ft_toupper.c.s
+
+.PHONY : srcs1/libft/char/ft_toupper.s
+
+# target to generate assembly for a file
+srcs1/libft/char/ft_toupper.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/char/ft_toupper.c.s
+.PHONY : srcs1/libft/char/ft_toupper.c.s
+
+srcs1/libft/convert/ft_atoi.o: srcs1/libft/convert/ft_atoi.c.o
+
+.PHONY : srcs1/libft/convert/ft_atoi.o
+
+# target to build an object file
+srcs1/libft/convert/ft_atoi.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_atoi.c.o
+.PHONY : srcs1/libft/convert/ft_atoi.c.o
+
+srcs1/libft/convert/ft_atoi.i: srcs1/libft/convert/ft_atoi.c.i
+
+.PHONY : srcs1/libft/convert/ft_atoi.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_atoi.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_atoi.c.i
+.PHONY : srcs1/libft/convert/ft_atoi.c.i
+
+srcs1/libft/convert/ft_atoi.s: srcs1/libft/convert/ft_atoi.c.s
+
+.PHONY : srcs1/libft/convert/ft_atoi.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_atoi.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_atoi.c.s
+.PHONY : srcs1/libft/convert/ft_atoi.c.s
+
+srcs1/libft/convert/ft_digits_base.o: srcs1/libft/convert/ft_digits_base.c.o
+
+.PHONY : srcs1/libft/convert/ft_digits_base.o
+
+# target to build an object file
+srcs1/libft/convert/ft_digits_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_digits_base.c.o
+.PHONY : srcs1/libft/convert/ft_digits_base.c.o
+
+srcs1/libft/convert/ft_digits_base.i: srcs1/libft/convert/ft_digits_base.c.i
+
+.PHONY : srcs1/libft/convert/ft_digits_base.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_digits_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_digits_base.c.i
+.PHONY : srcs1/libft/convert/ft_digits_base.c.i
+
+srcs1/libft/convert/ft_digits_base.s: srcs1/libft/convert/ft_digits_base.c.s
+
+.PHONY : srcs1/libft/convert/ft_digits_base.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_digits_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_digits_base.c.s
+.PHONY : srcs1/libft/convert/ft_digits_base.c.s
+
+srcs1/libft/convert/ft_imaxtoa_base.o: srcs1/libft/convert/ft_imaxtoa_base.c.o
+
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.o
+
+# target to build an object file
+srcs1/libft/convert/ft_imaxtoa_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_imaxtoa_base.c.o
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.c.o
+
+srcs1/libft/convert/ft_imaxtoa_base.i: srcs1/libft/convert/ft_imaxtoa_base.c.i
+
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_imaxtoa_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_imaxtoa_base.c.i
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.c.i
+
+srcs1/libft/convert/ft_imaxtoa_base.s: srcs1/libft/convert/ft_imaxtoa_base.c.s
+
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_imaxtoa_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_imaxtoa_base.c.s
+.PHONY : srcs1/libft/convert/ft_imaxtoa_base.c.s
+
+srcs1/libft/convert/ft_is_valid_base.o: srcs1/libft/convert/ft_is_valid_base.c.o
+
+.PHONY : srcs1/libft/convert/ft_is_valid_base.o
+
+# target to build an object file
+srcs1/libft/convert/ft_is_valid_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_is_valid_base.c.o
+.PHONY : srcs1/libft/convert/ft_is_valid_base.c.o
+
+srcs1/libft/convert/ft_is_valid_base.i: srcs1/libft/convert/ft_is_valid_base.c.i
+
+.PHONY : srcs1/libft/convert/ft_is_valid_base.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_is_valid_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_is_valid_base.c.i
+.PHONY : srcs1/libft/convert/ft_is_valid_base.c.i
+
+srcs1/libft/convert/ft_is_valid_base.s: srcs1/libft/convert/ft_is_valid_base.c.s
+
+.PHONY : srcs1/libft/convert/ft_is_valid_base.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_is_valid_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_is_valid_base.c.s
+.PHONY : srcs1/libft/convert/ft_is_valid_base.c.s
+
+srcs1/libft/convert/ft_udigits_base.o: srcs1/libft/convert/ft_udigits_base.c.o
+
+.PHONY : srcs1/libft/convert/ft_udigits_base.o
+
+# target to build an object file
+srcs1/libft/convert/ft_udigits_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_udigits_base.c.o
+.PHONY : srcs1/libft/convert/ft_udigits_base.c.o
+
+srcs1/libft/convert/ft_udigits_base.i: srcs1/libft/convert/ft_udigits_base.c.i
+
+.PHONY : srcs1/libft/convert/ft_udigits_base.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_udigits_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_udigits_base.c.i
+.PHONY : srcs1/libft/convert/ft_udigits_base.c.i
+
+srcs1/libft/convert/ft_udigits_base.s: srcs1/libft/convert/ft_udigits_base.c.s
+
+.PHONY : srcs1/libft/convert/ft_udigits_base.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_udigits_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_udigits_base.c.s
+.PHONY : srcs1/libft/convert/ft_udigits_base.c.s
+
+srcs1/libft/convert/ft_uimaxtoa_base.o: srcs1/libft/convert/ft_uimaxtoa_base.c.o
+
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.o
+
+# target to build an object file
+srcs1/libft/convert/ft_uimaxtoa_base.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_uimaxtoa_base.c.o
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.c.o
+
+srcs1/libft/convert/ft_uimaxtoa_base.i: srcs1/libft/convert/ft_uimaxtoa_base.c.i
+
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.i
+
+# target to preprocess a source file
+srcs1/libft/convert/ft_uimaxtoa_base.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_uimaxtoa_base.c.i
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.c.i
+
+srcs1/libft/convert/ft_uimaxtoa_base.s: srcs1/libft/convert/ft_uimaxtoa_base.c.s
+
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.s
+
+# target to generate assembly for a file
+srcs1/libft/convert/ft_uimaxtoa_base.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/convert/ft_uimaxtoa_base.c.s
+.PHONY : srcs1/libft/convert/ft_uimaxtoa_base.c.s
+
+srcs1/libft/math/ft_abs.o: srcs1/libft/math/ft_abs.c.o
+
+.PHONY : srcs1/libft/math/ft_abs.o
+
+# target to build an object file
+srcs1/libft/math/ft_abs.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_abs.c.o
+.PHONY : srcs1/libft/math/ft_abs.c.o
+
+srcs1/libft/math/ft_abs.i: srcs1/libft/math/ft_abs.c.i
+
+.PHONY : srcs1/libft/math/ft_abs.i
+
+# target to preprocess a source file
+srcs1/libft/math/ft_abs.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_abs.c.i
+.PHONY : srcs1/libft/math/ft_abs.c.i
+
+srcs1/libft/math/ft_abs.s: srcs1/libft/math/ft_abs.c.s
+
+.PHONY : srcs1/libft/math/ft_abs.s
+
+# target to generate assembly for a file
+srcs1/libft/math/ft_abs.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_abs.c.s
+.PHONY : srcs1/libft/math/ft_abs.c.s
+
+srcs1/libft/math/ft_exponent.o: srcs1/libft/math/ft_exponent.c.o
+
+.PHONY : srcs1/libft/math/ft_exponent.o
+
+# target to build an object file
+srcs1/libft/math/ft_exponent.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_exponent.c.o
+.PHONY : srcs1/libft/math/ft_exponent.c.o
+
+srcs1/libft/math/ft_exponent.i: srcs1/libft/math/ft_exponent.c.i
+
+.PHONY : srcs1/libft/math/ft_exponent.i
+
+# target to preprocess a source file
+srcs1/libft/math/ft_exponent.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_exponent.c.i
+.PHONY : srcs1/libft/math/ft_exponent.c.i
+
+srcs1/libft/math/ft_exponent.s: srcs1/libft/math/ft_exponent.c.s
+
+.PHONY : srcs1/libft/math/ft_exponent.s
+
+# target to generate assembly for a file
+srcs1/libft/math/ft_exponent.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_exponent.c.s
+.PHONY : srcs1/libft/math/ft_exponent.c.s
+
+srcs1/libft/math/ft_max.o: srcs1/libft/math/ft_max.c.o
+
+.PHONY : srcs1/libft/math/ft_max.o
+
+# target to build an object file
+srcs1/libft/math/ft_max.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_max.c.o
+.PHONY : srcs1/libft/math/ft_max.c.o
+
+srcs1/libft/math/ft_max.i: srcs1/libft/math/ft_max.c.i
+
+.PHONY : srcs1/libft/math/ft_max.i
+
+# target to preprocess a source file
+srcs1/libft/math/ft_max.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_max.c.i
+.PHONY : srcs1/libft/math/ft_max.c.i
+
+srcs1/libft/math/ft_max.s: srcs1/libft/math/ft_max.c.s
+
+.PHONY : srcs1/libft/math/ft_max.s
+
+# target to generate assembly for a file
+srcs1/libft/math/ft_max.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/math/ft_max.c.s
+.PHONY : srcs1/libft/math/ft_max.c.s
+
+srcs1/libft/mem/ft_bzero.o: srcs1/libft/mem/ft_bzero.c.o
+
+.PHONY : srcs1/libft/mem/ft_bzero.o
+
+# target to build an object file
+srcs1/libft/mem/ft_bzero.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_bzero.c.o
+.PHONY : srcs1/libft/mem/ft_bzero.c.o
+
+srcs1/libft/mem/ft_bzero.i: srcs1/libft/mem/ft_bzero.c.i
+
+.PHONY : srcs1/libft/mem/ft_bzero.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_bzero.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_bzero.c.i
+.PHONY : srcs1/libft/mem/ft_bzero.c.i
+
+srcs1/libft/mem/ft_bzero.s: srcs1/libft/mem/ft_bzero.c.s
+
+.PHONY : srcs1/libft/mem/ft_bzero.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_bzero.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_bzero.c.s
+.PHONY : srcs1/libft/mem/ft_bzero.c.s
+
+srcs1/libft/mem/ft_memalloc.o: srcs1/libft/mem/ft_memalloc.c.o
+
+.PHONY : srcs1/libft/mem/ft_memalloc.o
+
+# target to build an object file
+srcs1/libft/mem/ft_memalloc.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memalloc.c.o
+.PHONY : srcs1/libft/mem/ft_memalloc.c.o
+
+srcs1/libft/mem/ft_memalloc.i: srcs1/libft/mem/ft_memalloc.c.i
+
+.PHONY : srcs1/libft/mem/ft_memalloc.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_memalloc.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memalloc.c.i
+.PHONY : srcs1/libft/mem/ft_memalloc.c.i
+
+srcs1/libft/mem/ft_memalloc.s: srcs1/libft/mem/ft_memalloc.c.s
+
+.PHONY : srcs1/libft/mem/ft_memalloc.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_memalloc.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memalloc.c.s
+.PHONY : srcs1/libft/mem/ft_memalloc.c.s
+
+srcs1/libft/mem/ft_memcat.o: srcs1/libft/mem/ft_memcat.c.o
+
+.PHONY : srcs1/libft/mem/ft_memcat.o
+
+# target to build an object file
+srcs1/libft/mem/ft_memcat.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcat.c.o
+.PHONY : srcs1/libft/mem/ft_memcat.c.o
+
+srcs1/libft/mem/ft_memcat.i: srcs1/libft/mem/ft_memcat.c.i
+
+.PHONY : srcs1/libft/mem/ft_memcat.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_memcat.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcat.c.i
+.PHONY : srcs1/libft/mem/ft_memcat.c.i
+
+srcs1/libft/mem/ft_memcat.s: srcs1/libft/mem/ft_memcat.c.s
+
+.PHONY : srcs1/libft/mem/ft_memcat.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_memcat.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcat.c.s
+.PHONY : srcs1/libft/mem/ft_memcat.c.s
+
+srcs1/libft/mem/ft_memcpy.o: srcs1/libft/mem/ft_memcpy.c.o
+
+.PHONY : srcs1/libft/mem/ft_memcpy.o
+
+# target to build an object file
+srcs1/libft/mem/ft_memcpy.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcpy.c.o
+.PHONY : srcs1/libft/mem/ft_memcpy.c.o
+
+srcs1/libft/mem/ft_memcpy.i: srcs1/libft/mem/ft_memcpy.c.i
+
+.PHONY : srcs1/libft/mem/ft_memcpy.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_memcpy.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcpy.c.i
+.PHONY : srcs1/libft/mem/ft_memcpy.c.i
+
+srcs1/libft/mem/ft_memcpy.s: srcs1/libft/mem/ft_memcpy.c.s
+
+.PHONY : srcs1/libft/mem/ft_memcpy.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_memcpy.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memcpy.c.s
+.PHONY : srcs1/libft/mem/ft_memcpy.c.s
+
+srcs1/libft/mem/ft_memjoin.o: srcs1/libft/mem/ft_memjoin.c.o
+
+.PHONY : srcs1/libft/mem/ft_memjoin.o
+
+# target to build an object file
+srcs1/libft/mem/ft_memjoin.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memjoin.c.o
+.PHONY : srcs1/libft/mem/ft_memjoin.c.o
+
+srcs1/libft/mem/ft_memjoin.i: srcs1/libft/mem/ft_memjoin.c.i
+
+.PHONY : srcs1/libft/mem/ft_memjoin.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_memjoin.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memjoin.c.i
+.PHONY : srcs1/libft/mem/ft_memjoin.c.i
+
+srcs1/libft/mem/ft_memjoin.s: srcs1/libft/mem/ft_memjoin.c.s
+
+.PHONY : srcs1/libft/mem/ft_memjoin.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_memjoin.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memjoin.c.s
+.PHONY : srcs1/libft/mem/ft_memjoin.c.s
+
+srcs1/libft/mem/ft_memset.o: srcs1/libft/mem/ft_memset.c.o
+
+.PHONY : srcs1/libft/mem/ft_memset.o
+
+# target to build an object file
+srcs1/libft/mem/ft_memset.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memset.c.o
+.PHONY : srcs1/libft/mem/ft_memset.c.o
+
+srcs1/libft/mem/ft_memset.i: srcs1/libft/mem/ft_memset.c.i
+
+.PHONY : srcs1/libft/mem/ft_memset.i
+
+# target to preprocess a source file
+srcs1/libft/mem/ft_memset.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memset.c.i
+.PHONY : srcs1/libft/mem/ft_memset.c.i
+
+srcs1/libft/mem/ft_memset.s: srcs1/libft/mem/ft_memset.c.s
+
+.PHONY : srcs1/libft/mem/ft_memset.s
+
+# target to generate assembly for a file
+srcs1/libft/mem/ft_memset.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/mem/ft_memset.c.s
+.PHONY : srcs1/libft/mem/ft_memset.c.s
+
+srcs1/libft/str/ft_instr.o: srcs1/libft/str/ft_instr.c.o
+
+.PHONY : srcs1/libft/str/ft_instr.o
+
+# target to build an object file
+srcs1/libft/str/ft_instr.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_instr.c.o
+.PHONY : srcs1/libft/str/ft_instr.c.o
+
+srcs1/libft/str/ft_instr.i: srcs1/libft/str/ft_instr.c.i
+
+.PHONY : srcs1/libft/str/ft_instr.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_instr.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_instr.c.i
+.PHONY : srcs1/libft/str/ft_instr.c.i
+
+srcs1/libft/str/ft_instr.s: srcs1/libft/str/ft_instr.c.s
+
+.PHONY : srcs1/libft/str/ft_instr.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_instr.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_instr.c.s
+.PHONY : srcs1/libft/str/ft_instr.c.s
+
+srcs1/libft/str/ft_strappend.o: srcs1/libft/str/ft_strappend.c.o
+
+.PHONY : srcs1/libft/str/ft_strappend.o
+
+# target to build an object file
+srcs1/libft/str/ft_strappend.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strappend.c.o
+.PHONY : srcs1/libft/str/ft_strappend.c.o
+
+srcs1/libft/str/ft_strappend.i: srcs1/libft/str/ft_strappend.c.i
+
+.PHONY : srcs1/libft/str/ft_strappend.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strappend.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strappend.c.i
+.PHONY : srcs1/libft/str/ft_strappend.c.i
+
+srcs1/libft/str/ft_strappend.s: srcs1/libft/str/ft_strappend.c.s
+
+.PHONY : srcs1/libft/str/ft_strappend.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strappend.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strappend.c.s
+.PHONY : srcs1/libft/str/ft_strappend.c.s
+
+srcs1/libft/str/ft_strcat.o: srcs1/libft/str/ft_strcat.c.o
+
+.PHONY : srcs1/libft/str/ft_strcat.o
+
+# target to build an object file
+srcs1/libft/str/ft_strcat.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcat.c.o
+.PHONY : srcs1/libft/str/ft_strcat.c.o
+
+srcs1/libft/str/ft_strcat.i: srcs1/libft/str/ft_strcat.c.i
+
+.PHONY : srcs1/libft/str/ft_strcat.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strcat.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcat.c.i
+.PHONY : srcs1/libft/str/ft_strcat.c.i
+
+srcs1/libft/str/ft_strcat.s: srcs1/libft/str/ft_strcat.c.s
+
+.PHONY : srcs1/libft/str/ft_strcat.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strcat.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcat.c.s
+.PHONY : srcs1/libft/str/ft_strcat.c.s
+
+srcs1/libft/str/ft_strchr.o: srcs1/libft/str/ft_strchr.c.o
+
+.PHONY : srcs1/libft/str/ft_strchr.o
+
+# target to build an object file
+srcs1/libft/str/ft_strchr.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strchr.c.o
+.PHONY : srcs1/libft/str/ft_strchr.c.o
+
+srcs1/libft/str/ft_strchr.i: srcs1/libft/str/ft_strchr.c.i
+
+.PHONY : srcs1/libft/str/ft_strchr.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strchr.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strchr.c.i
+.PHONY : srcs1/libft/str/ft_strchr.c.i
+
+srcs1/libft/str/ft_strchr.s: srcs1/libft/str/ft_strchr.c.s
+
+.PHONY : srcs1/libft/str/ft_strchr.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strchr.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strchr.c.s
+.PHONY : srcs1/libft/str/ft_strchr.c.s
+
+srcs1/libft/str/ft_strclcat.o: srcs1/libft/str/ft_strclcat.c.o
+
+.PHONY : srcs1/libft/str/ft_strclcat.o
+
+# target to build an object file
+srcs1/libft/str/ft_strclcat.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strclcat.c.o
+.PHONY : srcs1/libft/str/ft_strclcat.c.o
+
+srcs1/libft/str/ft_strclcat.i: srcs1/libft/str/ft_strclcat.c.i
+
+.PHONY : srcs1/libft/str/ft_strclcat.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strclcat.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strclcat.c.i
+.PHONY : srcs1/libft/str/ft_strclcat.c.i
+
+srcs1/libft/str/ft_strclcat.s: srcs1/libft/str/ft_strclcat.c.s
+
+.PHONY : srcs1/libft/str/ft_strclcat.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strclcat.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strclcat.c.s
+.PHONY : srcs1/libft/str/ft_strclcat.c.s
+
+srcs1/libft/str/ft_strcmp.o: srcs1/libft/str/ft_strcmp.c.o
+
+.PHONY : srcs1/libft/str/ft_strcmp.o
+
+# target to build an object file
+srcs1/libft/str/ft_strcmp.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcmp.c.o
+.PHONY : srcs1/libft/str/ft_strcmp.c.o
+
+srcs1/libft/str/ft_strcmp.i: srcs1/libft/str/ft_strcmp.c.i
+
+.PHONY : srcs1/libft/str/ft_strcmp.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strcmp.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcmp.c.i
+.PHONY : srcs1/libft/str/ft_strcmp.c.i
+
+srcs1/libft/str/ft_strcmp.s: srcs1/libft/str/ft_strcmp.c.s
+
+.PHONY : srcs1/libft/str/ft_strcmp.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strcmp.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcmp.c.s
+.PHONY : srcs1/libft/str/ft_strcmp.c.s
+
+srcs1/libft/str/ft_strcnew.o: srcs1/libft/str/ft_strcnew.c.o
+
+.PHONY : srcs1/libft/str/ft_strcnew.o
+
+# target to build an object file
+srcs1/libft/str/ft_strcnew.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcnew.c.o
+.PHONY : srcs1/libft/str/ft_strcnew.c.o
+
+srcs1/libft/str/ft_strcnew.i: srcs1/libft/str/ft_strcnew.c.i
+
+.PHONY : srcs1/libft/str/ft_strcnew.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strcnew.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcnew.c.i
+.PHONY : srcs1/libft/str/ft_strcnew.c.i
+
+srcs1/libft/str/ft_strcnew.s: srcs1/libft/str/ft_strcnew.c.s
+
+.PHONY : srcs1/libft/str/ft_strcnew.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strcnew.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcnew.c.s
+.PHONY : srcs1/libft/str/ft_strcnew.c.s
+
+srcs1/libft/str/ft_strcpy.o: srcs1/libft/str/ft_strcpy.c.o
+
+.PHONY : srcs1/libft/str/ft_strcpy.o
+
+# target to build an object file
+srcs1/libft/str/ft_strcpy.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcpy.c.o
+.PHONY : srcs1/libft/str/ft_strcpy.c.o
+
+srcs1/libft/str/ft_strcpy.i: srcs1/libft/str/ft_strcpy.c.i
+
+.PHONY : srcs1/libft/str/ft_strcpy.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strcpy.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcpy.c.i
+.PHONY : srcs1/libft/str/ft_strcpy.c.i
+
+srcs1/libft/str/ft_strcpy.s: srcs1/libft/str/ft_strcpy.c.s
+
+.PHONY : srcs1/libft/str/ft_strcpy.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strcpy.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcpy.c.s
+.PHONY : srcs1/libft/str/ft_strcpy.c.s
+
+srcs1/libft/str/ft_strcut.o: srcs1/libft/str/ft_strcut.c.o
+
+.PHONY : srcs1/libft/str/ft_strcut.o
+
+# target to build an object file
+srcs1/libft/str/ft_strcut.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcut.c.o
+.PHONY : srcs1/libft/str/ft_strcut.c.o
+
+srcs1/libft/str/ft_strcut.i: srcs1/libft/str/ft_strcut.c.i
+
+.PHONY : srcs1/libft/str/ft_strcut.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strcut.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcut.c.i
+.PHONY : srcs1/libft/str/ft_strcut.c.i
+
+srcs1/libft/str/ft_strcut.s: srcs1/libft/str/ft_strcut.c.s
+
+.PHONY : srcs1/libft/str/ft_strcut.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strcut.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strcut.c.s
+.PHONY : srcs1/libft/str/ft_strcut.c.s
+
+srcs1/libft/str/ft_strdel.o: srcs1/libft/str/ft_strdel.c.o
+
+.PHONY : srcs1/libft/str/ft_strdel.o
+
+# target to build an object file
+srcs1/libft/str/ft_strdel.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel.c.o
+.PHONY : srcs1/libft/str/ft_strdel.c.o
+
+srcs1/libft/str/ft_strdel.i: srcs1/libft/str/ft_strdel.c.i
+
+.PHONY : srcs1/libft/str/ft_strdel.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strdel.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel.c.i
+.PHONY : srcs1/libft/str/ft_strdel.c.i
+
+srcs1/libft/str/ft_strdel.s: srcs1/libft/str/ft_strdel.c.s
+
+.PHONY : srcs1/libft/str/ft_strdel.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strdel.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel.c.s
+.PHONY : srcs1/libft/str/ft_strdel.c.s
+
+srcs1/libft/str/ft_strdel_ret.o: srcs1/libft/str/ft_strdel_ret.c.o
+
+.PHONY : srcs1/libft/str/ft_strdel_ret.o
+
+# target to build an object file
+srcs1/libft/str/ft_strdel_ret.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret.c.o
+.PHONY : srcs1/libft/str/ft_strdel_ret.c.o
+
+srcs1/libft/str/ft_strdel_ret.i: srcs1/libft/str/ft_strdel_ret.c.i
+
+.PHONY : srcs1/libft/str/ft_strdel_ret.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strdel_ret.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret.c.i
+.PHONY : srcs1/libft/str/ft_strdel_ret.c.i
+
+srcs1/libft/str/ft_strdel_ret.s: srcs1/libft/str/ft_strdel_ret.c.s
+
+.PHONY : srcs1/libft/str/ft_strdel_ret.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strdel_ret.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret.c.s
+.PHONY : srcs1/libft/str/ft_strdel_ret.c.s
+
+srcs1/libft/str/ft_strdel_ret_null.o: srcs1/libft/str/ft_strdel_ret_null.c.o
+
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.o
+
+# target to build an object file
+srcs1/libft/str/ft_strdel_ret_null.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret_null.c.o
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.c.o
+
+srcs1/libft/str/ft_strdel_ret_null.i: srcs1/libft/str/ft_strdel_ret_null.c.i
+
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strdel_ret_null.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret_null.c.i
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.c.i
+
+srcs1/libft/str/ft_strdel_ret_null.s: srcs1/libft/str/ft_strdel_ret_null.c.s
+
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strdel_ret_null.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdel_ret_null.c.s
+.PHONY : srcs1/libft/str/ft_strdel_ret_null.c.s
+
+srcs1/libft/str/ft_strdup.o: srcs1/libft/str/ft_strdup.c.o
+
+.PHONY : srcs1/libft/str/ft_strdup.o
+
+# target to build an object file
+srcs1/libft/str/ft_strdup.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdup.c.o
+.PHONY : srcs1/libft/str/ft_strdup.c.o
+
+srcs1/libft/str/ft_strdup.i: srcs1/libft/str/ft_strdup.c.i
+
+.PHONY : srcs1/libft/str/ft_strdup.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strdup.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdup.c.i
+.PHONY : srcs1/libft/str/ft_strdup.c.i
+
+srcs1/libft/str/ft_strdup.s: srcs1/libft/str/ft_strdup.c.s
+
+.PHONY : srcs1/libft/str/ft_strdup.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strdup.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strdup.c.s
+.PHONY : srcs1/libft/str/ft_strdup.c.s
+
+srcs1/libft/str/ft_strjoin.o: srcs1/libft/str/ft_strjoin.c.o
+
+.PHONY : srcs1/libft/str/ft_strjoin.o
+
+# target to build an object file
+srcs1/libft/str/ft_strjoin.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strjoin.c.o
+.PHONY : srcs1/libft/str/ft_strjoin.c.o
+
+srcs1/libft/str/ft_strjoin.i: srcs1/libft/str/ft_strjoin.c.i
+
+.PHONY : srcs1/libft/str/ft_strjoin.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strjoin.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strjoin.c.i
+.PHONY : srcs1/libft/str/ft_strjoin.c.i
+
+srcs1/libft/str/ft_strjoin.s: srcs1/libft/str/ft_strjoin.c.s
+
+.PHONY : srcs1/libft/str/ft_strjoin.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strjoin.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strjoin.c.s
+.PHONY : srcs1/libft/str/ft_strjoin.c.s
+
+srcs1/libft/str/ft_strlcat.o: srcs1/libft/str/ft_strlcat.c.o
+
+.PHONY : srcs1/libft/str/ft_strlcat.o
+
+# target to build an object file
+srcs1/libft/str/ft_strlcat.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlcat.c.o
+.PHONY : srcs1/libft/str/ft_strlcat.c.o
+
+srcs1/libft/str/ft_strlcat.i: srcs1/libft/str/ft_strlcat.c.i
+
+.PHONY : srcs1/libft/str/ft_strlcat.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strlcat.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlcat.c.i
+.PHONY : srcs1/libft/str/ft_strlcat.c.i
+
+srcs1/libft/str/ft_strlcat.s: srcs1/libft/str/ft_strlcat.c.s
+
+.PHONY : srcs1/libft/str/ft_strlcat.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strlcat.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlcat.c.s
+.PHONY : srcs1/libft/str/ft_strlcat.c.s
+
+srcs1/libft/str/ft_strlen.o: srcs1/libft/str/ft_strlen.c.o
+
+.PHONY : srcs1/libft/str/ft_strlen.o
+
+# target to build an object file
+srcs1/libft/str/ft_strlen.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlen.c.o
+.PHONY : srcs1/libft/str/ft_strlen.c.o
+
+srcs1/libft/str/ft_strlen.i: srcs1/libft/str/ft_strlen.c.i
+
+.PHONY : srcs1/libft/str/ft_strlen.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strlen.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlen.c.i
+.PHONY : srcs1/libft/str/ft_strlen.c.i
+
+srcs1/libft/str/ft_strlen.s: srcs1/libft/str/ft_strlen.c.s
+
+.PHONY : srcs1/libft/str/ft_strlen.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strlen.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strlen.c.s
+.PHONY : srcs1/libft/str/ft_strlen.c.s
+
+srcs1/libft/str/ft_strncpy.o: srcs1/libft/str/ft_strncpy.c.o
+
+.PHONY : srcs1/libft/str/ft_strncpy.o
+
+# target to build an object file
+srcs1/libft/str/ft_strncpy.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strncpy.c.o
+.PHONY : srcs1/libft/str/ft_strncpy.c.o
+
+srcs1/libft/str/ft_strncpy.i: srcs1/libft/str/ft_strncpy.c.i
+
+.PHONY : srcs1/libft/str/ft_strncpy.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strncpy.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strncpy.c.i
+.PHONY : srcs1/libft/str/ft_strncpy.c.i
+
+srcs1/libft/str/ft_strncpy.s: srcs1/libft/str/ft_strncpy.c.s
+
+.PHONY : srcs1/libft/str/ft_strncpy.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strncpy.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strncpy.c.s
+.PHONY : srcs1/libft/str/ft_strncpy.c.s
+
+srcs1/libft/str/ft_strndup.o: srcs1/libft/str/ft_strndup.c.o
+
+.PHONY : srcs1/libft/str/ft_strndup.o
+
+# target to build an object file
+srcs1/libft/str/ft_strndup.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strndup.c.o
+.PHONY : srcs1/libft/str/ft_strndup.c.o
+
+srcs1/libft/str/ft_strndup.i: srcs1/libft/str/ft_strndup.c.i
+
+.PHONY : srcs1/libft/str/ft_strndup.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strndup.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strndup.c.i
+.PHONY : srcs1/libft/str/ft_strndup.c.i
+
+srcs1/libft/str/ft_strndup.s: srcs1/libft/str/ft_strndup.c.s
+
+.PHONY : srcs1/libft/str/ft_strndup.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strndup.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strndup.c.s
+.PHONY : srcs1/libft/str/ft_strndup.c.s
+
+srcs1/libft/str/ft_strnew.o: srcs1/libft/str/ft_strnew.c.o
+
+.PHONY : srcs1/libft/str/ft_strnew.o
+
+# target to build an object file
+srcs1/libft/str/ft_strnew.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strnew.c.o
+.PHONY : srcs1/libft/str/ft_strnew.c.o
+
+srcs1/libft/str/ft_strnew.i: srcs1/libft/str/ft_strnew.c.i
+
+.PHONY : srcs1/libft/str/ft_strnew.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strnew.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strnew.c.i
+.PHONY : srcs1/libft/str/ft_strnew.c.i
+
+srcs1/libft/str/ft_strnew.s: srcs1/libft/str/ft_strnew.c.s
+
+.PHONY : srcs1/libft/str/ft_strnew.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strnew.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strnew.c.s
+.PHONY : srcs1/libft/str/ft_strnew.c.s
+
+srcs1/libft/str/ft_strpad_left.o: srcs1/libft/str/ft_strpad_left.c.o
+
+.PHONY : srcs1/libft/str/ft_strpad_left.o
+
+# target to build an object file
+srcs1/libft/str/ft_strpad_left.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_left.c.o
+.PHONY : srcs1/libft/str/ft_strpad_left.c.o
+
+srcs1/libft/str/ft_strpad_left.i: srcs1/libft/str/ft_strpad_left.c.i
+
+.PHONY : srcs1/libft/str/ft_strpad_left.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strpad_left.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_left.c.i
+.PHONY : srcs1/libft/str/ft_strpad_left.c.i
+
+srcs1/libft/str/ft_strpad_left.s: srcs1/libft/str/ft_strpad_left.c.s
+
+.PHONY : srcs1/libft/str/ft_strpad_left.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strpad_left.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_left.c.s
+.PHONY : srcs1/libft/str/ft_strpad_left.c.s
+
+srcs1/libft/str/ft_strpad_right.o: srcs1/libft/str/ft_strpad_right.c.o
+
+.PHONY : srcs1/libft/str/ft_strpad_right.o
+
+# target to build an object file
+srcs1/libft/str/ft_strpad_right.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_right.c.o
+.PHONY : srcs1/libft/str/ft_strpad_right.c.o
+
+srcs1/libft/str/ft_strpad_right.i: srcs1/libft/str/ft_strpad_right.c.i
+
+.PHONY : srcs1/libft/str/ft_strpad_right.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strpad_right.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_right.c.i
+.PHONY : srcs1/libft/str/ft_strpad_right.c.i
+
+srcs1/libft/str/ft_strpad_right.s: srcs1/libft/str/ft_strpad_right.c.s
+
+.PHONY : srcs1/libft/str/ft_strpad_right.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strpad_right.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strpad_right.c.s
+.PHONY : srcs1/libft/str/ft_strpad_right.c.s
+
+srcs1/libft/str/ft_strprepend.o: srcs1/libft/str/ft_strprepend.c.o
+
+.PHONY : srcs1/libft/str/ft_strprepend.o
+
+# target to build an object file
+srcs1/libft/str/ft_strprepend.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strprepend.c.o
+.PHONY : srcs1/libft/str/ft_strprepend.c.o
+
+srcs1/libft/str/ft_strprepend.i: srcs1/libft/str/ft_strprepend.c.i
+
+.PHONY : srcs1/libft/str/ft_strprepend.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strprepend.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strprepend.c.i
+.PHONY : srcs1/libft/str/ft_strprepend.c.i
+
+srcs1/libft/str/ft_strprepend.s: srcs1/libft/str/ft_strprepend.c.s
+
+.PHONY : srcs1/libft/str/ft_strprepend.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strprepend.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strprepend.c.s
+.PHONY : srcs1/libft/str/ft_strprepend.c.s
+
+srcs1/libft/str/ft_strskip.o: srcs1/libft/str/ft_strskip.c.o
+
+.PHONY : srcs1/libft/str/ft_strskip.o
+
+# target to build an object file
+srcs1/libft/str/ft_strskip.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strskip.c.o
+.PHONY : srcs1/libft/str/ft_strskip.c.o
+
+srcs1/libft/str/ft_strskip.i: srcs1/libft/str/ft_strskip.c.i
+
+.PHONY : srcs1/libft/str/ft_strskip.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strskip.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strskip.c.i
+.PHONY : srcs1/libft/str/ft_strskip.c.i
+
+srcs1/libft/str/ft_strskip.s: srcs1/libft/str/ft_strskip.c.s
+
+.PHONY : srcs1/libft/str/ft_strskip.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strskip.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strskip.c.s
+.PHONY : srcs1/libft/str/ft_strskip.c.s
+
+srcs1/libft/str/ft_strupper.o: srcs1/libft/str/ft_strupper.c.o
+
+.PHONY : srcs1/libft/str/ft_strupper.o
+
+# target to build an object file
+srcs1/libft/str/ft_strupper.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strupper.c.o
+.PHONY : srcs1/libft/str/ft_strupper.c.o
+
+srcs1/libft/str/ft_strupper.i: srcs1/libft/str/ft_strupper.c.i
+
+.PHONY : srcs1/libft/str/ft_strupper.i
+
+# target to preprocess a source file
+srcs1/libft/str/ft_strupper.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strupper.c.i
+.PHONY : srcs1/libft/str/ft_strupper.c.i
+
+srcs1/libft/str/ft_strupper.s: srcs1/libft/str/ft_strupper.c.s
+
+.PHONY : srcs1/libft/str/ft_strupper.s
+
+# target to generate assembly for a file
+srcs1/libft/str/ft_strupper.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/libft/str/ft_strupper.c.s
+.PHONY : srcs1/libft/str/ft_strupper.c.s
+
+srcs1/main.o: srcs1/main.c.o
+
+.PHONY : srcs1/main.o
+
+# target to build an object file
+srcs1/main.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/main.c.o
+.PHONY : srcs1/main.c.o
+
+srcs1/main.i: srcs1/main.c.i
+
+.PHONY : srcs1/main.i
+
+# target to preprocess a source file
+srcs1/main.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/main.c.i
+.PHONY : srcs1/main.c.i
+
+srcs1/main.s: srcs1/main.c.s
+
+.PHONY : srcs1/main.s
+
+# target to generate assembly for a file
+srcs1/main.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/main.c.s
+.PHONY : srcs1/main.c.s
+
+srcs1/options_handler.o: srcs1/options_handler.c.o
+
+.PHONY : srcs1/options_handler.o
+
+# target to build an object file
+srcs1/options_handler.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/options_handler.c.o
+.PHONY : srcs1/options_handler.c.o
+
+srcs1/options_handler.i: srcs1/options_handler.c.i
+
+.PHONY : srcs1/options_handler.i
+
+# target to preprocess a source file
+srcs1/options_handler.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/options_handler.c.i
+.PHONY : srcs1/options_handler.c.i
+
+srcs1/options_handler.s: srcs1/options_handler.c.s
+
+.PHONY : srcs1/options_handler.s
+
+# target to generate assembly for a file
+srcs1/options_handler.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/srcs1/options_handler.c.s
+.PHONY : srcs1/options_handler.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +2129,229 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... printf"
+	@echo "... srcs1/conv_spec_parser.o"
+	@echo "... srcs1/conv_spec_parser.i"
+	@echo "... srcs1/conv_spec_parser.s"
+	@echo "... srcs1/conv_spec_parser_utils.o"
+	@echo "... srcs1/conv_spec_parser_utils.i"
+	@echo "... srcs1/conv_spec_parser_utils.s"
+	@echo "... srcs1/dbl_digits_buf_rfmt.o"
+	@echo "... srcs1/dbl_digits_buf_rfmt.i"
+	@echo "... srcs1/dbl_digits_buf_rfmt.s"
+	@echo "... srcs1/dbl_prec_utils.o"
+	@echo "... srcs1/dbl_prec_utils.i"
+	@echo "... srcs1/dbl_prec_utils.s"
+	@echo "... srcs1/dbl_to_str_conv.o"
+	@echo "... srcs1/dbl_to_str_conv.i"
+	@echo "... srcs1/dbl_to_str_conv.s"
+	@echo "... srcs1/dbl_type_handler.o"
+	@echo "... srcs1/dbl_type_handler.i"
+	@echo "... srcs1/dbl_type_handler.s"
+	@echo "... srcs1/dbl_utils.o"
+	@echo "... srcs1/dbl_utils.i"
+	@echo "... srcs1/dbl_utils.s"
+	@echo "... srcs1/format_parser.o"
+	@echo "... srcs1/format_parser.i"
+	@echo "... srcs1/format_parser.s"
+	@echo "... srcs1/formatting_utils.o"
+	@echo "... srcs1/formatting_utils.i"
+	@echo "... srcs1/formatting_utils.s"
+	@echo "... srcs1/ft_printf.o"
+	@echo "... srcs1/ft_printf.i"
+	@echo "... srcs1/ft_printf.s"
+	@echo "... srcs1/get_formatted_str.o"
+	@echo "... srcs1/get_formatted_str.i"
+	@echo "... srcs1/get_formatted_str.s"
+	@echo "... srcs1/int_formatting_utils.o"
+	@echo "... srcs1/int_formatting_utils.i"
+	@echo "... srcs1/int_formatting_utils.s"
+	@echo "... srcs1/int_to_str_conv.o"
+	@echo "... srcs1/int_to_str_conv.i"
+	@echo "... srcs1/int_to_str_conv.s"
+	@echo "... srcs1/int_type_handler.o"
+	@echo "... srcs1/int_type_handler.i"
+	@echo "... srcs1/int_type_handler.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_add.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_add.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_add.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_comp.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_comp.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_comp.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_divide.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_divide.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_divide.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply_uint.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply_uint.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_multiply_uint.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_order.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_order.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_order.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_pow10.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_pow10.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_pow10.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_shiftleft.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_shiftleft.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_shiftleft.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_size.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_size.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_size.s"
+	@echo "... srcs1/libft/bigint/ft_bigint_subst.o"
+	@echo "... srcs1/libft/bigint/ft_bigint_subst.i"
+	@echo "... srcs1/libft/bigint/ft_bigint_subst.s"
+	@echo "... srcs1/libft/bigint/ft_uimax_to_bigint.o"
+	@echo "... srcs1/libft/bigint/ft_uimax_to_bigint.i"
+	@echo "... srcs1/libft/bigint/ft_uimax_to_bigint.s"
+	@echo "... srcs1/libft/char/ft_isdigit.o"
+	@echo "... srcs1/libft/char/ft_isdigit.i"
+	@echo "... srcs1/libft/char/ft_isdigit.s"
+	@echo "... srcs1/libft/char/ft_islower.o"
+	@echo "... srcs1/libft/char/ft_islower.i"
+	@echo "... srcs1/libft/char/ft_islower.s"
+	@echo "... srcs1/libft/char/ft_isprint.o"
+	@echo "... srcs1/libft/char/ft_isprint.i"
+	@echo "... srcs1/libft/char/ft_isprint.s"
+	@echo "... srcs1/libft/char/ft_issign.o"
+	@echo "... srcs1/libft/char/ft_issign.i"
+	@echo "... srcs1/libft/char/ft_issign.s"
+	@echo "... srcs1/libft/char/ft_isspace.o"
+	@echo "... srcs1/libft/char/ft_isspace.i"
+	@echo "... srcs1/libft/char/ft_isspace.s"
+	@echo "... srcs1/libft/char/ft_isupper.o"
+	@echo "... srcs1/libft/char/ft_isupper.i"
+	@echo "... srcs1/libft/char/ft_isupper.s"
+	@echo "... srcs1/libft/char/ft_tolower.o"
+	@echo "... srcs1/libft/char/ft_tolower.i"
+	@echo "... srcs1/libft/char/ft_tolower.s"
+	@echo "... srcs1/libft/char/ft_toupper.o"
+	@echo "... srcs1/libft/char/ft_toupper.i"
+	@echo "... srcs1/libft/char/ft_toupper.s"
+	@echo "... srcs1/libft/convert/ft_atoi.o"
+	@echo "... srcs1/libft/convert/ft_atoi.i"
+	@echo "... srcs1/libft/convert/ft_atoi.s"
+	@echo "... srcs1/libft/convert/ft_digits_base.o"
+	@echo "... srcs1/libft/convert/ft_digits_base.i"
+	@echo "... srcs1/libft/convert/ft_digits_base.s"
+	@echo "... srcs1/libft/convert/ft_imaxtoa_base.o"
+	@echo "... srcs1/libft/convert/ft_imaxtoa_base.i"
+	@echo "... srcs1/libft/convert/ft_imaxtoa_base.s"
+	@echo "... srcs1/libft/convert/ft_is_valid_base.o"
+	@echo "... srcs1/libft/convert/ft_is_valid_base.i"
+	@echo "... srcs1/libft/convert/ft_is_valid_base.s"
+	@echo "... srcs1/libft/convert/ft_udigits_base.o"
+	@echo "... srcs1/libft/convert/ft_udigits_base.i"
+	@echo "... srcs1/libft/convert/ft_udigits_base.s"
+	@echo "... srcs1/libft/convert/ft_uimaxtoa_base.o"
+	@echo "... srcs1/libft/convert/ft_uimaxtoa_base.i"
+	@echo "... srcs1/libft/convert/ft_uimaxtoa_base.s"
+	@echo "... srcs1/libft/math/ft_abs.o"
+	@echo "... srcs1/libft/math/ft_abs.i"
+	@echo "... srcs1/libft/math/ft_abs.s"
+	@echo "... srcs1/libft/math/ft_exponent.o"
+	@echo "... srcs1/libft/math/ft_exponent.i"
+	@echo "... srcs1/libft/math/ft_exponent.s"
+	@echo "... srcs1/libft/math/ft_max.o"
+	@echo "... srcs1/libft/math/ft_max.i"
+	@echo "... srcs1/libft/math/ft_max.s"
+	@echo "... srcs1/libft/mem/ft_bzero.o"
+	@echo "... srcs1/libft/mem/ft_bzero.i"
+	@echo "... srcs1/libft/mem/ft_bzero.s"
+	@echo "... srcs1/libft/mem/ft_memalloc.o"
+	@echo "... srcs1/libft/mem/ft_memalloc.i"
+	@echo "... srcs1/libft/mem/ft_memalloc.s"
+	@echo "... srcs1/libft/mem/ft_memcat.o"
+	@echo "... srcs1/libft/mem/ft_memcat.i"
+	@echo "... srcs1/libft/mem/ft_memcat.s"
+	@echo "... srcs1/libft/mem/ft_memcpy.o"
+	@echo "... srcs1/libft/mem/ft_memcpy.i"
+	@echo "... srcs1/libft/mem/ft_memcpy.s"
+	@echo "... srcs1/libft/mem/ft_memjoin.o"
+	@echo "... srcs1/libft/mem/ft_memjoin.i"
+	@echo "... srcs1/libft/mem/ft_memjoin.s"
+	@echo "... srcs1/libft/mem/ft_memset.o"
+	@echo "... srcs1/libft/mem/ft_memset.i"
+	@echo "... srcs1/libft/mem/ft_memset.s"
+	@echo "... srcs1/libft/str/ft_instr.o"
+	@echo "... srcs1/libft/str/ft_instr.i"
+	@echo "... srcs1/libft/str/ft_instr.s"
+	@echo "... srcs1/libft/str/ft_strappend.o"
+	@echo "... srcs1/libft/str/ft_strappend.i"
+	@echo "... srcs1/libft/str/ft_strappend.s"
+	@echo "... srcs1/libft/str/ft_strcat.o"
+	@echo "... srcs1/libft/str/ft_strcat.i"
+	@echo "... srcs1/libft/str/ft_strcat.s"
+	@echo "... srcs1/libft/str/ft_strchr.o"
+	@echo "... srcs1/libft/str/ft_strchr.i"
+	@echo "... srcs1/libft/str/ft_strchr.s"
+	@echo "... srcs1/libft/str/ft_strclcat.o"
+	@echo "... srcs1/libft/str/ft_strclcat.i"
+	@echo "... srcs1/libft/str/ft_strclcat.s"
+	@echo "... srcs1/libft/str/ft_strcmp.o"
+	@echo "... srcs1/libft/str/ft_strcmp.i"
+	@echo "... srcs1/libft/str/ft_strcmp.s"
+	@echo "... srcs1/libft/str/ft_strcnew.o"
+	@echo "... srcs1/libft/str/ft_strcnew.i"
+	@echo "... srcs1/libft/str/ft_strcnew.s"
+	@echo "... srcs1/libft/str/ft_strcpy.o"
+	@echo "... srcs1/libft/str/ft_strcpy.i"
+	@echo "... srcs1/libft/str/ft_strcpy.s"
+	@echo "... srcs1/libft/str/ft_strcut.o"
+	@echo "... srcs1/libft/str/ft_strcut.i"
+	@echo "... srcs1/libft/str/ft_strcut.s"
+	@echo "... srcs1/libft/str/ft_strdel.o"
+	@echo "... srcs1/libft/str/ft_strdel.i"
+	@echo "... srcs1/libft/str/ft_strdel.s"
+	@echo "... srcs1/libft/str/ft_strdel_ret.o"
+	@echo "... srcs1/libft/str/ft_strdel_ret.i"
+	@echo "... srcs1/libft/str/ft_strdel_ret.s"
+	@echo "... srcs1/libft/str/ft_strdel_ret_null.o"
+	@echo "... srcs1/libft/str/ft_strdel_ret_null.i"
+	@echo "... srcs1/libft/str/ft_strdel_ret_null.s"
+	@echo "... srcs1/libft/str/ft_strdup.o"
+	@echo "... srcs1/libft/str/ft_strdup.i"
+	@echo "... srcs1/libft/str/ft_strdup.s"
+	@echo "... srcs1/libft/str/ft_strjoin.o"
+	@echo "... srcs1/libft/str/ft_strjoin.i"
+	@echo "... srcs1/libft/str/ft_strjoin.s"
+	@echo "... srcs1/libft/str/ft_strlcat.o"
+	@echo "... srcs1/libft/str/ft_strlcat.i"
+	@echo "... srcs1/libft/str/ft_strlcat.s"
+	@echo "... srcs1/libft/str/ft_strlen.o"
+	@echo "... srcs1/libft/str/ft_strlen.i"
+	@echo "... srcs1/libft/str/ft_strlen.s"
+	@echo "... srcs1/libft/str/ft_strncpy.o"
+	@echo "... srcs1/libft/str/ft_strncpy.i"
+	@echo "... srcs1/libft/str/ft_strncpy.s"
+	@echo "... srcs1/libft/str/ft_strndup.o"
+	@echo "... srcs1/libft/str/ft_strndup.i"
+	@echo "... srcs1/libft/str/ft_strndup.s"
+	@echo "... srcs1/libft/str/ft_strnew.o"
+	@echo "... srcs1/libft/str/ft_strnew.i"
+	@echo "... srcs1/libft/str/ft_strnew.s"
+	@echo "... srcs1/libft/str/ft_strpad_left.o"
+	@echo "... srcs1/libft/str/ft_strpad_left.i"
+	@echo "... srcs1/libft/str/ft_strpad_left.s"
+	@echo "... srcs1/libft/str/ft_strpad_right.o"
+	@echo "... srcs1/libft/str/ft_strpad_right.i"
+	@echo "... srcs1/libft/str/ft_strpad_right.s"
+	@echo "... srcs1/libft/str/ft_strprepend.o"
+	@echo "... srcs1/libft/str/ft_strprepend.i"
+	@echo "... srcs1/libft/str/ft_strprepend.s"
+	@echo "... srcs1/libft/str/ft_strskip.o"
+	@echo "... srcs1/libft/str/ft_strskip.i"
+	@echo "... srcs1/libft/str/ft_strskip.s"
+	@echo "... srcs1/libft/str/ft_strupper.o"
+	@echo "... srcs1/libft/str/ft_strupper.i"
+	@echo "... srcs1/libft/str/ft_strupper.s"
+	@echo "... srcs1/main.o"
+	@echo "... srcs1/main.i"
+	@echo "... srcs1/main.s"
+	@echo "... srcs1/options_handler.o"
+	@echo "... srcs1/options_handler.i"
+	@echo "... srcs1/options_handler.s"
 .PHONY : help
 
 

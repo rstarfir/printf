@@ -31,15 +31,17 @@
 # define J 5
 # define Z 6
 # define UCL 7
+# define CAP_L 8
 
 /*
  * flags
  * unsigned int 32 bits
- * 00001 MFL
- * 00010 PFL
- * 00100 SFL
- * 01000 OFL
- * 10000 ZFL
+ * 000001 MFL
+ * 000010 PFL
+ * 000100 SFL
+ * 001000 OFL
+ * 010000 ZFL
+ * 100000 NFL // NULL flag for floats
  */
 
 # define MFL    0x1
@@ -47,6 +49,29 @@
 # define SFL    0x4
 # define OFL    0x8
 # define ZFL    0x10
+# define NFL    0x20
+
+/*
+ *
+ */
+
+typedef struct      s_dbl_parts{
+    t_ullint        mantissa : 52;
+    t_ullint		exponent : 11;
+    t_uint			sign : 1;
+}					t_dbl_parts;
+
+typedef struct		s_ldbl_parts{
+	t_ullint		mantissa : 63;
+	t_ullint
+};
+
+typedef union       u_dbls{
+    t_dbl           dbl;
+    t_ldbl          ldbl;
+    t_dbl_parts     dbl_parts;
+    t_ldbl_parts    ldbl_parts;
+}                   t_dbls;
 
 /*
  * typedefs for classical types
@@ -59,6 +84,8 @@ typedef long int                t_lint;
 typedef unsigned long int       t_ulint;
 typedef long long int           t_llint;
 typedef unsigned long long int  t_ullint;
+typedef double					t_dbl;
+typedef long double				t_ldbl;
 
 typedef struct	s_parser
 {
@@ -70,6 +97,7 @@ typedef struct	s_parser
 	int             beforeNum;
 	int			    width;
 	int			    precision;
+	int             flprecision;
 	int			    size;
 }				    t_parser;
 

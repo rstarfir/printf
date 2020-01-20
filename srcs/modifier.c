@@ -62,6 +62,7 @@ static	void	checkprecision(t_parser *f, va_list ap)
 	if (f->format[f->i] == '.')
 	{
 		f->precision = 0;
+		//f->flprecision = 0;
 		f->i++;
 		if (ft_isdigit(f->format[f->i]))
 		{
@@ -76,6 +77,7 @@ static	void	checkprecision(t_parser *f, va_list ap)
 			f->precision = va_arg(ap, int);
 			f->i++;
 		}
+		f->flprecision = f->precision;
 	}
 }
 
@@ -103,6 +105,11 @@ static	void	checksize(t_parser *f)
 		else
 			f->size = L;
 	}
+	else if (f->format[f->i] == 'L')
+    {
+	    f->i++;
+	    f->size = CAP_L;
+    }
 }
 
 void			modifiers(t_parser *f, va_list ap)

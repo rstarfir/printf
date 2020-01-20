@@ -44,8 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/hthunder/printf/includes"/>
-					<Add directory="/Users/hthunder/printf/libft/includes"/>
+					<Add directory="/Users/hthunder/printf/includes1"/>
+					<Add directory="/Users/hthunder/printf/srcs1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -67,8 +68,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/hthunder/printf/includes"/>
-					<Add directory="/Users/hthunder/printf/libft/includes"/>
+					<Add directory="/Users/hthunder/printf/includes1"/>
+					<Add directory="/Users/hthunder/printf/srcs1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -84,235 +86,232 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hthunder/printf/includes/printf.h">
+		<Unit filename="/Users/hthunder/printf/includes1/ft_printf.h">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/includes/libft.h">
+		<Unit filename="/Users/hthunder/printf/includes1/libft.h">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_atoi.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/conv_spec_parser.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_bubblesort.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/conv_spec_parser_utils.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_bzero.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/dbl_digits_buf_rfmt.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_isalnum.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/dbl_prec_utils.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_isalpha.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/dbl_to_str_conv.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_isascii.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/dbl_type_handler.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_isdigit.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/dbl_utils.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_isprint.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/format_parser.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_itoa.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/formatting_utils.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstadd.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/ft_printf.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstdel.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/get_formatted_str.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstdelone.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/int_formatting_utils.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstiter.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/int_to_str_conv.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstmap.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/int_type_handler.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstnew.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_add.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_lstpushback.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_comp.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memalloc.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_divide.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memccpy.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_multiply.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memchr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_multiply_uint.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memcmp.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_order.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memcpy.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_pow10.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memdel.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_shiftleft.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memmove.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_size.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_memset.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_bigint_subst.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_numsign.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/bigint/ft_uimax_to_bigint.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_power.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_isdigit.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putchar.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_islower.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putchar_fd.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_isprint.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putendl.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_issign.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putendl_fd.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_isspace.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putnbr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_isupper.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putnbr_fd.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_tolower.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putstr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/char/ft_toupper.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_putstr_fd.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_atoi.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strcat.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_digits_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strchr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_imaxtoa_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strclr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_is_valid_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strcmp.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_udigits_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strcpy.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/convert/ft_uimaxtoa_base.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strdel.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/math/ft_abs.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strdup.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/math/ft_exponent.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strequ.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/math/ft_max.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_striter.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_bzero.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_striteri.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_memalloc.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strjoin.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_memcat.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strlcat.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_memcpy.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strlen.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_memjoin.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strmap.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/mem/ft_memset.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strmapi.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_instr.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strncat.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strappend.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strncmp.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strcat.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strncpy.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strchr.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strnequ.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strclcat.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strnew.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strcmp.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strnstr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strcnew.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strrchr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strcpy.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strsplit.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strcut.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strstr.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strdel.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strsub.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strdel_ret.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_strtrim.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strdel_ret_null.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_swap.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strdup.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_tolower.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strjoin.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/libft/srcs/ft_toupper.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strlcat.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/main.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strlen.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/auxiliary.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strncpy.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ft_itoabase.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strndup.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifchar.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strnew.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifhex.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strpad_left.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifint.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strpad_right.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifoctal.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strprepend.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifpointer.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strskip.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifstring.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/libft/str/ft_strupper.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/ifudecint.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/main.c">
 			<Option target="printf"/>
 		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/modifier.c">
-			<Option target="printf"/>
-		</Unit>
-		<Unit filename="/Users/hthunder/printf/srcs/printf.c">
+		<Unit filename="/Users/hthunder/printf/srcs1/options_handler.c">
 			<Option target="printf"/>
 		</Unit>
 		<Unit filename="/Users/hthunder/printf/CMakeLists.txt">
