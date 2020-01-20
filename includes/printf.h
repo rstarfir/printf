@@ -59,6 +59,7 @@ typedef long int                t_lint;
 typedef unsigned long int       t_ulint;
 typedef long long int           t_llint;
 typedef unsigned long long int  t_ullint;
+typedef long double				t_ldbl;
 
 typedef struct	s_parser
 {
