@@ -6,13 +6,13 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:44:24 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:39:32 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/02/17 15:58:44 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/includes/libft.h"
+#include "printf.h"
 
-static char	*strrev(char *str)
+static char		*strrev(char *str)
 {
 	int		i;
 	int		j;
@@ -38,8 +38,7 @@ static char	*strrev(char *str)
 		return (NULL);
 }
 
-//static	int	ft_nsize(long long int nb)
-static      int ft_nsize(t_llint nb)
+static int		ft_nsize(t_llint nb)
 {
 	int	size;
 
@@ -56,10 +55,9 @@ static      int ft_nsize(t_llint nb)
 	return (size);
 }
 
-//char		*ft_llitoa(long long int n)
-char		*ft_llitoa(t_llint n)
+char			*ft_llitoa(t_llint n)
 {
-    char    *ptr;
+	char	*ptr;
 	int		i;
 	int		size;
 
@@ -82,8 +80,7 @@ char		*ft_llitoa(t_llint n)
 	return (ptr);
 }
 
-//char		*ft_itoabase_unsigned(unsigned long long int num, int base)
-char		*ft_itoabase_unsigned(t_ullint num, int base)
+char			*ft_itoabase_unsigned(t_ullint num, int base)
 {
 	size_t	i;
 	int		rem;

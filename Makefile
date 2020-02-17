@@ -6,7 +6,7 @@
 #    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 19:13:34 by hthunder          #+#    #+#              #
-#    Updated: 2019/12/08 21:44:40 by rstarfir         ###   ########.fr        #
+#    Updated: 2020/02/17 19:53:54 by hthunder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,26 @@ CFLAGS = -Wall -Wextra -Werror
 CC = gcc -g
 DIR_S = srcs
 DIR_O = temporary
-INCLUDES = includes
-SOURCES = printf.c \
-		ft_itoabase.c \
-		ifint.c \
-		iffloat.c \
-		ifchar.c \
-		ifhex.c \
-		ifoctal.c \
-		ifpointer.c \
-		ifudecint.c \
-		ifstring.c \
-		auxiliary.c \
-		modifier.c
+INCLUDES = -Iincludes
+HEADER = includes/printf.h libft/includes/bigint.h libft/includes/custom_data_types.h libft/includes/libft.h
+SOURCES = auxiliary.c \
+        bonus_func.c \
+        dragon4.c \
+        ft_itoabase.c \
+        ifbinary.c \
+        ifchar.c \
+        iffloat.c \
+        handle_special_values.c \
+        round_and_return_double.c \
+        double_alignment_put_extra_symbs.c \
+        ifhex.c \
+        ifint.c \
+        ifoctal.c \
+        ifpointer.c \
+        ifstring.c \
+        ifudecint.c \
+        modifier.c \
+        printf.c
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 
@@ -40,9 +47,9 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-$(DIR_O)/%.o: $(DIR_S)/%.c
+$(DIR_O)/%.o: $(DIR_S)/%.c $(HEADER)
 	mkdir -p temporary
-	$(CC) $(FLAGS) -I$(INCLUDES) -o $@ -c $<
+	$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
 
 clean:
 	rm -rf $(DIR_O)
@@ -54,8 +61,4 @@ fclean: clean
 
 re: fclean all
 
-test: libftprintf.a main.c
-	gcc libftprintf.a main.c
-
-tclean: fclean
-	rm -f a.out
+.PHONY: all clean fclean re

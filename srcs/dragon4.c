@@ -3,49 +3,94 @@
 /*                                                        :::      ::::::::   */
 /*   dragon4.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/08 18:41:12 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/12/08 21:34:46 by rstarfir         ###   ########.fr       */
+/*   Created: 2020/02/05 19:09:04 by hthunder          #+#    #+#             */
+/*   Updated: 2020/02/17 19:24:08 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** 1.get the representation of the floating point number as a fraction of 2
-** that are 0 < frac < 10
-** 		1.1 represent the float.point number as a pair of integers in the equation
-**			val_mantissa * 2 ^ val_exponent
-**			init val_matissa & val_exponent:
-**				for 64-bit(double):
-**				denormalized: val_matissa = mantissa * 2 ^ (1-1023-52)
-**				normalized: val_mantissa = (mantissa * 2 ^ 52) * 2 (exponent - 1023)
-**
-**				for 80-bit(long double):
-**				denormalized: val_mantissa = mantissa * 2 ^ (1-16383-63)
-**				normalized: val_mantissa = (mantissa * 2 ^ 63) * 2 (exponent - 16383)
-**		
-**		1.2   Then, represent it as a fraction of two big int depending on the value of
-** 		val_exponent:
-**   			- val_exponent >= 0:          val_mantissa * 2 ^ (val_exponent)
-**              	                  			---------------------------------
-**                  	                        		     1
-** 				  
-*				 - val_exponent < 0:                    val_mantissa
-**              			                  ---------------------------------
-**                          			             2 ^ (-val_exponent)
-** 
-**2.Extract the digits as the integer division of numerator by denominator.
-** 		
-**		Get the power of 10 of the float.point number written in scientific notation
-** 		ex. 142.5 = 1.425 * 10^2 --> exponent = 2
-**	  
-**		Scale th the fraction, so that:               0 <= val_num
-**													----------------
-**													  val_denom < 10
-**		ex.         - 142.5 would become 1.425 --> val_num / (val_den * 10^2)
-**  				- 0.01425 would become 1.425 --> val_num / (val_den * 10^-2)
-**                                				 --> (val_num * 10^2) / val_den   
-**
-** 	Repeat until numenator equals 0.
-*/
+#include "printf.h"
 
+static void		set_values(t_dbls *arg_val, t_ullint *val_mant,
+							int *val_exp, t_parser *conv_params)
+{
+	if (conv_params->size == UCL)
+	{
+		*val_mant = arg_val->ldbl_parts.mant +
+				((arg_val->ldbl_parts.exp) ? (1ULL << 63) : 0ULL);
+		*val_exp = (int)arg_val->ldbl_parts.exp - 16446 +
+				((arg_val->ldbl_parts.exp) ? 0 : 1);
+	}
+	else
+	{
+		*val_mant = arg_val->dbl_parts.mant +
+				((arg_val->dbl_parts.exp) ? (1ULL << 52) : 0ULL);
+		*val_exp = (int)arg_val->dbl_parts.exp - 1075 +
+				((arg_val->dbl_parts.exp) ? 0 : 1);
+	}
+}
+
+static void		set_fraction(t_dbls *arg_val, t_bigint *val_num,
+								t_bigint *val_den, t_parser *conv_params)
+{
+	t_ullint		val_mant;
+	int				val_exp;
+
+	val_mant = 0ULL;
+	val_exp = 0;
+	set_values(arg_val, &val_mant, &val_exp, conv_params);
+	ft_ullint_to_bigint(val_mant, val_num);
+	if (val_exp >= 0)
+		ft_bigint_shiftleft(val_num, val_exp);
+	else
+		ft_bigint_shiftleft(val_den, -val_exp);
+}
+
+static void		scale_fraction(t_bigint *val_num, t_bigint *val_den,
+								int exponent)
+{
+	t_bigint		pow10;
+
+	pow10 = exponent > 0 ? ft_bigint_x10(exponent) : ft_bigint_x10(-exponent);
+	if (exponent > 0)
+		*val_den = ft_bigint_multiply(val_den, &pow10, 0);
+	else if (exponent < 0)
+		*val_num = ft_bigint_multiply(val_num, &pow10, 0);
+}
+
+void			get_first_digit_exponent(t_dbls *arg_val, int *exponent,
+										t_parser *conv_params)
+{
+	if (conv_params->size == UCL)
+		*exponent = ft_exponent(arg_val->ldbl);
+	else
+		*exponent = ft_exponent(arg_val->dbl);
+}
+
+void			dragon4(t_dbls *arg_val, char *digits,
+						int *exponent, t_parser *conv_params)
+{
+	t_bigint		val_num;
+	t_bigint		val_den;
+	t_bigint		bigint_tmp;
+	int				i;
+	int				digit;
+
+	val_num = (t_bigint){0, {0}};
+	val_den = (t_bigint){1, {0}};
+	val_den.blocks[0] = 1;
+	set_fraction(arg_val, &val_num, &val_den, conv_params);
+	get_first_digit_exponent(arg_val, exponent, conv_params);
+	scale_fraction(&val_num, &val_den, *exponent);
+	i = 0;
+	while (val_num.length > 0 && i < BUF_DIGITS_SIZE)
+	{
+		digit = ft_bigint_divide(&val_num, &val_den);
+		digits[i++] = '0' + digit;
+		bigint_tmp = val_den;
+		ft_bi_uint_mult(&bigint_tmp, digit);
+		ft_bigint_subt(&val_num, &bigint_tmp, &val_num);
+		ft_bi_uint_mult(&val_num, 10);
+	}
+}

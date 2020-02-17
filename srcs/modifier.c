@@ -6,21 +6,21 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:55:59 by rstarfir          #+#    #+#             */
-/*   Updated: 2019/11/30 17:40:35 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/02/17 15:59:46 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "printf.h"
 
-static	void	checkflags(t_parser *f)
+static void		checkflags(t_parser *f)
 {
 	while (1)
 	{
 		if (f->format[f->i] == '+')
 		{
-            f->flags |= PFL;
-            f->beforeNum = '+';
-        }
+			f->flags |= PFL;
+			f->before_num = '+';
+		}
 		else if (f->format[f->i] == '-')
 			f->flags |= MFL;
 		else if (f->format[f->i] == '#')
@@ -30,7 +30,7 @@ static	void	checkflags(t_parser *f)
 		else if (f->format[f->i] == ' ')
 		{
 			if (!(f->flags & PFL))
-                f->flags |= SFL;
+				f->flags |= SFL;
 		}
 		else
 			break ;
@@ -48,6 +48,8 @@ static	void	checkwidth(t_parser *f, va_list ap)
 		{
 			f->width = 10 * f->width + f->format[f->i] - '0';
 			f->i++;
+			if (f->width < 0)
+				f->width = 0;
 		}
 	}
 	if (f->format[f->i] == '*')
@@ -76,6 +78,9 @@ static	void	checkprecision(t_parser *f, va_list ap)
 			f->precision = va_arg(ap, int);
 			f->i++;
 		}
+		f->flprecision = f->precision;
+		if (f->flprecision < 0)
+			f->flprecision = 6;
 	}
 }
 
@@ -103,6 +108,8 @@ static	void	checksize(t_parser *f)
 		else
 			f->size = L;
 	}
+	else if (f->format[f->i] == 'L' && ++(f->i))
+		f->size = UCL;
 }
 
 void			modifiers(t_parser *f, va_list ap)

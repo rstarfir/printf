@@ -6,11 +6,11 @@
 /*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:40:11 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 17:40:13 by hthunder         ###   ########.fr       */
+/*   Updated: 2020/02/17 15:59:31 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "printf.h"
 
 static	void	left_aligned_pointer(t_parser *f, int length, char *s)
 {
@@ -22,7 +22,7 @@ static	void	left_aligned_pointer(t_parser *f, int length, char *s)
 	if (f->precision < -1)
 		f->precision = -1;
 	if (f->flags & OFL)
-	    f->nprinted += write(1, "0x", 2);
+		f->nprinted += write(1, "0x", 2);
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -47,7 +47,7 @@ static	void	right_aligned_pointer(t_parser *f, int length, char *s)
 		f->width--;
 	}
 	if (f->flags & OFL)
-	    f->nprinted += write(1, "0x", 2);
+		f->nprinted += write(1, "0x", 2);
 	while (f->precision > length)
 	{
 		f->nprinted += write(1, "0", 1);
@@ -59,14 +59,15 @@ static	void	right_aligned_pointer(t_parser *f, int length, char *s)
 
 void			ifpointer(t_parser *f, va_list ap)
 {
-	char					*s;
-	unsigned long long int	number;
+	char		*s;
+	t_ullint	number;
 
 	f->flags |= OFL;
-	number = (unsigned long long int)va_arg(ap, void *);
+	number = (t_ullint)va_arg(ap, void *);
 	s = ft_itoabase_unsigned(number, 16);
-    if (f->flags & MFL)
-        	left_aligned_pointer(f, ft_strlen(s), s);
-    else
-    	right_aligned_pointer(f, ft_strlen(s), s);
+	if (f->flags & MFL)
+		left_aligned_pointer(f, ft_strlen(s), s);
+	else
+		right_aligned_pointer(f, ft_strlen(s), s);
+	free(s);
 }

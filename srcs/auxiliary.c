@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   auxiliary.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hthunder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 20:15:11 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/30 20:16:49 by hthunder         ###   ########.fr       */
+/*   Created: 2020/02/12 20:44:44 by hthunder          #+#    #+#             */
+/*   Updated: 2020/02/17 15:58:16 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "printf.h"
 
 void	widthstar(t_parser *f, va_list ap)
 {
@@ -29,7 +29,7 @@ void	widthstar(t_parser *f, va_list ap)
 
 char	*ft_toupperstring(char *c)
 {
-	char *temp;
+	char	*temp;
 
 	temp = c;
 	if (c)
@@ -44,4 +44,39 @@ char	*ft_toupperstring(char *c)
 	}
 	else
 		return (NULL);
+}
+
+char	*ft_strjoinf(char *s1, char *s2,
+		char *str_for_free1, char *str_for_free2)
+{
+	char	*str;
+
+	str = ft_strjoin(s1, s2);
+	if (str_for_free1)
+		free(s1);
+	if (str_for_free2)
+		free(s2);
+	return (str);
+}
+
+char	*ft_strndupf(const char *s1, size_t n)
+{
+	char	*ptr;
+	size_t	i;
+
+	i = 0;
+	if (s1)
+	{
+		if (!(ptr = (char *)malloc(sizeof(char) * (n + 1))))
+			return (NULL);
+		while (s1[i] != '\0' && n--)
+		{
+			ptr[i] = s1[i];
+			i++;
+		}
+		ptr[i] = '\0';
+		free((char *)s1);
+		return (ptr);
+	}
+	return (NULL);
 }

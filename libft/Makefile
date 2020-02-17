@@ -6,12 +6,13 @@
 #    By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/06 22:40:51 by rstarfir          #+#    #+#              #
-#    Updated: 2019/12/06 22:41:20 by rstarfir         ###   ########.fr        #
+#    Updated: 2020/02/17 19:59:26 by hthunder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
+HEADER = includes/libft.h includes/bigint.h
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 SRCS = srcs/ft_lstpushback.c \
@@ -21,6 +22,7 @@ SRCS = srcs/ft_lstpushback.c \
 	srcs/ft_swap.c \
 	srcs/ft_memset.c \
 	srcs/ft_bzero.c \
+	srcs/ft_max.c \
 	srcs/ft_memcpy.c \
 	srcs/ft_memccpy.c \
 	srcs/ft_memmove.c \
@@ -28,6 +30,7 @@ SRCS = srcs/ft_lstpushback.c \
 	srcs/ft_memcmp.c \
 	srcs/ft_strlen.c \
 	srcs/ft_strdup.c \
+	srcs/ft_strndup.c \
 	srcs/ft_strcpy.c \
 	srcs/ft_strncpy.c \
 	srcs/ft_strcat.c \
@@ -76,7 +79,20 @@ SRCS = srcs/ft_lstpushback.c \
 	srcs/ft_lstdel.c \
 	srcs/ft_lstadd.c \
 	srcs/ft_lstiter.c \
-	srcs/ft_lstmap.c
+	srcs/ft_exponent.c \
+	srcs/ft_lstmap.c \
+	bigInt/ft_bi_add.c \
+	bigInt/ft_bi_comp.c \
+	bigInt/ft_bi_divide.c \
+	bigInt/ft_bi_multiply.c \
+	bigInt/ft_bi_multiply_uint.c \
+	bigInt/ft_bi_order.c \
+	bigInt/ft_bi_shiftleft.c \
+	bigInt/ft_bi_size.c \
+	bigInt/ft_bi_subtruct.c \
+	bigInt/ft_bi_x10.c \
+	bigInt/ft_ullint_to_bi.c
+
 
 OBJ = $(SRCS:%.c=%.o)
 INCLUDES = includes
@@ -85,8 +101,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
-%.o: %.c
-	$(CC) $(FLAGS) -o $@ -I$(INCLUDES) -c $<
+%.o: %.c $(HEADER)
+	$(CC) $(FLAGS) -I$(INCLUDES) -o $@ -c $<
 clean:
 	rm -f $(OBJ)
 

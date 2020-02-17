@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_bi_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 21:51:44 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:40:00 by rstarfir         ###   ########.fr       */
+/*   Created: 2020/02/06 13:42:49 by hthunder          #+#    #+#             */
+/*   Updated: 2020/02/17 21:00:05 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "bigint.h"
 
-long long	ft_power(int val, int pow)
+size_t			ft_bigint_size(t_bigint *bigint)
 {
-	long long	res;
+	size_t		i;
 
-	res = 1;
-	while (pow > 0)
-	{
-		if (pow % 2 == 0)
-		{
-			pow /= 2;
-			val *= val;
-		}
-		else
-		{
-			pow--;
-			res *= val;
-		}
-	}
-	return (res);
+	i = BIG_INT_SIZE;
+	while (i--)
+		if (bigint->blocks[i])
+			return (i + 1);
+	return (0);
 }

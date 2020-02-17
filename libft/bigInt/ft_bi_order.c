@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_bi_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 21:51:44 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:40:00 by rstarfir         ###   ########.fr       */
+/*   Created: 2020/02/06 13:41:31 by hthunder          #+#    #+#             */
+/*   Updated: 2020/02/17 21:00:05 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "bigint.h"
 
-long long	ft_power(int val, int pow)
+void			ft_bigint_order(t_bigint *bi1, t_bigint *bi2,
+								t_bigint **small_nb, t_bigint **large_nb)
 {
-	long long	res;
-
-	res = 1;
-	while (pow > 0)
+	if (ft_bigint_comp(bi1, bi2) >= 0)
 	{
-		if (pow % 2 == 0)
-		{
-			pow /= 2;
-			val *= val;
-		}
-		else
-		{
-			pow--;
-			res *= val;
-		}
+		*large_nb = bi1;
+		*small_nb = bi2;
 	}
-	return (res);
+	else
+	{
+		*large_nb = bi2;
+		*small_nb = bi1;
+	}
 }

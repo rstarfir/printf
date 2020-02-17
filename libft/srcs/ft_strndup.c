@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_power.c                                         :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rstarfir <rstarfir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hthunder <hthunder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 21:51:44 by hthunder          #+#    #+#             */
-/*   Updated: 2019/11/28 17:40:00 by rstarfir         ###   ########.fr       */
+/*   Created: 2020/02/17 15:10:33 by hthunder          #+#    #+#             */
+/*   Updated: 2020/02/17 15:10:40 by hthunder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long	ft_power(int val, int pow)
+char		*ft_strndup(const char *s1, size_t n)
 {
-	long long	res;
+	char	*ptr;
+	size_t	i;
 
-	res = 1;
-	while (pow > 0)
+	i = 0;
+	if (s1)
 	{
-		if (pow % 2 == 0)
+		if (!(ptr = (char *)malloc(sizeof(char) * (n + 1))))
+			return (NULL);
+		while (s1[i] != '\0' && n--)
 		{
-			pow /= 2;
-			val *= val;
+			ptr[i] = s1[i];
+			i++;
 		}
-		else
-		{
-			pow--;
-			res *= val;
-		}
+		ptr[i] = '\0';
+		return (ptr);
 	}
-	return (res);
+	return (NULL);
 }
