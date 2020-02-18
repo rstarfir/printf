@@ -16,7 +16,7 @@
 # include "custom_data_types.h"
 # include <stdlib.h>
 
-# define BIG_INT_SIZE 514
+# define BIG_INT_SIZE 515
 
 typedef struct	s_bigint {
 	size_t		length;

@@ -26,7 +26,7 @@
 # define H			4
 # define UCL 		5
 
-# define BUF_DIGITS_SIZE 10000
+# define BUF_DIGITS_SIZE 50000
 
 # define MFL    	0x1
 # define PFL    	0x2
